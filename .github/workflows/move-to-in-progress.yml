@@ -6,12 +6,9 @@ on:
 jobs:
   move-assigned-card:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      repository-projects: write
     steps:
       - uses: alex-page/github-project-automation-plus@v0.8.3
         with:
           project: MyAcademia
           column: In Progress
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.MY_ACADEMIA_TOKEN }}
