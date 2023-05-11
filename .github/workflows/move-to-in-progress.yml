@@ -1,14 +1,17 @@
-name: Move assigned card
+name: Move assigned issue
 on:
   issues:
     types:
       - assigned
 jobs:
-  move-assigned-card:
+  move-assigned-issue:
     runs-on: ubuntu-latest
     steps:
-      - uses: alex-page/github-project-automation-plus@v0.8.3
+      - name: Move issue to in progress
+        uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
-          project: MyAcademia
-          column: In Progress
-          repo-token: ${{ secrets.MY_ACADEMIA_TOKEN }}
+          gh_token: ${{ secrets.MY_ACADEMIA_TOKEN }}
+          organization: utmgdsc
+          project_id: 6
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: In Progress
