@@ -3,6 +3,7 @@ import requests
 import csv
 import typing
 import os
+import databaseFiller
 '''
 Created a class for the course data with the properties: Course Code, Course Title, Credit, Distribution, 
 Recommended Prep, Pre Requisites, Exclusion
@@ -89,8 +90,11 @@ class CourseData:
                     else:
                         self.recommended_prep='None'
 
-                    writer.writerow([self.code, self.title,self.description,self.credit, self.distribution, self.recommended_prep,
-                                  self.pre_req, self.exclusion])
+                    # writer.writerow([self.code, self.title,self.description,self.credit, self.distribution, self.recommended_prep,
+                    #               self.pre_req, self.exclusion])
+                    databaseFiller.fillCourseDatabase([self.code, self.title,self.credit,self.distribution , self.recommended_prep,
+                                                       self.pre_req, self.exclusion])
+
 
 
 
