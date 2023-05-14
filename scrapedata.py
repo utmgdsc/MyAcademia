@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 import typing
-
+import os
 '''
 Created a class for the course data with the properties: Course Code, Course Title, Credit, Distribution, 
 Recommended Prep, Pre Requisites, Exclusion
@@ -51,26 +51,40 @@ class CourseData:
                             self.credit='0.5'
                         elif self.code[-3]== 'Y':
                             self.credit='1.0'
+                    else:
+                        continue
+
                     # Course Distribution
                     if course.find('span',class_="views-field views-field-field-distribution-requirements"):
                         span_elem=course.find('span',class_="views-field views-field-field-distribution-requirements")
                         self.distribution=span_elem.find('span',class_='field-content').text
+                    else:
+                        self.distribution='None'
 
                     #Course Exclusion
                     if course.find('span',class_="views-field views-field-field-exclusion"):
                         span_elem=course.find('span',class_="views-field views-field-field-exclusion")
                         self.exclusion=span_elem.find('span',class_='field-content').text
+                    else:
+                        self.exclusion='None'
                     #Course Pre Requisites
                     if course.find('span',class_="views-field views-field-field-prerequisite"):
                         span_elem=course.find('span',class_="views-field views-field-field-prerequisite")
                         self.pre_req=span_elem.find('span',class_='field-content').text
+                    else:
+                        self.pre_req='None'
 
                     #Course Recommended Prep
                     if course.find('span',class_="views-field views-field-field-recommended-preparation"):
                         span_elem=course.find('span',class_="views-field views-field-field-recommended-preparation")
                         self.recommended_prep=span_elem.find('span',class_='field-content').text
+                    else:
+                        self.recommended_prep='None'
 
-                    writer.writerow([self.code, self.title, self.credit, self.distribution, self.recommended_prep, self.pre_req, self.exclusion])
+                    writer.writerow([self.code, self.title, self.credit, self.distribution, self.recommended_prep,
+                                     self.pre_req, self.exclusion])
+
+
 
 
 
