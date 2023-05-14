@@ -15,7 +15,8 @@ class CourseData:
     recommended_prep: str
     pre_req: str
     exclusion: str
-    def __init__(self,code,title,credit,distribution,recommended_prep,pre_req,exclusion):
+    description: str
+    def __init__(self,code,title,credit,distribution,recommended_prep,pre_req,exclusion,description):
         self.code=code
         self.title=title
         self.credit=credit
@@ -23,6 +24,7 @@ class CourseData:
         self.recommended_prep=recommended_prep
         self.pre_req=pre_req
         self.exclusion=exclusion
+        self.description=description
 
     def populate_data(self):
         """
@@ -32,7 +34,7 @@ class CourseData:
             writer = csv.writer(csv_file)
             # Preparing the CSV file Columns
             writer.writerow(
-                ['Course Code', 'Course Title', 'Credit', 'Distribution', 'Recommended Prep', 'Pre Requisites',
+                ['Course Code', 'Course Title','Course Description', 'Credit', 'Distribution', 'Recommended Prep', 'Pre Requisites',
                  'Exclusion'])
             for i in range(79):
                 URL = f'https://utm.calendar.utoronto.ca/course-search?page={i}'
@@ -53,6 +55,12 @@ class CourseData:
                             self.credit='1.0'
                     else:
                         continue
+                    # Course Description
+                    if course.find('div',class_="views-field views-field-field-desc"):
+                        div_elem=course.find('div',class_="views-field views-field-field-desc")
+                        self.description=div_elem.find('div',class_='field-content').find('p').text
+                    else:
+                        self.description='None'
 
                     # Course Distribution
                     if course.find('span',class_="views-field views-field-field-distribution-requirements"):
@@ -81,14 +89,14 @@ class CourseData:
                     else:
                         self.recommended_prep='None'
 
-                    writer.writerow([self.code, self.title, self.credit, self.distribution, self.recommended_prep,
-                                     self.pre_req, self.exclusion])
+                    writer.writerow([self.code, self.title,self.description,self.credit, self.distribution, self.recommended_prep,
+                                  self.pre_req, self.exclusion])
 
 
 
 
 
-course_data=CourseData('','','','','','','')
+course_data=CourseData('','','','','','','','')
 course_data.populate_data()
 
 
