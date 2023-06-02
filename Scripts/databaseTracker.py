@@ -31,12 +31,35 @@ create_courses = '''CREATE TABLE IF NOT EXISTS courses (
     description      VARCHAR(1000) NULL
 );'''
 
-# Execute the SQL query
+# create programs table
+create_programs = '''CREATE TABLE IF NOT EXISTS programs (
+    program_ID        INT          NOT NULL PRIMARY KEY,
+    program_name      VARCHAR(100) NULL,
+    type_of_program   VARCHAR(50)  NULL
+);
+'''
+
+# create requirements table
+create_requirements = '''CREATE TABLE IF NOT EXISTS requirements (
+    requirement_ID   INT           NOT NULL PRIMARY KEY,
+    requirement      VARCHAR(2000) NOT NULL,
+    program_ID       INT           NOT NULL,
+    CONSTRAINT requirements_programs_program_ID_fk
+        FOREIGN KEY (program_ID) REFERENCES programs (program_ID)
+);
+'''
+
+
+# running the queries
 cursor.execute(create_courseDescription)
 cursor.execute(create_courses)
-# Commit the changes
+cursor.execute(create_programs)
+cursor.execute(create_requirements)
+
+# Commit the changes: This line essenitaly saves the changes and adds to
+# the database, similar to git commit :)
 connection.commit()
 
-# Close the cursor and the connection
+# ends the connection and closes the cursor
 cursor.close()
 connection.close()
