@@ -1,9 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 import csv
-import typing
-import os
-import databaseFiller
+from Scripts import databaseFiller
+
 '''
 Created a class for the course data with the properties: Course Code, Course Title, Credit, Distribution, 
 Recommended Prep, Pre Requisites, Exclusion
@@ -92,7 +91,7 @@ class CourseData:
 
                     # writer.writerow([self.code, self.title,self.description,self.credit, self.distribution, self.recommended_prep,
                     #               self.pre_req, self.exclusion])
-                    databaseFiller.fillCourseDatabase([self.code, self.title,self.credit,self.distribution , self.recommended_prep,
+                    databaseFiller.fillCourseDatabase([self.code, self.title, self.credit, self.distribution , self.recommended_prep,
                                                        self.pre_req, self.exclusion])
 
 
