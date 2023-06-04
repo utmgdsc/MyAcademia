@@ -1,6 +1,7 @@
 import pymysql
 import databaseFiller
 import databaseTracker
+from Scripts.scrapedata import CourseData
 
 """
 This script will be used to setup the database for the MyAcademia application
@@ -19,3 +20,5 @@ def emptyDatabase():
 if __name__ == "__main__":
     databaseTracker.trackDatabase()
     # databaseFiller.fillCourseDatabase()
+    course_data=CourseData('','','','','','','','')
+    course_data.populate_data()
