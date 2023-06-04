@@ -99,8 +99,7 @@ class CourseData:
 
 
 
-course_data=CourseData('','','','','','','','')
-course_data.populate_data()
+
 
 
 
