@@ -19,7 +19,3 @@ def fillCourseDatabase(inputList):
     return None
 
 
-# listInput = ["csc209", "0.3", "csc207", "csc236", "csc258", "csc263"]
-# fillCourseDatabase(listInput)
-
-

@@ -13,6 +13,7 @@ def emptyDatabase():
     The purpose of this function is to empty the database.
     """
     # todo: need to figure out fetchall
+    pass
 
 
 if __name__ == "__main__":
