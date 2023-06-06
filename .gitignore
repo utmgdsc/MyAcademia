@@ -5,3 +5,6 @@ out/
 *.log
 *.class
 *.DS_Store
+Scripts/databaseFiller.py
+Scripts/databaseTracker.py
+Scripts/setupDatabase.py
