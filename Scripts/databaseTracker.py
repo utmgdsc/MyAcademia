@@ -12,8 +12,8 @@ def trackDatabase():
     """
     # making connection to the database
     connection = pymysql.connect(host='localhost', user='root',
-                                 password='utm@GDSC',
-                                 database='testDatabase')
+                                 password='Akhil_0506',
+                                 database='utmCourseDatabase')
 
     # this helps to add quires
     cursor = connection.cursor()
