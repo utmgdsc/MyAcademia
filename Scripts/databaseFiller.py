@@ -1,6 +1,5 @@
 import pymysql as sql
 
-
 def fillCourseDatabase(inputList):
     """
     This function takes in a list of inputs and inserts them into the database.
@@ -15,7 +14,6 @@ def fillCourseDatabase(inputList):
     connection.commit()
     cursor.close()
     connection.close()
-
     return None
 
 
