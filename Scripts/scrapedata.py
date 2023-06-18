@@ -36,7 +36,7 @@ class CourseData:
             writer.writerow(
                 ['Course Code', 'Course Title','Course Description', 'Credit', 'Distribution', 'Recommended Prep', 'Pre Requisites',
                  'Exclusion'])
-            for i in range(79):
+            for i in range(80):
                 URL = f'https://utm.calendar.utoronto.ca/course-search?page={i}'
                 html_page = requests.get(URL).text
                 soup = BeautifulSoup(html_page, 'lxml')
@@ -89,13 +89,16 @@ class CourseData:
                     else:
                         self.recommended_prep='None'
 
-                    # writer.writerow([self.code, self.title,self.description,self.credit, self.distribution, self.recommended_prep,
-                    #               self.pre_req, self.exclusion])
-                    databaseFiller.fillCourseDatabase([self.code, self.title, self.credit, self.distribution , self.recommended_prep,
-                                                       self.pre_req, self.exclusion])
+                    writer.writerow([self.code, self.title,self.description,self.credit, self.distribution, self.recommended_prep,
+                                  self.pre_req, self.exclusion])
+                    #databaseFiller.fillCourseDatabase([self.code, self.title, self.credit, self.distribution , self.recommended_prep,
+                                                       #self.pre_req, self.exclusion])
 
 
 
+
+course_data=CourseData('','','','','','','','')
+course_data.populate_data()
 
 
 
