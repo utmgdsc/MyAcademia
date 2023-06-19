@@ -17,18 +17,18 @@ class AbstractReview(models.Model):
     review = models.TextField(max_length=2500) # Text field for the review
     course = models.ForeignKey(Course, on_delete=models.CASCADE) # Foreign key to the course model. on_delete = models.CASCADE since if the course is deleted, the review is deleted
     def __str__(self):
-        return self.review_id
+        return self.course.course_code + "-" + str(self.review_id)
     
     class Meta:
         abstract = True
 
 #UserReviews model which inherits from AbstractReview
-class UserReviews(AbstractReview):
+class UserReview(AbstractReview):
     rating = models.DecimalField(max_digits=2, decimal_places=1) 
     userName = models.ForeignKey(User, blank=True, on_delete=models.RESTRICT) # Foreign key to the user model. on_delete = models.RESTRICT since if the user is deleted, the review is not deleted
     Professor = models.ForeignKey(Professor, blank=True, on_delete=models.RESTRICT) # Foreign key to the professor model. on_delete = models.RESTRICT since if the professor is deleted, the review is not deleted
 
 #OnlineReviews model which inherits from AbstractReview
-class OnlineReviews(AbstractReview):
-    senitment_analysis_value = models.DecimalField(max_digits=2, decimal_places=1) # Sentiment analysis value for the review
+class OnlineReview(AbstractReview):
+    senitment_analysis_value = models.DecimalField(max_digits=2, decimal_places=1, default=0.0) # Sentiment analysis value for the review
 

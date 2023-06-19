@@ -7,12 +7,13 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 import csv
-from Scripts import databaseFiller
+#from Scripts import databaseFiller
 import prawcore
 import random
 from profanity import profanity
 #Using the profanity package to censor the reviews
 # Acessing the reddit api
+
 
 list_courses = []
 reddit = praw.Reddit(client_id="SMYL-lb2BhaNvaAi8SwVkw",  # my client id
@@ -20,6 +21,9 @@ reddit = praw.Reddit(client_id="SMYL-lb2BhaNvaAi8SwVkw",  # my client id
                      user_agent="utmreviewscraper",  # user agent name
                      username="myacademia392",  # your reddit username
                      password="akadgu392")  # your reddit password
+# Print pid. Used to kill the process.
+import os
+print(os.getpid())
 #Scraping the academic calendar website for course codes
 for i in range(80):
     URL = f'https://utm.calendar.utoronto.ca/course-search?page={i}'
@@ -36,7 +40,7 @@ for i in range(80):
 #Scraping Reddit Reviews for each course
 with open('courses_reviews.csv', 'w', newline='') as file:
     writer = csv.writer(file)
-    writer.writerow(["Course Code","Reddit Reviews"])
+    writer.writerow(["course_code","1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]) # For the 10 reviews
     for course in list_courses:
         reddit_coursecode = course[0:len(course) - 3].strip()
         subreddit_name='UTM'
@@ -62,7 +66,13 @@ with open('courses_reviews.csv', 'w', newline='') as file:
         #Using 10 Random Reviews out of 20 to remove bias
         random.shuffle(list_reviews)
         random_reviews_list = list_reviews[0:10]
-        writer.writerow([course,random_reviews_list])
+        # Populate with empty strings if there are less than 10 reviews
+        if(len(random_reviews_list)<10):
+            for i in range(10-len(random_reviews_list)):
+                random_reviews_list.append("")
+        writer.writerow([course,random_reviews_list[0], random_reviews_list[1], random_reviews_list[2], 
+                         random_reviews_list[3], random_reviews_list[4], random_reviews_list[5], 
+                         random_reviews_list[6], random_reviews_list[7], random_reviews_list[8], random_reviews_list[9]])
 
 
 
