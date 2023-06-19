@@ -8,3 +8,6 @@ out/
 Scripts/databaseFiller.py
 Scripts/databaseTracker.py
 Scripts/setupDatabase.py
+*.sqlite3
+*.csv
+*.pyc
