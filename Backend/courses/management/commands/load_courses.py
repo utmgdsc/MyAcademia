@@ -16,7 +16,6 @@ class Command(BaseCommand):
         with open(csv_file, mode='r') as csv_file:
             reader = csv.DictReader(csv_file) # Gets it as a dictionary and uses the first row as the keys
             for row in reader:
-                print(row['distribution'])
                 if(row['course_code'] == '' or Course.objects.filter(course_code=row['course_code']).exists()): # If empty or course already exists
                     continue
                 # Create and save course object

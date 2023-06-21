@@ -16,8 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from courses.views import CourseView
+from programs.views import ProgramView, RequirementView
+from reviews.views import UserReviewView, OnlineReviewView, ProfessorView
+
+# A router object created so that the views can be registered and accessed from the backend
+router = routers.DefaultRouter()
+router.register(r'courses', CourseView, 'course')
+router.register(r'programs', ProgramView, 'program')
+router.register(r'requirements', RequirementView, 'requirement')
+router.register(r'userreviews', UserReviewView, 'userreview')
+router.register(r'onlinereviews', OnlineReviewView, 'onlinereview')
+router.register(r'professors', ProfessorView, 'professor')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)), # Register the router object. So now, specific objects can be accessed via
+    # /api/name_of_object
     
 ]

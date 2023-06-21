@@ -17,7 +17,7 @@ class Command(BaseCommand):
         with open(csv_file, newline='') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                course = Course.objects.get(course_code=row['course_code']) # Get the course object from the database
+                course = Course.objects.get(course_code=row['course_code'].strip()) # Get the course object from the database
                 if course is None: # If course does not exist, skip
                     continue
                 for i in range(1,11): # 10 reviews

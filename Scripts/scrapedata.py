@@ -25,6 +25,14 @@ class CourseData:
         self.exclusions=exclusions
         self.description=description
 
+    def strip_all(self):
+        self.course_code = self.course_code.strip()
+        self.title = self.title.strip()
+        self.distribution = self.distribution.strip()
+        self.recommended_prep = self.recommended_prep.strip()
+        self.pre_req = self.pre_req.strip()
+        self.exclusions = self.exclusions.strip()
+        self.description = self.description.strip()
     def populate_data(self):
         """
         Scrape data from the uoft academic calendar website and populate into a csv file
@@ -87,7 +95,7 @@ class CourseData:
                         self.recommended_prep=span_elem.find('span',class_='field-content').text
                     else:
                         self.recommended_prep='None'
-
+                    self.strip_all() # Strip all strings to ensure no leading spaces
                     writer.writerow([self.course_code, self.title,self.description,self.credit, self.distribution, self.recommended_prep,
                                   self.pre_req, self.exclusions])
 
