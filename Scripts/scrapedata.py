@@ -42,12 +42,7 @@ class CourseData:
             writer = csv.writer(csv_file)
             # Preparing the CSV file Columns
             writer.writerow(
-<<<<<<< HEAD
-                ['Course Code', 'Course Title','Course Description', 'Credit', 'Distribution', 'Recommended Prep', 'Pre Requisites',
-                 'Exclusion'])
-=======
                 ['course_code', 'title', 'description', 'credit', 'distribution', 'recommended_prep', 'pre_req', 'exclusions'])
->>>>>>> 5b222535c7567e7c656a850837ebe7ac31466841
             for i in range(80):
                 URL = f'https://utm.calendar.utoronto.ca/course-search?page={i}'
                 html_page = requests.get(URL).text
@@ -103,22 +98,9 @@ class CourseData:
                     self.strip_all() # Strip all strings to ensure no leading spaces
                     writer.writerow([self.course_code, self.title,self.description,self.credit, self.distribution, self.recommended_prep,
                                   self.pre_req, self.exclusions])
-
-<<<<<<< HEAD
-                    writer.writerow([self.code, self.title,self.description,self.credit, self.distribution, self.recommended_prep,
-                                  self.pre_req, self.exclusion])
-                    #databaseFiller.fillCourseDatabase([self.code, self.title, self.credit, self.distribution , self.recommended_prep,
-                                                       #self.pre_req, self.exclusion])
-=======
->>>>>>> 5b222535c7567e7c656a850837ebe7ac31466841
-
-
-
 course_data=CourseData('','','','','','','','')
 course_data.populate_data()
 
-course_data=CourseData('','','','','','','','')
-course_data.populate_data()
 
 
 
