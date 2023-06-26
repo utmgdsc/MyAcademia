@@ -32,7 +32,9 @@ router.register(r'professors', ProfessorView, 'professor')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)), # Register the router object. So now, specific objects can be accessed via
+    path('api/', include(router.urls)), # Register the router object. So now, specific objects can be accessed via api/name_of_object
     # /api/name_of_object
+    path('auth/', include('djoser.urls')), # This is backend endpoints for authentication provided by djoser
+    path('auth/', include('djoser.urls.jwt')),
     
 ]

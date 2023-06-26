@@ -30,5 +30,5 @@ class UserReview(AbstractReview):
 
 #OnlineReviews model which inherits from AbstractReview
 class OnlineReview(AbstractReview):
-    senitment_analysis_value = models.DecimalField(max_digits=2, decimal_places=1, default=0.0) # Sentiment analysis value for the review
+    sentiment_analysis_value = models.DecimalField(max_digits=10, decimal_places=10, default=0.0) # Sentiment analysis value for the review
 

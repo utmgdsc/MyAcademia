@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'programs.apps.ProgramsConfig',
     'corsheaders',
     'rest_framework',
+    'djoser',
 ]
 
 MIDDLEWARE = [
