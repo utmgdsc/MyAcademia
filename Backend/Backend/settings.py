@@ -133,3 +133,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000"
 ]
+
+# Email setup for the backend. Using the utmgdsc392@gmail account
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'utmgdsc392@gmail.com'
+EMAIL_HOST_PASSWORD = 'akadgu392'
+EMAIL_USE_TLS = True
+# Djoser configuration
+DJOSER = {
+    'USER_ID_FIELD': 'username',
+    'SERIALIZERS': {
+        'user_create': 'accounts.serializers.CustomUserCreateSerializer',
+    },
+    # 'SEND_CONFIRMATION_EMAIL': True,
+    # 'ACTIVATION_URL': 'activate/{username}/{token}',
+}

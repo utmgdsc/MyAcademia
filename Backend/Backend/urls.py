@@ -36,7 +36,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)), # Register the router object. So now, specific objects can be accessed via api/name_of_object
     # /api/name_of_object
-    path('auth/', include('djoser.urls')), # This is backend endpoints for authentication provided by djoser
-    path('auth/', include('djoser.urls.jwt')), # Javascript Web Token authentication provided by djoser
-    path('auth/users', CustomUserViewSet.as_view({'post': 'create'}), name='auth_user_create'), # Created a custom endpoint for creating a new user
+    path(r'auth/', include('djoser.urls')), # This is backend endpoints for authentication provided by djoser
+    path(r'auth/', include('djoser.urls.jwt')), # Javascript Web Token authentication provided by djoser
+    path('auth/users', CustomUserViewSet.as_view({'post': 'create'}), name='user_create'), # Created a custom endpoint for creating a new user
 ]
