@@ -11,3 +11,5 @@ Scripts/setupDatabase.py
 *.sqlite3
 *.csv
 *.pyc
+*.pyo
+debug.html
