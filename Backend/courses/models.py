@@ -21,6 +21,7 @@ class Course(models.Model):
     pre_req = models.TextField(default="")
     exclusions = models.TextField(default="")
     description = models.TextField()
+    program_area = models.CharField(max_length=200, default="")
 
     def __str__(self):
         return self.course_code

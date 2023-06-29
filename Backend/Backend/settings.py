@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     'accounts.apps.AccountsConfig',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -149,4 +150,17 @@ DJOSER = {
     },
     # 'SEND_CONFIRMATION_EMAIL': True,
     # 'ACTIVATION_URL': 'activate/{username}/{token}',
+}
+
+# Authentication Settings
+# Token based authentication
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication',
+                                      'rest_framework_simplejwt.authentication.JWTAuthentication'),
+
+}
+
+#Javascript Web Token authentication
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
 }

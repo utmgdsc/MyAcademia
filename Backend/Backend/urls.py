@@ -39,4 +39,5 @@ urlpatterns = [
     path(r'auth/', include('djoser.urls')), # This is backend endpoints for authentication provided by djoser
     path(r'auth/', include('djoser.urls.jwt')), # Javascript Web Token authentication provided by djoser
     path('auth/users', CustomUserViewSet.as_view({'post': 'create'}), name='user_create'), # Created a custom endpoint for creating a new user
+    path(r'^auth/', include('djoser.urls.authtoken')) # Token based authentication
 ]

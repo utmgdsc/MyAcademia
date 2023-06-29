@@ -25,7 +25,7 @@ def filterCourses(course_code: str, pre_req: str, distribution:str, program_area
     if course_code != None or course_code != "": # Course code provided so return course with the course code
         return Course.objects.filter(course_code = course_code)
     # Filter courses based on the criteria provided. Program area is not implemented yet
-    return Course.objects.all().filter(course_code = course_code).filter(pre_req__icontains = pre_req)\
-        .filter(distribution = distribution)#.filter(program_area = program_area)
+    return Course.objects.all().filter(pre_req__icontains = pre_req).filter(distribution = distribution)
+#.filter(program_area = program_area)
     
     
