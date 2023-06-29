@@ -7,6 +7,8 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 import csv
+
+from Scripts import databaseFiller
 #from Scripts import databaseFiller
 import prawcore
 import random
@@ -14,13 +16,13 @@ from profanity import profanity
 #Using the profanity package to censor the reviews
 # Acessing the reddit api
 
-
 list_courses = []
 reddit = praw.Reddit(client_id="SMYL-lb2BhaNvaAi8SwVkw",  # my client id
                      client_secret="PFnA97kUL64vgAdWK9cnRxGWtM6siQ",  # your client secret
                      user_agent="utmreviewscraper",  # user agent name
                      username="myacademia392",  # your reddit username
                      password="akadgu392")  # your reddit password
+
 # Print pid. Used to kill the process.
 import os
 print(os.getpid())
@@ -73,6 +75,7 @@ with open('courses_reviews.csv', 'w', newline='') as file:
         writer.writerow([course,random_reviews_list[0], random_reviews_list[1], random_reviews_list[2], 
                          random_reviews_list[3], random_reviews_list[4], random_reviews_list[5], 
                          random_reviews_list[6], random_reviews_list[7], random_reviews_list[8], random_reviews_list[9]])
+
 
 
 
