@@ -2,6 +2,7 @@ from typing import Any, Optional
 from django.core.management.base import BaseCommand, CommandParser
 from reviews.models import OnlineReview
 from courses.models import Course
+from reviews.sentimentAnalysisAPI import sentimentAnalysisAPI
 import csv
 
 # Created a command to add courses from csv file to database
@@ -23,4 +24,5 @@ class Command(BaseCommand):
                 for i in range(1,11): # 10 reviews
                     if row[str(i)] == '': # Indicates end of reviews so break
                         break
-                    OnlineReview.objects.create(course=course, review=row[f'{i}']) # Create a new review object and store in database
+                    value = sentimentAnalysisAPI().getSentiment(row[f'{i}']) # Get the sentiment value of the review
+                    OnlineReview.objects.create(course=course, review=row[f'{i}'], sentiment_analysis_value=value) # Create a new review object and store in database
