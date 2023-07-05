@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from .serializers import CourseSerializer
 from .models import Course
-from django.http import request
+from django.http import request, JsonResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 # To view courses in the backend
 class CourseView(viewsets.ModelViewSet):
@@ -18,8 +20,9 @@ def courseSearch(request : request):
         pre_req = request.data['pre_req']
         distribution = request.data['distribution']
         program_area = request.data['program_area']
-        return filterCourses(course_code, pre_req, distribution, program_area)
-
+        courses = filterCourses(course_code, pre_req, distribution, program_area)
+        return JsonResponse(courses, safe=False, status = status.HTTP_200_OK) # Return the courses as a JSON object which can be parsed by the frontend and displayed
+    return Response("Invalid request", status=status.HTTP_400_BAD_REQUEST)
 
 def filterCourses(course_code: str, pre_req: str, distribution:str, program_area: str) -> Course.objects:
     if course_code != None or course_code != "": # Course code provided so return course with the course code

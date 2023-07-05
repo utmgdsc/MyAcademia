@@ -17,9 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from courses.views import CourseView
+from courses.views import CourseView, courseSearch
 from programs.views import ProgramView, RequirementView
-from reviews.views import UserReviewView, OnlineReviewView, ProfessorView
+from reviews.views import UserReviewView, OnlineReviewView, ProfessorView, createReview
 from accounts.views import ProfileView, CustomUserViewSet
 
 # A router object created so that the views can be registered and accessed from the backend
@@ -39,5 +39,6 @@ urlpatterns = [
     path(r'auth/', include('djoser.urls')), # This is backend endpoints for authentication provided by djoser
     path(r'auth/', include('djoser.urls.jwt')), # Javascript Web Token authentication provided by djoser
     path('auth/users', CustomUserViewSet.as_view({'post': 'create'}), name='user_create'), # Created a custom endpoint for creating a new user
-    path(r'^auth/', include('djoser.urls.authtoken')) # Token based authentication
+    path('api/reviews/createUserReview', createReview, name='createUserReview'), # Created a custom endpoint for creating a new user review
+    path('api/courses/courseSearch', courseSearch, name='courseSearch') # Created a custom endpoint for searching course
 ]
