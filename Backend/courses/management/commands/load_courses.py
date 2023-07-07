@@ -19,5 +19,5 @@ class Command(BaseCommand):
                 if(row['course_code'] == '' or Course.objects.filter(course_code=row['course_code']).exists()): # If empty or course already exists
                     continue
                 # Create and save course object
-                Course.objects.create(course_code=row['course_code'], title=row['title'], credit=row['credit'], recommended_prep=row['recommended_prep'], distrubution=row['distribution'], 
+                Course.objects.create(course_code=row['course_code'], title=row['title'], credit=row['credit'], recommended_prep=row['recommended_prep'], distribution=row['distribution'], 
                                       pre_req=row['pre_req'], exclusions=row['exclusions'], description=row['description'], program_area=row['program_area'])

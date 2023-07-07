@@ -46,6 +46,8 @@ def createReview(self, request, *args, **kwargs):
             UserReview.objects.create(user=user, course=course, rating=rating, review=review) # Don't add professor if it doesn't exist
         else:
             UserReview.objects.create(user=user, course=course, professor=professor, rating=rating, review=review) # Add professor since it exists
+        # Update the average rating and number of reviews for the course
+        course.updateRating(rating)
         return Response({'Success'}, status=status.HTTP_200_OK)
     else:
         return Response({'Error, invalid request'}, status=status.HTTP_400_BAD_REQUEST)
