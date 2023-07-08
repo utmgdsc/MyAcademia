@@ -19,7 +19,7 @@ from django.urls import path, include
 from rest_framework import routers
 from courses.views import CourseView, CourseSearchView
 from programs.views import ProgramView, RequirementView
-from reviews.views import UserReviewView, OnlineReviewView, ProfessorView, createReview
+from reviews.views import UserReviewView, OnlineReviewView, ProfessorView, CreateReviewView
 from accounts.views import ProfileView, CustomUserViewSet
 
 # A router object created so that the views can be registered and accessed from the backend
@@ -39,6 +39,6 @@ urlpatterns = [
     path(r'auth/', include('djoser.urls')), # This is backend endpoints for authentication provided by djoser
     path(r'auth/', include('djoser.urls.jwt')), # Javascript Web Token authentication provided by djoser
     path('auth/users', CustomUserViewSet.as_view({'post': 'create'}), name='user_create'), # Created a custom endpoint for creating a new user
-    path('api/createUserReview/', createReview, name='createUserReview'), # Created a custom endpoint for creating a new user review
+    path('api/createUserReview/', CreateReviewView.as_view(), name='createUserReview'), # Created a custom endpoint for creating a new user review
     path('api/courseSearch/', CourseSearchView.as_view(), name='courseSearch') # Created a custom endpoint for searching course. Returns a JSONResponse which can be parsed by the frontend
 ]

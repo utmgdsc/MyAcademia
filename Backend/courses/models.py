@@ -24,7 +24,7 @@ class Course(models.Model):
     program_area = models.CharField(max_length=200, default="")
     # Store the number of reviews and the average rating for the course. This is based on the reviews provided by the users and updated whenever a new review is added
     num_reviews = models.IntegerField(default=0)
-    avg_rating = models.DecimalField(max_digits=3, decimal_places=2, default=0.0)
+    avg_rating = models.FloatField(default=0.0)
 
     def __str__(self):
         return self.course_code

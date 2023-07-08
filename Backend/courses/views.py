@@ -17,7 +17,7 @@ class CourseView(viewsets.ModelViewSet):
 
 # A class to handle the course search functionality
 class CourseSearchView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.AllowAny] # Allow any user to access this endpoint
     http_method_names = ['post']
 
     # A post method to handle the request and return the courses
