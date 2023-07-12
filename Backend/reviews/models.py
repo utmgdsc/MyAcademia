@@ -8,9 +8,15 @@ class Professor(models.Model):
     professor_name = models.CharField(max_length=100)
     department = models.CharField(max_length=100) # Update to include a list of departments
     prof_id = models.AutoField(primary_key=True) # Autofield which automatically creates a unique id for the professor
+    previous_courses = models.ManyToManyField(Course, blank=True) # Previous courses taught by the professor
     
     def __str__(self):
         return self.professor_name
+    
+    # Method to add a course to the previous courses list of professor
+    def add_course(self, course):
+        if course not in self.previous_courses.all():
+            self.previous_courses.add(course)
 # Superclass for Reviews model
 class AbstractReview(models.Model):
     review_id = models.AutoField(primary_key=True) # Autofield which automatically creates a unique id

@@ -27,18 +27,18 @@ class ProfessorView(viewsets.ModelViewSet):
 # Class that handles the creation of a new user review
 class CreateReviewView(APIView):
     permission_classes = [permissions.IsAuthenticated] # Only authenticated users can access this endpoint
-    # permission_classes = [permissions.AllowAny] # Allow any user to access this endpoint. Only for testing
+    #permission_classes = [permissions.AllowAny] # Allow any user to access this endpoint. Only for testing
     http_method_names = ['post']
     # A post method to handle the request and create a new user review
     def post(self, request, *args, **kwargs):
             # Extract the review data from request
         username = request.data['username']
         course_code = request.data['course_code']
-        professor = request.data['professor']
+        professor_name = request.data['professor_name']
         department = request.data['department']
         rating = request.data['rating']
         review = request.data['review']
-        if not username or not course_code or not rating or not review:
+        if not username or not course_code or not rating or not review or not professor_name or not department:
             return Response({'Error, invalid arguments'}, status=status.HTTP_400_BAD_REQUEST)
         # Check if the user exists and add if not AnonymousUser
         userReview = UserReview()
@@ -46,20 +46,42 @@ class CreateReviewView(APIView):
         if not user and username != 'AnonymousUser':
             return Response({'Error, user does not exist'}, status=status.HTTP_400_BAD_REQUEST)
         if username != 'AnonymousUser':
-            userReview.user = user
+            userReview.userName = user
         # Check if the course exists
         course = Course.objects.get(course_code=course_code)
         if not course:
             return Response({'Error, course does not exist'}, status=status.HTTP_400_BAD_REQUEST)
         userReview.course = course
         # Check if the professor exists
-        professor = Professor.objects.filter(professor_name=professor).filter(department=department)
+        professor = Professor.objects.filter(professor_name=professor_name).filter(department=department)
         if len(professor) != 0:
-            userReview.professor = professor[0] # We may need to change this later. Currently it uniquely identifies a professor based on name and department. 
+            userReview.Professor = professor[0] # We may need to change this later. Currently it uniquely identifies a professor based on name and department.
+            userReview.Professor.add_course(course)  
+        if len(professor) == 0 and professor_name != 'NoProfessor':
+            return Response({'Error, professor does not exist'}, status=status.HTTP_400_BAD_REQUEST)
         # Add rating and review. Store the review in the database
         userReview.rating = rating
         userReview.review = review
         userReview.save()
         # Update the average rating and number of reviews for the course
         course.updateRating(rating)
-        return Response({'Success'}, status=status.HTTP_200_OK)
+        return Response({'Success'}, status=status.HTTP_201_CREATED)
+
+# Class that handles the finding of a professor for a course
+class FindProfessorsView(APIView):
+    permission_classes = [permissions.AllowAny] 
+    http_method_names = ['get']
+    # A get method to handle the request and find a professor for a course. 
+    def get(self, request, *args, **kwargs):
+        course_code = request.GET.get('course_code')
+        if not course_code:
+            return Response({'Error, invalid arguments'}, status=status.HTTP_400_BAD_REQUEST)
+        # Check if the course exists
+        try:
+            course = Course.objects.get(course_code=course_code)
+        except Course.DoesNotExist:
+            return Response({'Error, course does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        # Get the professor for the course
+        professors_names = Professor.objects.filter(previous_courses__in=[course]).values_list('professor_name', flat=True)
+        return Response(professors_names, status=status.HTTP_200_OK)
+

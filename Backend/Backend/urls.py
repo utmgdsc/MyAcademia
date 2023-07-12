@@ -19,7 +19,7 @@ from django.urls import path, include
 from rest_framework import routers
 from courses.views import CourseView, CourseSearchView
 from programs.views import ProgramView, RequirementView
-from reviews.views import UserReviewView, OnlineReviewView, ProfessorView, CreateReviewView
+from reviews.views import UserReviewView, OnlineReviewView, ProfessorView, CreateReviewView, FindProfessorsView
 from accounts.views import ProfileView, CustomUserViewSet
 
 # A router object created so that the views can be registered and accessed from the backend
@@ -38,7 +38,8 @@ urlpatterns = [
     # /api/name_of_object
     path(r'auth/', include('djoser.urls')), # This is backend endpoints for authentication provided by djoser
     path(r'auth/', include('djoser.urls.jwt')), # Javascript Web Token authentication provided by djoser
-    path('auth/users', CustomUserViewSet.as_view({'post': 'create'}), name='user_create'), # Created a custom endpoint for creating a new user
-    path('api/createUserReview/', CreateReviewView.as_view(), name='createUserReview'), # Created a custom endpoint for creating a new user review
-    path('api/courseSearch/', CourseSearchView.as_view(), name='courseSearch') # Created a custom endpoint for searching course. Returns a JSONResponse which can be parsed by the frontend
+    path('auth/users', CustomUserViewSet.as_view({'post': 'create'}), name='user_create'), # custom endpoint for creating a new user
+    path('api/createUserReview/', CreateReviewView.as_view(), name='createUserReview'), # custom endpoint for creating a new user review
+    path('api/courseSearch/', CourseSearchView.as_view(), name='courseSearch'), # custom endpoint for course search Returns a JSONResponse which can be parsed by the frontend
+    path('api/findProfessor/', FindProfessorsView.as_view(), name='findProfessor') # custom endpoint for filtering professors. Returns a JSONResponse which can be parsed by the frontend
 ]

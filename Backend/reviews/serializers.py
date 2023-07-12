@@ -17,4 +17,4 @@ class OnlineReviewSerializer(serializers.ModelSerializer):
 class ProfessorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Professor
-        fields = ('professor_name', 'department', 'prof_id')
+        fields = ('professor_name', 'department', 'prof_id', 'previous_courses')
