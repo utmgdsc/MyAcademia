@@ -12,7 +12,7 @@ class Course(models.Model):
     HUMANITIES = "Humanities"
     SOCIAL_SCIENCE = "Social Science"
     NONE = "None"
-    distrubution = models.CharField(max_length=max(len(SCIENCE), len(HUMANITIES), len(SOCIAL_SCIENCE), len(NONE)),
+    distribution = models.CharField(max_length=max(len(SCIENCE), len(HUMANITIES), len(SOCIAL_SCIENCE), len(NONE)),
                                     choices=
                                     [(SCIENCE, "SCI"),
                                      (HUMANITIES, "HUM"),
@@ -21,6 +21,22 @@ class Course(models.Model):
     pre_req = models.TextField(default="")
     exclusions = models.TextField(default="")
     description = models.TextField()
+    program_area = models.CharField(max_length=200, default="")
+    # Store the number of reviews and the average rating for the course. This is based on the reviews provided by the users and updated whenever a new review is added
+    num_reviews = models.IntegerField(default=0)
+    avg_rating = models.FloatField(default=0.0)
+    # Below are private fields which will be used by the degree explorer algorithm. These may be in a different format from the above fields which will be easier to 
+    # parse for the algorithm. These fields are not meant to be accessed by the user. 
+    pre_req_algo = models.TextField(default="") 
+    exclusions_algo = models.TextField(default="")
+
 
     def __str__(self):
         return self.course_code
+    
+    # Function to update the average rating and number of reviews for the course
+    def updateRating(self, rating: int):
+        currTotal = self.avg_rating * self.num_reviews
+        self.num_reviews += 1
+        self.avg_rating = (currTotal + rating) / self.num_reviews
+        self.save()

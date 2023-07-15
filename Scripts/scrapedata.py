@@ -17,9 +17,9 @@ class CourseData:
     pre_req: str
     exclusions: str
     description: str
-    programArea: str
+    program_area: str
 
-    def __init__(self, course_code, title, credit, distribution, recommended_prep, pre_req, exclusions, description,programArea):
+    def __init__(self, course_code, title, credit, distribution, recommended_prep, pre_req, exclusions, description,program_area):
         self.course_code = course_code
         self.title = title
         self.credit = credit
@@ -28,7 +28,7 @@ class CourseData:
         self.pre_req = pre_req
         self.exclusions = exclusions
         self.description = description
-        self.programArea=programArea
+        self.program_area=program_area
 
     def strip_all(self):
         self.course_code = self.course_code.strip()
@@ -38,7 +38,7 @@ class CourseData:
         self.pre_req = self.pre_req.strip()
         self.exclusions = self.exclusions.strip()
         self.description = self.description.strip()
-        self.programArea=self.programArea.strip()
+        self.program_area=self.program_area.strip()
 
     def populate_data(self):
         """
@@ -50,7 +50,7 @@ class CourseData:
             # Preparing the CSV file Columns
             writer.writerow(
                 ['course_code', 'title', 'description', 'credit', 'distribution', 'recommended_prep', 'pre_req',
-                 'exclusions'])
+                 'exclusions', 'program_area'])
             for i in range(80):
                 URL = f'https://utm.calendar.utoronto.ca/course-search?page={i}'
                 html_page = requests.get(URL).text
@@ -107,13 +107,13 @@ class CourseData:
                     # Course Program Area
                     if course.find('span',class_="views-field views-field-field-timetable-link"):
                         span_elem = course.find('span',class_="views-field views-field-field-timetable-link")
-                        self.programArea = span_elem.find('span', class_='field-content').text.split(':')[1]
+                        self.program_area = span_elem.find('span', class_='field-content').text.split(':')[1]
                     else:
-                        self.programArea = 'None'
+                        self.program_area = 'None'
                     self.strip_all()  # Strip all strings to ensure no leading spaces
                     writer.writerow([self.course_code, self.title, self.description, self.credit, self.distribution,
                                      self.recommended_prep,
-                                     self.pre_req, self.exclusions,self.programArea])
+                                     self.pre_req, self.exclusions,self.program_area])
 
 
 course_data = CourseData('', '', '', '', '', '', '', '', '')
