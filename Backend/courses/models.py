@@ -25,6 +25,11 @@ class Course(models.Model):
     # Store the number of reviews and the average rating for the course. This is based on the reviews provided by the users and updated whenever a new review is added
     num_reviews = models.IntegerField(default=0)
     avg_rating = models.FloatField(default=0.0)
+    # Below are private fields which will be used by the degree explorer algorithm. These may be in a different format from the above fields which will be easier to 
+    # parse for the algorithm. These fields are not meant to be accessed by the user. 
+    pre_req_algo = models.TextField(default="") 
+    exclusions_algo = models.TextField(default="")
+
 
     def __str__(self):
         return self.course_code
