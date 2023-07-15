@@ -31,7 +31,7 @@ class AbstractReview(models.Model):
 #UserReviews model which inherits from AbstractReview
 class UserReview(AbstractReview):
     rating = models.DecimalField(max_digits=2, decimal_places=1) 
-    userName = models.ForeignKey(User, blank=True, on_delete=models.SET_NULL, null = True) # Foreign key to the user model. This is optional hence null = True. on_delete = models.SET_NULL as user deleted then set to null.
+    username = models.ForeignKey(User, blank=True, on_delete=models.SET_NULL, null = True) # Foreign key to the user model. This is optional hence null = True. on_delete = models.SET_NULL as user deleted then set to null.
     Professor = models.ForeignKey(Professor, blank=True, on_delete=models.SET_NULL, null=True) # Foreign key to the professor model. This is optional hence null = True. on_delete = models.SET_NULL as professor deleted then set to null.
 #OnlineReviews model which inherits from AbstractReview
 class OnlineReview(AbstractReview):

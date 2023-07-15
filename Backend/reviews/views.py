@@ -85,3 +85,38 @@ class FindProfessorsView(APIView):
         professors_names = Professor.objects.filter(previous_courses__in=[course]).values_list('professor_name', flat=True)
         return Response(professors_names, status=status.HTTP_200_OK)
 
+
+# Get online reviews for a course
+class GetOnlineReviewsView(APIView):
+    permission_classes = [permissions.AllowAny]
+    http_method_names = ['get']
+    # A get method to return the online reviews for a course
+    def get(self, request, *args, **kwargs):
+        course_code = request.GET.get('course_code')
+        if not course_code:
+            return Response({'Error, invalid arguments'}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            course = Course.objects.get(course_code=course_code)
+        except Course.DoesNotExist:
+            return Response({'Error, course does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        online_reviews = OnlineReview.objects.filter(course=course)
+        serializer = OnlineReviewSerializer(online_reviews, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+# Get user reviews for a course
+class GetUserReviewsView(APIView):
+    permission_classes = [permissions.AllowAny]
+    http_method_names = ['get']
+    # A get method to return the user reviews for a course
+    def get(self, request, *args, **kwargs):
+        course_code = request.GET.get('course_code')
+        if not course_code:
+            return Response({'Error, invalid arguments'}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            course = Course.objects.get(course_code=course_code)
+        except Course.DoesNotExist:
+            return Response({'Error, course does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        user_reviews = UserReview.objects.filter(course=course)
+        serializer = UserReviewSerializer(user_reviews, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
