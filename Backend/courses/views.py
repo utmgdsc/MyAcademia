@@ -7,10 +7,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import permissions
 from django.core import serializers
+
 # To view courses in the backend
 class CourseView(viewsets.ModelViewSet):
     serializer_class = CourseSerializer
     queryset = Course.objects.all()
+
 
 # Create your views here.
 
@@ -68,4 +70,4 @@ class CourseSearchView(APIView):
 
 
     
-    
+   
