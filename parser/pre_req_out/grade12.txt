@@ -1,0 +1,15 @@
+BIO152H5: Grade 12 SBI4U Biology (minimum grade of 70%)
+CHM110H5: Grade 12 Chemistry (SCH4U) (minimum grade of 70) and Grade 12 Advanced Functions (MHF4U0) (minimum grade of 70) and Grade 12 Calculus and Vectors (MCV4U) highly recommended
+CSC108H5: Grade 12 Advanced Functions (MHF4U).
+ITA200Y5: ITA00Y5 or Grade 12 Italian
+LAT221H5: LAT213H5 or LAT201H1 or Grade 12 Latin (with permission of instructor)
+MAT102H5: Minimum 70% in Grade 12 Advanced Functions (MHF4U)
+MAT132H5: Minimum 70% in Grade 12 Advanced Functions (MHF4U)
+MAT133Y5: Minimum 70% in Grade 12 Advanced Functions (MHF4U).
+MAT135H5: Minimum 70% in Grade 12 Advanced Functions (MHF4U)
+MAT137H5: Minimum 70% in Grade 12 Advanced Functions (MHF4U) and Minimum 70% in Grade 12 Calculus and Vectors (MCV4U).
+MAT157H5: [Minimum 70% in Grade 12 Advanced Functions (MHF4U)] and [Minimum 70% in Grade 12 Calculus and Vectors (MCV4U)]
+MAT223H5: Grade 12 Advanced Functions (MHF4U) and Grade 12 Calculus and Vectors (MCV4U or MAT102H5).
+PHY136H5: [Grade 12 Advanced Functions (MHF4U) or Grade 12 Calculus & Vectors (MCV4U)] or a minimum grade of 70% in PHY100H5
+PHY146H5: Grade 12 Physics (SPH4U) and Grade 12 Advanced Functions (MHF4U) and Grade 12 Calculus & Vectors (MCV4U)
+PSY201H5: Grade 12 (4U) Advanced Functions

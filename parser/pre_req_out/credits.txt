@@ -1,0 +1,372 @@
+ANT355H5: 8.0 credits and 0.5 SSC credits or 0.5 HUM credits
+ANT465H5: 1.0 credits in ANT at the 300-level or Permission of Instructor
+ARA408H5: 9.0 credits.
+BIO332H5: 6.0 credits
+CCT302H5: 8.0 credits
+CCT306H5: 8.0 credits
+CCT328H5: 8.0 credits
+CCT341H5: 8.0 credits
+CCT391H5: 8.0 credits
+CCT395H5: 8.0 credits
+CCT399Y5: 10.0 credits or permission of instructor
+CCT400H5: 13.0 credits
+CCT403H5: 13.0 credits
+CCT404H5: 13.0 credits
+CCT405H5: 13.0 credits
+CCT409H5: 13.0 credits and CGPA of 2.5.
+CCT410H5: 13.0 credits and CGPA of 2.5 and permission of the instructor.
+CCT414H5: 13.0 credits
+CCT417H5: 13.0 credits
+CCT419H5: 13.0 credits
+CCT431H5: 13.0 credits
+CCT432H5: 13.0 credits
+CCT435H5: 13.0 credits
+CCT454H5: 13.0 credits
+CCT472H5: 13.0 credits and CGPA of 2.3
+CCT473H5: 13.0 credits
+CCT481H5: 13.0 credits
+CCT482H5: 13.0 credits
+CCT486H5: 13.0 credits
+CCT490H5: 13.0 credits
+CCT495H5: 13.0 credits
+CCT499Y5: 13.0 credits or permission of instructor
+CHM485H5: 2.5 credits in CHM at 300-level.
+CLA299Y5: 4.0 credits
+CLA395H5: 0.5 credit in CLA at the 200-level
+CLA399Y5: 8.0 credits and permission of the instructor
+CLA404H5: 2.5 credits in CLA and 1.5 credits in CLA at the 300-level.
+CLA499H5: 2.5 credits in CLA and 1.5 credits in CLA at the 300-level.
+CLA499Y5: 8.0 credits and permission of the instructor
+CPS401Y5: permission of the instructor
+CSC389H5: Permission of the instructor and 1.0 credit in CSC at the 200 level
+CSC392H5: 8.0 credits and Permission of Instructor
+DRE299Y5: 4.0 credits.
+DRE392H5: permission of the instructor
+DRE394H5: permission of the instructor
+ECO399H5: 10.0 credits
+ECO399Y5: 10.0 credits
+ENG300Y5: 1.0 credit in ENG and 3.0 credits.
+ENG301H5: 1.0 credit in ENG and 3.0 credits.
+ENG303H5: 1.0 credit in ENG and 3.0 credits.
+ENG304H5: 1.0 credit in ENG and 3.0 credits.
+ENG305H5: 1.0 credit in ENG and 3.0 credits.
+ENG306Y5: 1.0 credit in ENG and 3.0 credits.
+ENG308Y5: 1.0 credit in ENG and 3.0 credits.
+ENG309H5: 1.0 credit in ENG and 3.0 credits.
+ENG310H5: 1.0 credit in ENG and 3.0 credits.
+ENG311H5: 1.0 credit in ENG and 3.0 credits.
+ENG312H5: 1.0 credit in ENG and 3.0 credits.
+ENG313H5: 1.0 credit in ENG and 3.0 credits.
+ENG314H5: 1.0 credit in ENG and 3.0 credits.
+ENG315H5: 1.0 credit in ENG and 3.0 credits.
+ENG316H5: 1.0 credit in ENG and 3.0 credits.
+ENG317H5: 1.0 credit in ENG and 3.0 credits.
+ENG318H5: 1.0 credit in ENG and 3.0 credits.
+ENG319H5: (1.0 credit in ENG and 3.0 additional credits) or permission of the instructor.
+ENG320H5: 1.0 credit in ENG and 3.0 credits.
+ENG322Y5: 1.0 credit in ENG and 3.0 credits.
+ENG323H5: 1.0 credit in ENG and 3.0 credits.
+ENG325H5: 1.0 credit in ENG and 3.0 credits.
+ENG326H5: 1.0 credit in ENG and 3.0 credits.
+ENG327H5: 1.0 credit in ENG and 3.0 credits.
+ENG329H5: 1.0 credit in ENG and 3.0 credits.
+ENG330H5: 1.0 credit in ENG and 3.0 credits.
+ENG331H5: 1.0 credit in ENG and 3.0 credits.
+ENG332H5: 1.0 credit in ENG and 3.0 credits.
+ENG333H5: 1.0 credit in ENG and 3.0 credits.
+ENG334H5: 1.0 credit in ENG and 3.0 credits.
+ENG335H5: 1.0 credit in ENG and 3.0 credits.
+ENG336H5: 1.0 credit in ENG and 3.0 credits.
+ENG337H5: 1.0 credit in ENG and 3.0 credits.
+ENG338H5: 1.0 credit in ENG and 3.0 credits.
+ENG339H5: 1.0 credit in ENG and 3.0 credits.
+ENG340H5: 1.0 credit in ENG and 3.0 credits.
+ENG341H5: 1.0 credit in ENG and 3.0 credits.
+ENG342H5: 1.0 credit in ENG and 3.0 credits.
+ENG343H5: 1.0 credit in ENG and 3.0 credits.
+ENG344H5: 1.0 credit in ENG and 3.0 credits.
+ENG345H5: 1.0 credit in ENG and 3.0 credits.
+ENG346H5: 1.0 credit in ENG and 3.0 credits.
+ENG347H5: 1.0 credit in ENG and 3.0 credits.
+ENG348H5: 1.0 credit in ENG and 3.0 credits.
+ENG349H5: 1.0 credit in ENG and 3.0 credits.
+ENG350H5: 1.0 credit in ENG and 3.0 credits.
+ENG351H5: 1.0 credit in ENG and 3.0 credits.
+ENG352H5: 1.0 credit in ENG and 3.0 credits.
+ENG353Y5: 1.0 credit in ENG and 3.0 credits.
+ENG354Y5: 1.0 credit in ENG and 3.0 credits.
+ENG355H5: 1.0 credit in ENG and 3.0 credits.
+ENG356H5: 1.0 credit in ENG and 3.0 credits.
+ENG357H5: 1.0 credit in ENG and 3.0 credits.
+ENG358H5: 1.0 credit in ENG and 3.0 credits.
+ENG359H5: 1.0 credit in ENG and 3.0 credits.
+ENG360H5: 1.0 credit in ENG and 3.0 credits.
+ENG361H5: 1.0 credit in ENG and 3.0 credits.
+ENG362H5: 1.0 credit in ENG and 3.0 credits.
+ENG363Y5: 1.0 credit in ENG and 3.0 credits.
+ENG364Y5: 1.0 credit in ENG and 3.0 credits.
+ENG365H5: 1.0 credit in ENG and 3.0 credits.
+ENG366H5: 1.0 credit in ENG and 3.0 credits.
+ENG367H5: 1.0 credit in ENG and 3.0 credits.
+ENG368H5: 1.0 credit in ENG and 3.0 credits.
+ENG369H5: 1.0 credit in ENG and 3.0 credits.
+ENG370H5: 1.0 credit in ENG and 3.0 credits.
+ENG371H5: 1.0 credit in ENG and 3.0 credits.
+ENG372H5: 1.0 credit in ENG and 3.0 credits.
+ENG376H5: 1.0 credit in ENG and 3.0 credits.
+ENG377H5: 1.0 credit in ENG and 3.0 credits.
+ENG379H5: 1.0 credit in ENG and 3.0 credits.
+ENG380H5: 1.0 credit in ENG and 3.0 credits.
+ENG381H5: 1.0 credit in ENG and 3.0 credits.
+ENG382Y5: 1.0 credit in ENG and 3.0 credits.
+ENG383H5: 1.0 credit in ENG and 3.0 credits.
+ENG384H5: 1.0 credit in ENG and 3.0 credits.
+ENG385H5: 1.0 credit in ENG and 3.0 credits.
+ENG386H5: 1.0 credit in ENG and 3.0 credits.
+ENG387H5: 1.0 credit in ENG and 3.0 credits.
+ENG388H5: 1.0 credit in ENG and 3.0 credits.
+ENG390Y5: 1.0 credits in ENG and 3.0 credits.
+ENG391Y5: 1.0 credits in ENG and 3.0 credits.
+ENG392H5: 1.0 credit in ENG and 3.0 credits.
+ENG393H5: 1.0 credit in ENG and 3.0 credits.
+ENG394H5: 1.0 credit in ENG and 3.0 credits.
+ENG395H5: 1.0 credit in ENG and 3.0 credits.
+ENG396H5: 1.0 credit in ENG and 3.0 credits.
+ENG397H5: 1.0 credit in ENG and 3.0 credits.
+ENG398H5: 1.0 credits in ENG and 3.0 credits.
+ENG399Y5: 1.0 credit in ENG and 3.0 credits.
+ENG400H5: 14.5 credits
+ENG414H5: 5.0 credits in ENG and 4.0 credits
+ENG415H5: 5.0 credits in ENG and 4.0 credits
+ENG416H5: 5.0 credits in ENG and 4.0 credits
+ENG424H5: 5.0 credits in ENG and 4.0 credits
+ENG425H5: 5.0 credits in ENG and 4.0 credits
+ENG426H5: 5.0 credits in ENG and 4.0 credits
+ENG434H5: 5.0 credits in ENG and 4.0 credits
+ENG435H5: 5.0 credits in ENG and 4.0 credits
+ENG436H5: 5.0 credits in ENG and 4.0 credits
+ENG460H5: 5.0 credits in ENG and 4.0 credits
+ENG461H5: 5.0 credits in ENG and 4.0 credits
+ENG462H5: 5.0 credits in ENG and 4.0 credits
+ENG463H5: 5.0 credits in ENG and 4.0 credits
+ENG470H5: 5.0 credits in ENG and 4.0 credits
+ENG471H5: 5.0 credits in ENG and 4.0 credits
+ENG472H5: 5.0 credits in ENG and 4.0 credits
+ENG473H5: 5.0 credits in ENG and 4.0 credits
+ENV311H5: 9.0 credits
+ENV330H5: 9.0 credits
+ENV425H5: 14 credits
+ENV497H5: 14.0 credits and permission of instructor
+ERS304H5: 1.5 credits  in ERS at 200-level
+ERS381H5: 1.0 credits in ERS at 300-level
+ERS425H5: 1.5 credits in ERS at 300-level
+ERS471H5: 2.0 credits in ERS at the 300-level
+ERS472H5: 2.0 credits in ERS at the 300-level
+ERS499Y5: 2.0 credits in ERS at the 300-level
+FAH479H5: FAH310H5 and 6.0 credits and permission of instructor
+FAH481H5: 3.0 credits in FAH and 0.5 credit at the 300-level and permission of instructor
+FAH483H5: 3.0 credits in FAH and 0.5 credit at the 300-level and permission of instructor
+FAH485H5: 3.0 credits in FAH and 0.5 credit at the 300-level and permission of instructor
+FAH486H5: 3.0 credits in FAH and 0.5 credit at the 300-level and permission of instructor
+FAH488H5: 3.0 credits in FAH and 0.5 credit at the 300-level and permission of instructor
+----
+FAS330Y5: Any FAS200 level course and 1.5 credits in FAH/VCC and permission of instructor
+FAS453H5: For Art and Art History majors/specialists: 4.0 FAS credits and 1.5 FAH/VCC credits, Permission of the Department. For Art History majors/specialists: 1.0 credits in FAH at the 300/400 level and Permission of the Department.
+FAS454H5: For Art and Art History Majors/Specialists: 4.0 FAS credits and 1.5 FAH/VCC credits and permission of the department. For Art History Majors/Specialists: 1.0 credits in FAH at the 300/400 level and permission of the department.
+FAS455H5: For Art and Art History majors/specialists: 4.0 FAS credits, 1.5 FAH/VCC credits and Permission of the Department. For Art History majors/specialists: 1.0 credits in FAH at the 300/400 level and Permission of the Department.
+FRE440H5: 1.0 credit from among 300-level French and Francophone Literary & Cultural studies courses category.
+FRE445H5: (0.5 credit at the 300-level from the French & Francophone Literary and Cultural Studies category) and (0.5 credit of FRE at the 300-level, determined annually contingent on course content)
+FRE446H5: (0.5 credit from the 300-level French and Francophone Literary & Cultural Studies category) and (0.5 credit of FRE at the 300-level, determined annually contingent on course content)
+FRE487H5: 0.5 credit from the French Linguistics category plus 0.5 FRE 300-level credit determined annually contingent on course content.
+FRE488H5: 0.5 credit from the French Linguistics category plus 0.5 FRE 300-level credit determined annually contingent on course content.
+----
+FRE490Y5: 1.0 credit in FRE at the 300-level
+FRE491H5: 1.0 credit in FRE at the 300-level
+FRE492H5: 1.0 credit in FRE at the 300-level
+GGR202H5: 4.0 credits
+GGR207H5: 4.0 credits
+GGR208H5: 4.0 credits
+GGR209H5: 4.0 credits
+GGR210H5: 4.0 credits
+GGR252H5: 4.0 credits
+GGR265H5: 4.0 credits
+GGR276H5: 4.0 credits
+GGR277H5: 4.0 credits
+GGR278H5: 4.0 credits
+GGR305H5: 9.0 credits
+GGR307H5: 9.0 credits
+GGR309H5: 9.0 credits
+GGR311H5: 9.0 credits
+GGR313H5: 9.0 credits
+GGR318H5: 9.0 credits
+GGR319H5: 9.0 credits and (1.0 credits in GGR or 1.0 credits in ENV)
+GGR325H5: 9.0 credits
+GGR329H5: 9.0 credits
+GGR333H5: 9.0 credits
+GGR337H5: 9.0 credits
+GGR349H5: 9.0 credits
+GGR353H5: 9.0 credits
+GGR361H5: 9.0 credits
+GGR362H5: 9.0 credits
+GGR365H5: 9.0 credits
+GGR375H5: 9.0 credits
+GGR385H5: 9.0 credits
+GGR387H5: 9.0 credits
+GGR399Y5: 9.0 credits
+GGR406H5: 14.0 credits or permission of instructor
+GGR418H5: 14.0 credits
+GGR420H5: 14.0 credits
+GGR426H5: 14.0 credits
+GGR479H5: 14.0 credits or permission of instructor
+GGR489H5: 14.0 credits or permission of instructor
+GGR494H5: 14.0 credits or permission of instructor
+GGR497H5: 14.0 credits and permission of instructor
+GGR498H5: 14.0 credits and permission of instructor
+GLB201H5: 4.0 credits.
+HIS299Y5: 4.0 credits
+HIS318H5: 8.0 credits
+HIS319H5: 8.0 credits
+HIS321H5: 0.5 credit in HIS
+HIS399Y5: 8.0 credits
+HIS489Y5: permission of the instructor
+HIS499Y5: 8.0 credits
+IMI399H5: 8.0 credits and permission of instructor
+IMI499H5: 14.0 credits and permission of instructor
+JBH471H5: 2.0 credits in HIS or 1.0 credit in BIO at the 300-level and permission of instructor.
+JEG400Y5: 15.0 credits and permission of instructor
+JEG401Y5: 15.0 credits and permission of instructor
+JEG417Y5: 14.0 credits
+JEP356H5: 9.0 credits
+JGE378H5: 9.0 credits
+JPE251H5: 3.5 credits
+LIN479H5: LIN228H5 and LIN229H5 and LIN232H5 and 0.5 credit in LIN at the 300-level
+LTL495Y5: 0.5 credit in LTL at the 300-level
+LTL496H5: 0.5 credit in LTL at the 300-level
+MGT399H5: 10.0 credits
+MGT399Y5: 10.0 credits
+MGT458H5: 1.0 credit in MGT at the 300 or 400 level.
+MGT461H5: 3.0 credits of MGT at the 200-level
+MGT463H5: 3.0 credits in MGT at the 200-level
+MGT480H5: 1.0 credit in MGT at the 300/400 level and CGPA of 2.5 and 14.0 credits.
+MGT491H5: 1.0 credit in MGT at 300-level
+MGT492H5: 1.0 credit in MGT at 300-level
+PHL300H5: 1.5 credits in PHL
+PHL301H5: 1.5 credits in PHL
+PHL302H5: 1.5 credits in PHL
+PHL307H5: 1.5 credits in PHL
+PHL310H5: 1.5 credits in PHL
+PHL311H5: 1.5 credits in PHL
+PHL315H5: 1.5 credits in PHL
+PHL324H5: 1.5 credits in PHL
+PHL327H5: PHL245H5 and 1.5 credits in PHL
+PHL332H5: 1.5 credits in PHL
+PHL333H5: 1.5 credits in PHL
+PHL340H5: 1.5 credits in PHL
+PHL341H5: 1.5 credits in PHL
+PHL343H5: 1.5 credits in PHL.
+PHL346H5: 1.5 credits in PHL
+PHL355H5: 1.5 credits in PHL
+PHL365H5: 1.5 credits in PHL
+PHL367H5: 1.5 credits in PHL
+PHL370H5: 1.5 credits in PHL
+PHL374H5: 1.5 credits in PHL
+PHL376H5: 1.5 credits in PHL
+PHL390H5: 1.5 credits in PHL
+PHL420H5: 3.5 credits in PHL or by permission of the Instructor
+PHL432H5: 3.5 credits in PHL or by permission of the Instructor
+PHL433H5: 3.5 credits in PHL or by permission of the Instructor
+PHL440H5: 3.5 credits in PHL or by permission of the Instructor
+PHL475H5: 3.5 credits in PHL or by permission of the Instructor
+PHL495H5: 3.5 credits in PHL or by permission of the Instructor
+POL200Y5: 1.0 credits in POL or 4.0 credits
+POL203H5: 1.0 credits in POL or 4.0 credits
+POL209H5: 1.0 credits in POL or 4.0 credits
+POL215H5: 1.0 credits in POL or 4.0 credits
+POL218H5: 1.0 credits in POL or 4.0 credits
+POL219H5: 1.0 credits in POL or 4.0 credits
+POL243H5: 1.0 credits in POL or 4.0 credits
+POL300H5: 2.0 credits in POL
+POL302H5: 2.0 credits in POL
+POL303H5: 2.0 credits in POL
+POL304Y5: 2.0 credits in POL or permission of instructor
+POL307H5: 2.0 credits in POL
+POL311H5: 2.0 credits in POL
+POL312H5: 2.0 credits in POL
+POL313H5: 2.0 credits in POL
+POL314H5: 2.0 credits in POL
+POL317H5: 3.0 credits in POL
+POL346Y5: 2.0 credits in POL
+POL354H5: 3.0 credits in POL
+POL355H5: 2.0 credits in POL
+POL360H5: 2.0 credits in POL or 8.0 credits
+POL361H5: 2.0 credits in POL or 8.0 credits
+POL367H5: 3.0 credits in POL
+POL368H5: 2.0 credits in POL
+POL370H5: 1.0 credits in POL at 200-level
+POL371H5: 2.0 credits in POL or 2.0 credits in CCT or 2.0 credits in VCC
+POL372H5: 2.0 credits in POL or 2.0 credits in CCT or 2.0 credits in VCC
+POL390H5: 3.0 credits in POL
+POL392H5: 3.0 credits in POL
+POL393H5: 3.0 credits in POL or 8.0 credits
+POL394H5: 3.0 credits in POL or 8.0 credits
+POL399H5: 1.0 credits in POL
+POL399Y5: 1.0 credits in POL
+POL401Y5: 6.0 credits in POL and CGPA of 3.3 and permission of instructor
+POL402H5: 3.0 credits in POL and 1.0 credit in POL at the 300-level
+POL403H5: 3.0 credits in POL and 1.0 credit in POL at the 300-level
+POL405Y5: 6.0 credits in POL
+POL407H5: 1.0 credit in POL at the 300-level
+POL438H5: 3.0 credits in POL and 1.0 credit in POL at the 300-level
+POL446H5: 4.0 credits in POL and 1.0 credit in POL at the 300-level
+POL447H5: 4.0 credits in POL and 1.0 credit in POL at the 300-level
+POL448H5: 4.0 credits in POL and 1.0 credit in POL at the 300-level
+POL475H5: 3.0 credits in POL and 1.0 credit in POL at the 300-level
+POL484H5: 3.0 credits in POL and 1.0 credit in POL at the 300-level
+POL486H5: 3.0 credits in POL and 1.0 credit in POL at the 300-level
+POL490H5: 3.0 credits in POL and 1.0 credit in POL at the 300-level
+POL494H5: 3.0 credits in POL and 1.0 credit in POL at the 300-level
+PSY399H5: 8.0 credits and 1.0 credit of PSY at 200-level and AGPA of 3.0
+PSY399Y5: 8.0 credits and 1.0 credits in PSY at 200-level and AGPA of 3.0
+PSY400Y5: PSY202H5 and 0.5 credits in PSY at the 300-level and AGPA of 3.2
+PSY401H5: 1.0 credits at the 300-level credit in PSY and permission of instructor
+PSY402H5: 1.0 credit in PSY at 300 level
+PSY499H5: 13.0 credits and 1.0 credits at the 300-level credit in PSY and AGPA of 3.0.
+PSY499Y5: 13.0 credits and 1.0 credits at the 300-level credit in PSY and AGPA of 3.0.
+RLG399Y5: 8.0 credits
+RLG411H5: 2.0 credits in RLG
+RLG415H5: 2.0 credits in RLG
+RLG445H5: 2.0 credits in RLG
+RLG451H5: 2.0 credits in RLG
+RLG453H5: 2.0 credits in RLG
+RLG499H5: 2.0 credits in RLG
+RLG499Y5: 8.0 credits
+SOC228H5: 0.5 SSC credit
+SOC302H5: 1.0 SSC credit
+SOC339H5: 1.0 SSC credit
+SOC348H5: 1.0 SSC credit
+SOC358H5: 1.0 SSC credit
+SOC388H5: 1.0 SSC credit
+SOC415H5: 1.0 SSC credit and 0.5 credit at the 300-level
+SOC431H5: 1.0 SSC credit and 0.5 credit at the 300-level
+SOC455H5: 1.0 SSC credit and 0.5 credit at the 300-level
+VST410H5: 5.5 credits in DVS and 8.0 credits and CGPA of 2.5 and permission of instructor.
+VST410Y5: 5.5 credits in DVS and 8.0 credits and CGPA of 2.5 and permission of instructor.
+WGS299Y5: 4.0 credits
+WRI306H5: 8.0 credits and CGPA of 2.0
+WRI307H5: 8.0 credits and CGPA of 2.0
+WRI320H5: 8.0 credits and CGPA of 2.0
+WRI360H5: 8.0 credits and CGPA of 2.0
+WRI363H5: 8.0 credits and CGPA of 2.0
+WRI375H5: 8.0 credits and CGPA of 2.0
+WRI380H5: 8.0 credits and CGPA of 2.0
+WRI390H5: 8.0 credits and 1.5 credits in WRI and permission of instructor
+WRI391H5: 8.0 credits and 1.5 credits in WRI and permission of instructor
+WRI395H5: 8.0 credits and CGPA of 2.0
+WRI399Y5: 10.0 credits or permission of instructor
+WRI410H5: 13.0 credits and CGPA of 2.5 and permission of instructor
+WRI420H5: 3.0 credits in WRI and permission of instructor
+WRI470H5: 3.0 credits in WRI
+WRI483H5: 2.0 credits in WRI
+WRI488H5: 2.0 credits in WRI
+WRI490H5: 2.5 credits in WRI and permission of instructor
+WRI499Y5: 13.0 credits.

@@ -1,0 +1,337 @@
+ANT355H5: 8.0 credits of which 0.5 credits must be a social sciences or humanities course at the 200-level or higher
+ARA408H5: Open to all students who have completed 9.0 credits.
+BIO332H5: 6.0 credits and current registration in a Biology, Ecology, Environment/Geography or Earth Science program and permission of the instructor. Appropriate upper level BIO prerequisite core course requirements will be posted on the Biology department website. Any additional unique prerequisites for the course will be posted one year in advance of the move to a new location or with a change of instructor.
+CCT302H5: A minimum of 8.0 credits.
+CCT306H5: Completion of 8.0 credits
+CCT328H5: A minimum of 8.0 credits.
+CCT341H5: Minimum of 8.0 credits.
+CCT391H5: A minimum of 8.0 credits.
+CCT395H5: A minimum of 8.0 credits.
+CCT399Y5: A minimum of 10.0 credits or permission of instructor
+CCT400H5: A minimum of 13.0 credits
+CCT403H5: A minimum of 13.0 credits.
+CCT404H5: A minimum of 13.0 credits.
+CCT405H5: A minimum of 13.0 credits.
+CCT409H5: A minimum 13.0 credits and CGPA of 2.5.
+CCT410H5: Completion of 13.0 credits with a minimum CGPA of 2.5 and approval of the internship coordinator/instructor, and evidence of additional career development (e.g. workshops, networking events, and professional communication with faculty, librarians, staff, and peers).
+CCT414H5: A minimum of 13.0 credits
+CCT417H5: Minimum of 13.0 credits.
+CCT419H5: A minimum of 13.0 credits.
+CCT431H5: A minimum of 13.0 credits.
+CCT432H5: A minimum of 13.0 credits.
+CCT435H5: A minimum of 13.0 credits
+CCT454H5: A minimum of 13.0 credits.
+CCT472H5: A minimum of 13.0 credits and 2.3 CGPA
+CCT473H5: Minimum of 13.0 credits.
+CCT481H5: A minimum of 13.0 credits.
+CCT482H5: A minimum of 13.0 credits.
+CCT486H5: A minimum of 13.0 credits
+CCT490H5: A minimum of 13.0 credits.
+CCT495H5: A minimum of 13.0 credits.
+CCT499Y5: A minimum of 13.0 credits or permission of instructor
+CHM485H5: 2.5 CHM/JCP credits at 300 level.
+CLA299Y5: Completion of at least 4.0 and not more than 9.0 credits.
+CLA395H5: At least 0.5 200 level credits in Classical Civilization.
+CLA399Y5: Completion of at least 8.0, and not more than 10.0, credits.
+CLA404H5: At least 2.5 credits in Classics, including at least 1.5 credits at the 300 level.
+CLA499H5: At least 2.5 credits in Classics, including at least 1.5 credits at the 300 level.
+CLA499Y5: Completion of at least 8.0, and not more than 10.0 credits.
+CPS401Y5: Enrolment in a CPS or Environmental Science Major or Specialist program with a minimum CGPA of 2.7 and 9.0 credits, including at least 2.0 credits at the 200-level in CHM or ERS or ENV or GGR or PHY
+CSC392H5: A minimum of 8.0 credits and Permission of Instructor
+DRE299Y5: 4.0 credits.
+DRE392H5: Permission of the U of T Mississauga program director, and completion of three DRM/DRE/DRS credits.
+DRE394H5: Permission of the U of T Mississauga program director, and completion of three DRM/DRE/DRS credits.
+ECO399H5: Minimum of 10.0 credits completed.
+ECO399Y5: Minimum of 10.0 credits
+ENG300Y5: 1.0 credit in ENG and 3.0 additional credits.
+ENG301H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG303H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG304H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG305H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG306Y5: 1.0 credit in ENG and 3.0 additional credits.
+ENG308Y5: 1.0 credit of ENG and 3.0 additional credits.
+ENG309H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG310H5: 1.0 credit in ENG and 3 additional credits
+ENG311H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG312H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG313H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG314H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG315H5: 1.0 credit in ENG and 3 additional credits.
+ENG316H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG317H5: 1.0 credit in ENG and 3 additional credits.
+ENG318H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG319H5: (1.0 credit of ENG, which must include 0.5 credit of 200-level ENG Game Studies and 3.0 additional credits) or permission from the department
+ENG320H5: 1.0 credit in English and 3.0 additional credits.
+ENG322Y5: 1.0 credit in ENG and 3.0 additional credits.
+ENG323H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG325H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG326H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG327H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG329H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG330H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG331H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG332H5: 1.0 credit in ENG and 3.0 additional credits
+ENG333H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG334H5: 1.0 credit in ENG and 3 additional credits
+ENG335H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG336H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG337H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG338H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG339H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG340H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG341H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG342H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG343H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG344H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG345H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG346H5: 1.0 credit in ENG and 3.0 additional credits
+ENG347H5: 1.0 credit in ENG and 3.0 additional credits
+ENG348H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG349H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG350H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG351H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG352H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG353Y5: 1.0 credit in ENG and 3.0 additional credits.
+ENG354Y5: 1.0 credit in ENG and 3.0 additional credits.
+ENG355H5: 1.0 credit in ENG and 3 additional credits
+ENG356H5: 1.0 credit in ENG and 3 additional credits
+ENG357H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG358H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG359H5: 1.0 credit in ENG and 3.0 additional credits
+ENG360H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG361H5: 1.0 credit in ENG and 3.0 additional credits
+ENG362H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG363Y5: 1.0 credit in ENG and 3.0 additional credits.
+ENG364Y5: 1.0 credit in ENG and 3.0 additional credits.
+ENG365H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG366H5: 1.0 credit in ENG and 3.0 other credits.
+ENG367H5: 1.0 credit in ENG and 3 additional credits
+ENG368H5: 1.0 credit in ENG and 3 additional credits
+ENG369H5: 1.0 credit in ENG and 3 additional credits
+ENG370H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG371H5: 1.0 credits in ENG and 3.0 additional credits.
+ENG372H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG376H5: 1.0 credit in ENG and 3.0 other credits
+ENG377H5: 1.0 credit in ENG and 3.0 other credits
+ENG379H5: 1.0 credit in ENG and 3.0 additional credits
+ENG380H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG381H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG382Y5: 1.0 credit in ENG and 3.0 additional credits.
+ENG383H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG384H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG385H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG386H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG387H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG388H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG390Y5: 1.0 credits in English and 3.0 additional credits.
+ENG391Y5: 1.0 credits in English and 3.0 other credits.
+ENG392H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG393H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG394H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG395H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG396H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG397H5: 1.0 credit in ENG and 3.0 additional credits.
+ENG398H5: 1.0 credits in English and 3.0 additional credits.
+ENG399Y5: 1.0 credit in ENG and 3.0 additional credits.
+ENG400H5: Completion of 14.5 credits.
+ENG414H5: 5.0 credits in ENG and 4.0 additional credits
+ENG415H5: 5.0 credits in ENG and 4.0 additional credits
+ENG416H5: 5.0 credits in ENG and 4.0 additional credits
+ENG424H5: 5.0 credits in ENG and 4.0 additional credits
+ENG425H5: 5.0 credits in ENG and 4.0 additional credits
+ENG426H5: 5.0 credits in ENG and 4.0 additional credits
+ENG434H5: 5.0 credits in ENG and 4.0 additional credits
+ENG435H5: 5.0 credits in ENG and 4.0 additional credits
+ENG436H5: 5.0 credits in ENG and 4.0 additional credits
+ENG460H5: 5.0 credits in ENG and 4.0 additional credits
+ENG461H5: 5.0 credits in ENG and 4.0 additional credits
+ENG462H5: 5.0 credits in ENG and 4.0 additional credits
+ENG463H5: 5.0 credits in ENG and 4.0 additional credits
+ENG470H5: 5.0 credits in ENG and 4.0 additional credits
+ENG471H5: 5.0 credits in ENG and 4.0 additional credits
+ENG472H5: 5.0 credits in ENG and 4.0 additional credits
+ENG473H5: 5.0 credits in ENG and 4.0 additional credits
+ENV311H5: Any 9.0 credits
+ENV330H5: 9.0 credits, including the completion of a 100-level quantitative and basic scientific credit, and completion of a 200/300-levek quantitative methods course and enrolment in an Environmental Science program.
+ENV425H5: 14 credits
+ENV497H5: 14.0 credits towards an Environmental Specialist or Major program and permission of instructor
+ERS304H5: 1.5 credits from any 200 level ERS course
+ERS381H5: Enrolment in ERS Major or ERS Specialist or Environmental Geosciences Specialist or Geology Specialist Program and 1.0 ERS or ESS 300-level credits
+ERS425H5: Enrolment in ERS Major or ERS Specialist or Geology Specialist Program and 1.5 credits at ERS or ESS 300 level
+ERS471H5: Any 2.0 credits from ERS or ESS(St. George Campus) at the 300-level and a minimum grade average of 75% in the last 5 courses
+ERS472H5: Any 2.0 credits from ERS or ESS(St. George Campus) at the 300-level and a minimum grade average of 75% in the last 5 courses
+ERS499Y5: Any 2.0 credits from the ERS300 level or ESS300(G) level and a 75% average in the last five courses taken.
+FAH479H5: Six FAH credits including FAH310H and permission of instructor
+FAH481H5: 3.0 credits in FAH including 0.5 credit at the 300 or 400-level and permission of instructor
+FAH483H5: 3.0 credits in FAH including 0.5 at the 300 or 400-level and permission of instructor
+FAH485H5: 3.0 credits in FAH including 0.5 at the 300 or 400-level and permission of instructor
+FAH486H5: 3.0 credits in FAH including 0.5 credit at the 300 or 400-level and permission of instructor
+FAH488H5: 3.0 credits in FAH including 0.5 credit at the 300 or 400-level and permission of instructor
+FAS330Y5: Any FAS200 level course and 1.5 credits in FAH/VCC and permission of instructor
+FAS453H5: For Art and Art History majors/specialists: 4.0 FAS credits and 1.5 FAH/VCC credits, Permission of the Department. For Art History majors/specialists: 1.0 credits in FAH at the 300/400 level and Permission of the Department.
+FAS454H5: For Art and Art History Majors/Specialists: 4.0 FAS credits and 1.5 FAH/VCC credits and permission of the department. For Art History Majors/Specialists: 1.0 credits in FAH at the 300/400 level and permission of the department.
+FAS455H5: For Art and Art History majors/specialists: 4.0 FAS credits, 1.5 FAH/VCC credits and Permission of the Department. For Art History majors/specialists: 1.0 credits in FAH at the 300/400 level and Permission of the Department.
+GGR202H5: 4.0 credits
+GGR207H5: 4.0 credits
+GGR208H5: 4.0 credits
+GGR209H5: 4.0 credits
+GGR210H5: 4.0 credits
+GGR252H5: 4.0 credits
+GGR265H5: 4.0 credits
+GGR276H5: 4.0 credits
+GGR277H5: 4.0 credits
+GGR278H5: 4.0 credits
+GGR305H5: 9.0 credits
+GGR307H5: 9.0 credits
+GGR309H5: 9.0 credits
+GGR311H5: 9.0 credits
+GGR313H5: 9.0 credits
+GGR318H5: 9.0 credits
+GGR319H5: 9.0 credits of which 1.0 credit must be GGR or ENV
+GGR325H5: 9.0 credits
+GGR329H5: 9.0 credits
+GGR333H5: 9.0 credits
+GGR337H5: 9.0 credits
+GGR349H5: 9.0 credits
+GGR353H5: 9.0 credits
+GGR361H5: 9.0 credits
+GGR362H5: 9.0 credits
+GGR365H5: 9.0 credits
+GGR375H5: 9.0 credits
+GGR385H5: 9.0 credits
+GGR387H5: 9.0 credits
+GGR399Y5: 9.0 credits
+GGR406H5: 14.0 credits or permission of instructor
+GGR418H5: 14.0 credits
+GGR420H5: 14.0 credits
+GGR426H5: 14.0 credits
+GGR479H5: 14.0 credits or permission of instructor
+GGR489H5: 14.0 credits or permission of instructor
+GGR494H5: 14.0 credits or permission of instructor
+GGR497H5: 14.0 credits and permission of instructor
+GGR498H5: 14.0 credits and permission of instructor
+GLB201H5: Completion of 4.0 credits.
+HIS299Y5: Completion of at least 4.0 and not more than 9.0 credits.
+HIS318H5: 8.0 credits
+HIS319H5: 8.0 credits
+HIS399Y5: Completion of a minimum of 8.0 to 10.0 credits. (Amended)
+HIS489Y5: Students must obtain a mark of 77% in each of 4.0 History credits and permission of the instructor.
+HIS499Y5: Completion of a minimum of 8.0 to 10.0 credits. (Amended)
+IMI399H5: 8.0 credits and permission of instructor
+IMI499H5: 14.0 credits and permission of instructor
+JBH471H5: 2.0 HIS credits or 1.0 BIO credit at the 300 level and permission of instructor.
+JEG400Y5: 15.0-18.0 credits and permission of instructor
+JEG401Y5: 15.0-18.0 credits and permission of instructor
+JEG417Y5: 14.0 credits
+JEP356H5: 9.0 credits
+JGE378H5: 9.0 credits
+JPE251H5: 3.5 credits
+MGT399H5: A minimum of 10.0 credits
+MGT399Y5: A minimum of 10.0 credits
+MGT461H5: 3.0 credits of MGM or MGT at the 200-level
+MGT463H5: 3.0 credits in MGM/MGT at the 200-level
+MGT480H5: 1.0 credit in MGT at the 300/400 level and 2.5 CGPA and 14.0 credits.
+PHL300H5: 1.5 credits in PHL
+PHL301H5: 1.5 credits in PHL
+PHL302H5: 1.5 credits in PHL
+PHL307H5: 1.5 credits in PHL
+PHL310H5: 1.5 credits in PHL
+PHL311H5: 1.5 credits in PHL
+PHL315H5: 1.5 credits in PHL
+PHL324H5: 1.5 credits in PHL
+PHL327H5: PHL 245H5 and 1.5 additional credits in PHL
+PHL332H5: 1.5 credits in PHL
+PHL333H5: 1.5 credits in PHL
+PHL340H5: 1.5 credits in PHL
+PHL341H5: 1.5 credits in PHL
+PHL343H5: 1.5 credits in PHL.
+PHL346H5: 1.5 PHL credits
+PHL355H5: 1.5 credits in PHL
+PHL365H5: 1.5 credits in PHL
+PHL367H5: 1.5 credits in PHL
+PHL370H5: 1.5 credits in PHL
+PHL374H5: 1.5 credits in PHL
+PHL376H5: 1.5 credits in PHL
+PHL390H5: 1.5 credits in PHL
+PHL420H5: 3.5 credits of PHL or by permission of the Instructor or Department.
+PHL432H5: 3.5 credits of PHL or by permission of the Instructor or Department.
+PHL433H5: 3.5 credits of PHL or by permission of the Instructor or Department.
+PHL440H5: 3.5 credits of PHL or by permission of the Instructor or Department.
+PHL475H5: 3.5 credits of PHL or by permission of the Instructor or Department.
+PHL495H5: 3.5 credits of PHL or by permission of the Instructor or Department.
+POL200Y5: 1.0 POL credit or 4.0 credits
+POL203H5: 1.0 POL credit or 4.0 credits
+POL209H5: 1.0 POL credit or 4.0 credits
+POL215H5: 1.0 POL credit or 4.0 credits
+POL218H5: 1.0 POL credit or 4.0 credits
+POL219H5: 1.0 POL credit or 4.0 credits
+POL243H5: 1.0 POL credit or 4.0 credits
+POL300H5: 2.0 credits in POL
+POL302H5: 2.0 credits in POL
+POL303H5: 2.0 POL credits
+POL304Y5: 2.0 credits in POL or permission of instructor
+POL307H5: 2.0 credits in POL
+POL311H5: 2.0 credits in POL
+POL312H5: 2.0 credits in POL
+POL313H5: 2.0 credits in POL
+POL314H5: 2.0 credits in POL
+POL317H5: 3.0 POL credits, including 1.0 credit in comparative politics or public policy
+POL346Y5: Any 2.0 POL credits
+POL354H5: 3.0 POL credits or relevant coursework in Russian history, society, or culture
+POL355H5: 2.0 POL credits
+POL360H5: 2.0 POL credits or 8.0 credits
+POL361H5: 2.0 POL credits or 8.0 credits
+POL367H5: 3.0 POL credits
+POL368H5: 2.0 credits in POL
+POL371H5: 2.0 POL credits or (2.0 CCT or VCC credits)
+POL372H5: 2.0 POL credits or (2.0 CCT or VCC credits)
+POL390H5: 3.0 POL credits
+POL392H5: 3.0 POL credits
+POL393H5: 3.0 POL credits or 8.0 credits
+POL394H5: 3.0 POL credits or 8.0 credits
+POL401Y5: a minimum of 6.0 POL credits and 3.3 minimum CGPA and permission of instructor
+POL402H5: 3.0 POL credits including 1.0 POL credit at the 300-level
+POL403H5: 3.0 POL credits including 1.0 POL credit at the 300-level
+POL405Y5: 6.0 credits in POL
+POL438H5: 3.0 POL credits including 1.0 POL credit at the 300-level
+POL446H5: 4.0 credits in POL including 1.0 POL credit at the 300-level
+POL447H5: 4.0 POL credits, including 1.0 POL credit at the 300-level
+POL448H5: 4.0 POL credits, including 1.0 POL credit at the 300-level
+POL475H5: 3.0 POL credits, including 1.0 POL credit at the 300-level
+POL484H5: 3.0 credits in POL, including 1.0 POL credit at the 300-level.
+POL486H5: 3.0 POL credits, including 1.0 POL credit at the 300-level
+POL490H5: 3.0 POL credits, including 1.0 POL credit at the 300-level
+POL494H5: 3.0 POL credits, including 1.0 POL credit at the 300-level
+PSY399H5: Completion of 8.0 credits and 1.0 credit of PSY at 200-level and last AGPA of 3.0 or above.
+PSY400Y5: PSY202H (or equivalent) and at least 0.5 credits in advanced laboratory or research courses in Psychology at the 300 or 400 level (e.g., PSY courses ending in "9" at the 300 or 400 level, and PSY403) and last AGPA of 3.2 (varies from year to year and is rarely below 3.4).
+PSY401H5: 1.0 credits in 300-level psychology courses. Commitment from a faculty supervisor via application process.
+PSY499Y5: Completion of 13.0 credits and 1.0 300-level credit in Psychology and minimum last AGPA of 3.0 or above.
+RLG399Y5: Completion of a minimum of 8.0 to 10.0 credits. (Amended)
+RLG411H5: 2.0 RLG credits
+RLG415H5: 2.0 RLG credits
+RLG445H5: 2.0 RLG credits
+RLG451H5: 2.0 RLG credits
+RLG453H5: 2.0 RLG credits
+RLG499H5: 2.0 RLG credits
+RLG499Y5: Completion of a minimum of 8.0 to 10.0 credits. (Amended)
+VST410H5: Minimum completion of 5.5 credits in DVS Programs and 8.0 additional credits and minimum CGPA 2.5 and and permission of internship coordinator.
+VST410Y5: Minimum of 5.5 credits in DVS program courses and 8.0 additional credits and minimum CGPA 2.5 and permission of internship coordinator
+WGS299Y5: Completion of at least 4.0 and not more than 9.0 credits
+WRI306H5: Completion of 8.0 credits with a minimum CGPA of 2.0
+WRI307H5: Completion of 8.0 credits with a minimumCGPA of 2.0
+WRI320H5: Completion of 8.0 credits with a minimum CGPA of 2.0
+WRI360H5: Completion of 8.0 credits with a minimum CGPA of 2.0
+WRI363H5: Completion of 8.0 credits with a minimum CGPA of 2.0
+WRI375H5: Completion of 8.0 credits with a minimum CGPA of 2.0
+WRI380H5: Completion of 8.0 credits with a minimum CGPA of 2.0
+WRI390H5: 8.0 credits including 1.5 WRI credits with a mark of 77% or higher in each and permission of course instructor or the PWC Director.
+WRI391H5: 8.0 credits including 1.5 WRI credits with a mark of 77% or higher in each and permission of instructor or the PWC Director.
+WRI395H5: Completion of 8.0 credits with a minimum CGPA of 2.0
+WRI399Y5: A minimum of 10.0 credits or permission of instructor
+WRI410H5: Completion of 13.0 credits with a minimum CGPA of 2.5 and approval of the internship coordinator/instructor, and evidence of additional career development (e.g. workshops, networking events, and professional communication with faculty, librarians, staff, and peers).
+WRI420H5: A minimum of 3.0 WRI credits and permission of instructor
+WRI470H5: 3.0 WRI credits
+WRI483H5: 2.0 WRI credits
+WRI488H5: 2.0 WRI credits
+WRI490H5: 2.5 WRI credits and permission of instructor
+WRI499Y5: A minimum of 13.0 credits.
