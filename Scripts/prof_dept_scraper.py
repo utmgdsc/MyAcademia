@@ -41,8 +41,6 @@ class ProfessorsData:
                         continue
                     else:
                         dict_tracket[copy] = 1
-                    # print(copy)
-                    # print(self.department)
                     if copy:
                         program_url = 'https://utm.calendar.utoronto.ca/section/' + copy
                         html_page2 = requests.get(program_url).text
@@ -74,9 +72,6 @@ class ProfessorsData:
                                             for professor in self.professors:
                                                 writer.writerow([self.department, professor])
 
-                                        # for professor in self:
-                                        #     pass
-                                        #     # print(professor)
 
 
 if __name__ == '__main__':
