@@ -67,7 +67,9 @@ class CourseSearchView(APIView):
             return Course.objects.none() 
 
 
-
+def getSuggestion(input_list):
+    AllCourses = Course.objects.all()
+    
 
     
    

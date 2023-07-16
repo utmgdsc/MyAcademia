@@ -11,7 +11,7 @@ class Command(BaseCommand):
         parser.add_argument("csv_file", type=str, help="Path to csv file") # Argument for the path to the csv file
     
     def handle(self, *args: Any, **options: Any) -> str :
-        Course.objects.all().delete() # Delete all courses in database. This is for testing purposes
+        # Course.objects.all().delete() # Delete all courses in database. This is for testing purposes
         csv_file = options["csv_file"]
         with open(csv_file, mode='r') as csv_file:
             reader = csv.DictReader(csv_file) # Gets it as a dictionary and uses the first row as the keys

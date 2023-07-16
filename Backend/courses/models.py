@@ -6,7 +6,7 @@ from django.db import models
 class Course(models.Model):
     course_code = models.CharField(max_length=10, primary_key=True)
     title = models.CharField(max_length=200)
-    credit = models.DecimalField(max_digits=3, decimal_places=1)
+    credit = models.DecimalField(max_digits=3, decimal_places=1, default=0.5)
     recommended_prep = models.TextField(default="")
     SCIENCE = "Science"
     HUMANITIES = "Humanities"
@@ -29,11 +29,14 @@ class Course(models.Model):
     # parse for the algorithm. These fields are not meant to be accessed by the user. 
     pre_req_algo = models.TextField(default="") 
     exclusions_algo = models.TextField(default="")
+    is_dummy = models.BooleanField(default=False) # Indicates whether the course is a dummy course. Dummy courses are used to represent a course that is not in the database but is required for program and degre evaluation.
+
 
 
     def __str__(self):
-        return self.course_code
-    
+        if self.course_code is not None:
+            return self.course_code
+        return "Issues exist here"
     # Function to update the average rating and number of reviews for the course
     def updateRating(self, rating: int):
         currTotal = self.avg_rating * self.num_reviews
