@@ -43,12 +43,13 @@ class CourseSearchView(APIView):
         return Response(data, status=status.HTTP_200_OK)
 
     def filterCourses(self, course_code, pre_req, distribution, program_area):
+        active_courses = Course.objects.filter(is_dummy=False) # Get all active courses
         if course_code:
             if not course_code.endswith("H5"):
                 course_code += "H5"  # Add H5 to the end of the course code if it is not already there
-            return Course.objects.filter(course_code=course_code)
+            return active_courses.filter(course_code=course_code)
         # Filter courses based on the criteria provided. If empty string is provided for an attribute, don't filter
-        courses = Course.objects.all()
+        courses = active_courses
         searched = False # Boolean that tells us whether we have narrowed the queryset or not
         if pre_req != "":
             courses = courses.filter(pre_req__icontains=pre_req)
@@ -66,9 +67,6 @@ class CourseSearchView(APIView):
         else:
             return Course.objects.none() 
 
-
-def getSuggestion(input_list):
-    AllCourses = Course.objects.all()
     
 
     
