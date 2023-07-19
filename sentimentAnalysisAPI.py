@@ -3,9 +3,13 @@ from transformers import TFAutoModelForSequenceClassification
 import tensorflow as tf
 from textblob import TextBlob
 
+# twitter model
 MODEL = "cardiffnlp/twitter-roberta-base-sentiment"
+
+# tokenizing based on the model
 tokenizer = AutoTokenizer.from_pretrained(MODEL)
 model = TFAutoModelForSequenceClassification.from_pretrained(MODEL)
+
 
 class SentimentAnalysis:
     def __init__(self, text):
@@ -21,6 +25,13 @@ class SentimentAnalysis:
         textblob = TextBlob(self.text)
         return textblob.sentiment.polarity
 
+    """
+    This function will use the roBERTa model to analyze the sentiment of the text.
+    This is a more advanced approach to sentiment analysis as it uses a deep learning
+    model to analyze the sentiment of the text.
+    As shown in the code above, the roBERTa model is using a pre-trained model
+    of 500 million twitter posts to analyze the sentiment of the text.
+    """
     def roBERTaModel(self):
         encoded_text = tokenizer(self.text, return_tensors='tf')
         output = model(**encoded_text)
@@ -37,6 +48,6 @@ class SentimentAnalysis:
         result = self.roBERTaModel()
         return result['roberta_neg'] * -1 + result['roberta_neu'] * 0 + result['roberta_pos'] * 1
 
-sea = SentimentAnalysis("you are very very very very bad")
-print(sea.roBERTaModelResult())
-print(sea.vaderModel())
+# sea = SentimentAnalysis("you are very very very very bad")
+# print(sea.roBERTaModelResult())
+# print(sea.vaderModel())
