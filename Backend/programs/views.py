@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .serializers import ProgramSerializer
 from .models import Program, Requirement
+from courses.models import Course
 
 # To view programs in the backend
 class ProgramView(viewsets.ModelViewSet):
@@ -13,6 +14,3 @@ class RequirementView(viewsets.ModelViewSet):
     serializer_class = ProgramSerializer
     queryset = Requirement.objects.all()
 
-
-
-# Create your views here.
