@@ -19,7 +19,7 @@ class CourseData:
     description: str
     program_area: str
 
-    def __init__(self, course_code, title, credit, distribution, recommended_prep, pre_req, exclusions, description,program_area):
+    def __init__(self, course_code, title, credit, distribution, recommended_prep, pre_req, exclusions, description,program_area,corequisite):
         self.course_code = course_code
         self.title = title
         self.credit = credit
@@ -29,6 +29,7 @@ class CourseData:
         self.exclusions = exclusions
         self.description = description
         self.program_area=program_area
+        self.corequisite=corequisite
 
     def strip_all(self):
         self.course_code = self.course_code.strip()
@@ -39,13 +40,15 @@ class CourseData:
         self.exclusions = self.exclusions.strip()
         self.description = self.description.strip()
         self.program_area=self.program_area.strip()
+        self.corequisite=self.corequisite.strip()
+
 
     def populate_data(self):
         """
         Scrape data from the uoft academic calendar website and populate into a csv file
         """
 
-        with open('course_data.csv', mode='w', newline='') as csv_file:
+        with open('course_data2.csv', mode='w', newline='') as csv_file:
             writer = csv.writer(csv_file)
             # Preparing the CSV file Columns
             writer.writerow(
@@ -110,11 +113,19 @@ class CourseData:
                         self.program_area = span_elem.find('span', class_='field-content').text.split(':')[1]
                     else:
                         self.program_area = 'None'
+                    # Course Corequisite
+                    if course.find('span',class_="views-field views-field-field-corequisite"):
+                        span_elem = course.find('span',class_="views-field views-field-field-corequisite")
+                        self.corequisite = span_elem.find('span', class_='field-content').text
+                    else:
+                        self.corequisite = 'None'
+
                     self.strip_all()  # Strip all strings to ensure no leading spaces
                     writer.writerow([self.course_code, self.title, self.description, self.credit, self.distribution,
                                      self.recommended_prep,
                                      self.pre_req, self.exclusions,self.program_area])
+                    # writer.writerow([self.course_code,self.corequisite])
 
 
-course_data = CourseData('', '', '', '', '', '', '', '', '')
+course_data = CourseData('', '', '', '', '', '', '', '', '','')
 course_data.populate_data()
