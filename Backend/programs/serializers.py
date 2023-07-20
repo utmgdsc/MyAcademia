@@ -5,10 +5,10 @@ from .models import Program, Requirement
 class ProgramSerializer(serializers.ModelSerializer):
     class Meta:
         model = Program
-        fields = ('program_id', 'program_name', 'program_type')
+        fields = ('program_code', 'program_title', 'requirements')
     
 # Serializer for the Requirement model
 class RequirementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Requirement
-        fields = ('requirement_id', 'requirement', 'program')
+        fields = ('requirement_id', 'requirement_type', 'requirement_description', 'count', 'courses')
