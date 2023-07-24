@@ -54,7 +54,7 @@ if __name__ == "__main__":
             # We need the actual codes of each requisiteItem to make the display string
             requisiteCodes = []
 
-            # For each requisite item, we only need the code and the type of the code i.e. course, program, or category, or another prereq. We will group them via these labels.
+            # For each requisite item, we only need the code and the type of the code i.e. course, program, or category, or another coreq. We will group them via these labels.
             courses = []
             programs = []  # There are actually no programs in any of the requirements, but this is just left in for completion's sake.
             categories = []

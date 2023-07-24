@@ -48,6 +48,7 @@ class SentimentAnalysis:
         result = self.roBERTaModel()
         return result['roberta_neg'] * -1 + result['roberta_neu'] * 0 + result['roberta_pos'] * 1
 
-# sea = SentimentAnalysis("you are very very very very bad")
-# print(sea.roBERTaModelResult())
-# print(sea.vaderModel())
+
+sem = SentimentAnalysis("This thing tasted so Bad")
+print(sem.roBERTaModelResult())
+print(sem.vaderModel())

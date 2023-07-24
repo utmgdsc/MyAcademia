@@ -195,8 +195,8 @@ class PrereqParser:
 #     if not line:
 #         break
 #     line = line.strip().split(":")
-#     prereq = line[1]
+#     coreq = line[1]
 #     course_code = line[0]
-#     parser = PrereqParser(prereq, [])
+#     parser = PrereqParser(coreq, [])
 #     result = parser.check_for_credits()
-#     print(prereq,":",result)
+#     print(coreq,":",result)
