@@ -14,6 +14,7 @@ class ProfileView(viewsets.ModelViewSet):
 class CustomUserViewSet(UserViewSet):
     serializer_class = CustomUserCreateSerializer
 
+    # We can modify this so that a User is required to provide a program as well. 
     def create(self, request, *args, **kwargs):
         email = request.data['email']
         first_name = request.data['first_name']
