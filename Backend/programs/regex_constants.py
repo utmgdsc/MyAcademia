@@ -10,3 +10,8 @@ programTitleRe = re.compile('ER_[A-Z]{3}[0-9]{1,3}')
 courseTypeRe = re.compile('[A-Z]{3}-COURSES')
 #For courses Code without a plus:E.g-MAT-400
 courseCodeRe = re.compile('[A-Z]{3}-[0-9]{3}')
+#For Number Categorie E.g-300:
+numberRe = re.compile('[0-9]{3}')
+#For Number Categories with a plus E.g-300+:
+numberPlusRe = re.compile('[0-9]{3}\+')
+
