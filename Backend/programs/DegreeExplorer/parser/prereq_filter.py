@@ -3,7 +3,7 @@ import re
 from MyAcademia.parser.PrereqParser import PrereqParser
 
 def read_csv():
-    with open('/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/Scripts/course_data.csv',
+    with open('/Scripts/course_data.csv',
               mode='r') as csv_file:
         reader = csv.DictReader(csv_file)
         course_data = {}
@@ -15,7 +15,7 @@ course_data = read_csv()
 
 
 def filter_none_pre_req():
-    f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/parser/pre_req_out/none.txt", "w")
+    f = open("/Backend/programs/DegreeExplorer/parser/pre_req_out/none.txt", "w")
     for course in course_data:
         parser = PrereqParser(course_data[course], [])
         if parser.check_for_none_requirement():
@@ -24,7 +24,8 @@ def filter_none_pre_req():
 
 # NOTE: No course code also imples None and Grade 12
 def filter_no_course_code_req():
-    f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/parser/pre_req_out/no_course_req.txt", "w")
+    f = open(
+        "/Backend/programs/DegreeExplorer/parser/pre_req_out/no_course_req.txt", "w")
     for course in course_data:
         parser = PrereqParser(course_data[course], [])
         if parser.check_for_no_course_code_req():
@@ -34,7 +35,7 @@ def filter_no_course_code_req():
     f.close()
 
 def filter_grade12_req():
-    f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/parser/pre_req_out/grade12.txt", "w")
+    f = open("/Backend/programs/DegreeExplorer/parser/pre_req_out/grade12.txt", "w")
     for course in course_data:
         parser = PrereqParser(course_data[course], [])
         if parser.check_for_garde12_req():
@@ -42,7 +43,8 @@ def filter_grade12_req():
     f.close()
 
 def filter_strctured_pre_reqs():
-    f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/parser/pre_req_out/structured.txt", "w")
+    f = open(
+        "/Backend/programs/DegreeExplorer/parser/pre_req_out/structured.txt", "w")
     for course in course_data:
         parser = PrereqParser(course_data[course], [])
         if parser.check_for_structured_prereq():
@@ -51,7 +53,7 @@ def filter_strctured_pre_reqs():
     f.close()
 
 def filter_credit_based_pre_reqs():
-    f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/parser/pre_req_out/credits.txt", "w")
+    f = open("/Backend/programs/DegreeExplorer/parser/pre_req_out/credits.txt", "w")
     for course in course_data:
         parser = PrereqParser(course_data[course], [])
         if parser.check_for_credits_in_prereq() and not parser.check_for_course_code():

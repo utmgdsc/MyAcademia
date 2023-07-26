@@ -109,7 +109,7 @@ class ExclusionParser:
 
 
 def check_all_exclusion():
-    f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/parser/updatedExclusion.txt", "r")
+    f = open("/Backend/programs/DegreeExplorer/parser/updatedExclusion.txt", "r")
 
     while True:
         line = f.readline()
