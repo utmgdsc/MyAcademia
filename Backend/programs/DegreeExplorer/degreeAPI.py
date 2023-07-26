@@ -78,9 +78,9 @@ class Degree:
         """
         This function removes a course from the user's list of courses.
         """
-        for c in self.user_courses:
-            if c.course_code == course.course_code:
-                self.user_courses.remove(c)
+        pass
+
+
 
     def getIncompleteRequirements(self):
         """
@@ -140,3 +140,5 @@ class BcomDegree(Degree):
 class HBADegree(Degree):
     def __init__(self):
         super().__init__()
+
+
