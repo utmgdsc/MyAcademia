@@ -39,7 +39,9 @@ class Degree:
         :param course:
         :return:
         """
-        self.user_courses.append(course)
+        self.user_courses.append(course) # adds course to user's list of courses
+
+        # adds course to the appropriate list of courses as per the requirements
         self.credits += course.credits
         self.minNumCRCourses.append(course)
         if course.course_code[3] == "2":
@@ -74,11 +76,11 @@ class Degree:
             self.sciRequirement = True
 
 
-    def removeCourse(self, course) -> None:
+    def removeCourse(self) -> None:
         """
         This function removes a course from the user's list of courses.
         """
-        pass
+        print("this works")
 
 
 

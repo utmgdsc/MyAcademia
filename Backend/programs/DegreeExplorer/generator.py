@@ -13,8 +13,9 @@ class Generator:
         self.program = Program.objects.get(program_code=program)
         self.degree = degree
 
-    def potential_courses(self, semester):
-        pass
+
+
+
 
     def generate_graph(self):
         pass
