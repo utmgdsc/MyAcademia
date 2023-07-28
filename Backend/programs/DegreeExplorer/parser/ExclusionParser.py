@@ -23,13 +23,27 @@ class ExclusionParser:
     def checkCourseApproval(self):
         if self.noneSyntax():
             return True
-        elif self.isStructuredExclusion():
-            return self.checkStructuredExclusion()
+        elif self.check_for_structured_prereqs():
+            match = re.findall(utmCourseCode, self.exclusion,
+                               flags=re.IGNORECASE)
+            match += re.findall(utsgCourseCode, self.exclusion,
+                                flags=re.IGNORECASE)
+            match += re.findall(utscCourseCode, self.exclusion,
+                                flags=re.IGNORECASE)
+            tempExclusion = self.exclusion[::]
+            if len(match) > 0:
+                for course in match:
+                    if course in self.user_courses:
+                        tempExclusion = tempExclusion.replace(course, "True")
+                    else:
+                        tempExclusion = tempExclusion.replace(course, "False")
+            return not eval(tempExclusion)
 
     def noneSyntax(self):
         if "None" in self.exclusion:
             return True
         return False
+
 
     def isValidCouseCode(self, courseCode):
         utmMatches = re.findall(utmCourseCode, courseCode, flags=re.IGNORECASE)
@@ -109,7 +123,7 @@ class ExclusionParser:
 
 
 def check_all_exclusion():
-    f = open("/Backend/programs/DegreeExplorer/parser/updatedExclusion.txt", "r")
+    f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/Backend/programs/DegreeExplorer/parser/updatedExclusion.txt", "r")
 
     while True:
         line = f.readline()
