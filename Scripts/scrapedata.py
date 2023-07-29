@@ -48,7 +48,7 @@ class CourseData:
         Scrape data from the uoft academic calendar website and populate into a csv file
         """
 
-        with open('course_data2.csv', mode='w', newline='') as csv_file:
+        with open('course_data.csv', mode='w', newline='') as csv_file:
             writer = csv.writer(csv_file)
             # Preparing the CSV file Columns
             writer.writerow(
