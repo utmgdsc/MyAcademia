@@ -99,7 +99,12 @@ class Generator:
         # remove courses for which the user doesn't have pre-reqs
         return sci_course
 
-
+    def suggest200L(self):
+        courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}2[0-9]{2}$')
+        # more to do
+    def suggest300L(self):
+        courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}3[0-9]{2}$')
+        # more to do
 
     def getExclusionCourses(self):
         for course in degree.user_courses:
