@@ -3,7 +3,7 @@ from programs.models import Program, Requirement
 
 from Backend.programs.DegreeExplorer.parser.ExclusionParser import \
     ExclusionParser
-from degreeAPI import Degree
+from DegreeAPI import Degree
 import re
 """
 The purpose of this class is to generate a graph of the user's degree and
@@ -99,11 +99,14 @@ class Generator:
         # remove courses for which the user doesn't have pre-reqs
         return sci_course
 
+
     def suggest200L(self):
         courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}2[0-9]{2}$')
+
         # more to do
     def suggest300L(self):
         courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}3[0-9]{2}$')
+
         # more to do
 
     def getExclusionCourses(self):

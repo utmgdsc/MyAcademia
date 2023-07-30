@@ -34,11 +34,7 @@ class Degree:
         self.user_courses = []
         self.credits = 0
 
-    def addCourse(self, course):
-        """
-        :param course:
-        :return:
-        """
+    def addCourse(self, course) -> None:
         self.user_courses.append(course) # adds course to user's list of courses
 
         # adds course to the appropriate list of courses as per the requirements
@@ -56,12 +52,32 @@ class Degree:
             self.sscRequirementCourses.append(course)
         if course.distribution_area == "Science":
             self.sciRequirementCourses.append(course)
+        self.evaluate_requirements()
+
+    def removeCourse(self, course) -> None:
+        """
+        This function removes a course from the user's list of courses.
+        """
+        self.user_courses.remove(course)
+        self.credits -= course.credits
+        self.minNumCRCourses.remove(course)
+        if course.course_code[3] == "2":
+            self.min200LRCourses.remove(course)
+            self.min300LRCourses.remove(course)
+        if course.course_code[3] == "3":
+            self.min300LRCourses.remove(course)
+
+        if course.distribution_area == "Humanities":
+            self.humRequirementCourses.remove(course)
+        if course.distribution_area == "Social Science":
+            self.sscRequirementCourses.remove(course)
+        if course.distribution_area == "Science":
+            self.sciRequirementCourses.remove(course)
+
+        self.evaluate_requirements()
 
     def evaluate_requirements(self):
-        """
 
-        :return:
-        """
         if self.credits >= 20:
             self.minCR = True
         if self.countCredits(self.min200LRCourses) >= 13.0:
@@ -74,15 +90,6 @@ class Degree:
             self.sscRequirement = True
         if self.countCredits(self.sciRequirementCourses) >= 1.0:
             self.sciRequirement = True
-
-
-    def removeCourse(self) -> None:
-        """
-        This function removes a course from the user's list of courses.
-        """
-        print("this works")
-
-
 
     def getIncompleteRequirements(self):
         """

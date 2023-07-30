@@ -2,6 +2,8 @@ from django.test import TestCase
 from courses.models import Course
 from programs.DegreeExplorer.degreeAPI import Degree
 # from programs.models import Program, Requirement
+
+
 class DegreeExplorerTestCase(TestCase):
 
     def testCreditCalculation(self):
