@@ -1,6 +1,6 @@
 from typing import List
 
-from Backend.courses.models import Course
+from courses.models import Course
 
 """
 This class keeps track of essential information about the user's degree and
