@@ -123,21 +123,21 @@ class ExclusionParser:
                         return False
             return True
 
-
-def check_all_exclusion():
-    f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/Backend/programs/DegreeExplorer/parser/updatedExclusion.txt", "r")
-
-    while True:
-        line = f.readline()
-        if not line:
-            break
-        else:
-            line_exclusion = line.split(":")
-            exclusion = ExclusionParser(line_exclusion[1], [])
-
-            if not exclusion.noneSyntax():
-                if not exclusion.check_for_structured_prereqs():
-                    print(f"{line}")
-    f.close()
-
-check_all_exclusion()
+#
+# def check_all_exclusion():
+#     f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/Backend/programs/DegreeExplorer/parser/updatedExclusion.txt", "r")
+#
+#     while True:
+#         line = f.readline()
+#         if not line:
+#             break
+#         else:
+#             line_exclusion = line.split(":")
+#             exclusion = ExclusionParser(line_exclusion[1], [])
+#
+#             if not exclusion.noneSyntax():
+#                 if not exclusion.check_for_structured_prereqs():
+#                     print(f"{line}")
+#     f.close()
+#
+# check_all_exclusion()

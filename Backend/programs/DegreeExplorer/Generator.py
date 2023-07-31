@@ -1,9 +1,9 @@
-from Courses.course import Course
+from courses.models import Course
 from programs.models import Program, Requirement
 
-from Backend.programs.DegreeExplorer.parser.ExclusionParser import \
+from programs.DegreeExplorer.parser.ExclusionParser import \
     ExclusionParser
-from DegreeAPI import Degree
+from .DegreeAPI import Degree
 import re
 """
 The purpose of this class is to generate a graph of the user's degree and
@@ -17,9 +17,9 @@ class Generator:
     program: Program
     degree: Degree
 
-    def __init__(self, semester_length, program, degree):
-        self.semester_length = semester_length
-        self.program = Program.objects.get(program_code=program)
+    def __init__(self, degree):
+        # self.semester_length = semester_length
+        # self.program = Program.objects.get(program_code=program)
         self.degree = degree
 
     def suggestDegreeCourse(self):
@@ -99,7 +99,6 @@ class Generator:
         # remove courses for which the user doesn't have pre-reqs
         return sci_course
 
-
     def suggest200L(self):
         courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}2[0-9]{2}$')
 
@@ -110,7 +109,7 @@ class Generator:
         # more to do
 
     def getExclusionCourses(self):
-        for course in degree.user_courses:
+        for course in self.degree.user_courses:
             pass
 
 
