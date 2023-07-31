@@ -67,6 +67,27 @@ class CourseSearchView(APIView):
         else:
             return Course.objects.none() 
 
+class GetProgramAreaView(APIView):
+    permission_classes = [permissions.AllowAny] # Allow any user to access this endpoint
+    http_method_names = ['get']
+
+    # A get method to handle the request and return the program areas
+    def get(self, request):
+        # Get all program areas
+        program_areas_db = Course.objects.values('program_area').distinct()
+        program_areas = []
+        # Extract the program areas from the queryset
+        for program_area in program_areas_db:
+            value=program_area.get('program_area',"")
+            value=value.split(",")
+            for val in value:
+                val=val.strip()
+                if val not in program_areas:
+                    program_areas.append(val)
+        program_areas.sort()
+
+        return Response(program_areas, status=status.HTTP_200_OK)
+
     
 
     

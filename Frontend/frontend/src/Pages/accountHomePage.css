@@ -1,0 +1,36 @@
+/* accountHomePage.css */
+body{
+    background-color: aquamarine;
+
+    
+}
+/* Style for the buttons in the top-left corner */
+.text-left {
+   
+    display: flex;
+    justify-content:space-between;
+    padding: 40px;
+
+  }
+
+  
+.text-left .btn {
+    margin-right: 40px;
+  }
+  
+  /* Style for the buttons in the center */
+.text-center {
+    display: flex;
+    justify-content:center;
+    margin-top: 30px;
+  }
+  
+.text-center .btn {
+    margin-right: 4px;
+  }
+  
+  /* Optional: Increase the font size of the buttons */
+  .btn {
+    font-size: 18px;
+  }
+  
