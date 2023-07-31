@@ -17,6 +17,12 @@ class Degree:
     sciRequirement: bool
     user_courses: List[Course]
     credits: float
+    minCRCourses: List[Course]
+    min200LRCourses: List[Course]
+    min300LRCourses: List[Course]
+    humRequirementCourses: List[Course]
+    sscRequirementCourses: List[Course]
+    sciRequirementCourses: List[Course]
 
     def __init__(self):
         self.minNumCR = False
@@ -38,7 +44,7 @@ class Degree:
         self.user_courses.append(course) # adds course to user's list of courses
 
         # adds course to the appropriate list of courses as per the requirements
-        self.credits += course.credits
+        self.credits += course.credit
         self.minNumCRCourses.append(course)
         if course.course_code[3] == "2":
             self.min200LRCourses.append(course)
@@ -46,11 +52,11 @@ class Degree:
         if course.course_code[3] == "3":
             self.min300LRCourses.append(course)
 
-        if course.distribution_area == "Humanities":
+        if course.distribution == "Humanities":
             self.humRequirementCourses.append(course)
-        if course.distribution_area == "Social Science":
+        if course.distribution == "Social Science":
             self.sscRequirementCourses.append(course)
-        if course.distribution_area == "Science":
+        if course.distribution == "Science":
             self.sciRequirementCourses.append(course)
         self.evaluate_requirements()
 
@@ -59,7 +65,7 @@ class Degree:
         This function removes a course from the user's list of courses.
         """
         self.user_courses.remove(course)
-        self.credits -= course.credits
+        self.credits -= course.credit
         self.minNumCRCourses.remove(course)
         if course.course_code[3] == "2":
             self.min200LRCourses.remove(course)
@@ -67,11 +73,11 @@ class Degree:
         if course.course_code[3] == "3":
             self.min300LRCourses.remove(course)
 
-        if course.distribution_area == "Humanities":
+        if course.distribution == "Humanities":
             self.humRequirementCourses.remove(course)
-        if course.distribution_area == "Social Science":
+        if course.distribution == "Social Science":
             self.sscRequirementCourses.remove(course)
-        if course.distribution_area == "Science":
+        if course.distribution == "Science":
             self.sciRequirementCourses.remove(course)
 
         self.evaluate_requirements()
@@ -127,7 +133,7 @@ class Degree:
     def countCredits(self, courses) -> float:
         count = 0
         for c in courses:
-            count += c.credits
+            count += c.credit
         return count
 
 
@@ -149,5 +155,3 @@ class BcomDegree(Degree):
 class HBADegree(Degree):
     def __init__(self):
         super().__init__()
-
-
