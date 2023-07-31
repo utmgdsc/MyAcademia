@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from courses.views import CourseView, CourseSearchView
+from courses.views import CourseView, CourseSearchView,GetProgramAreaView
 from programs.views import ProgramView, RequirementView
 from reviews.views import UserReviewView, OnlineReviewView, ProfessorView, CreateReviewView, FindProfessorsView, GetOnlineReviewsView, GetUserReviewsView
 from accounts.views import ProfileView, CustomUserViewSet
@@ -44,4 +44,5 @@ urlpatterns = [
     path('api/findProfessor/', FindProfessorsView.as_view(), name='findProfessor'), # custom endpoint for filtering professors. 
     path('api/getOnlineReviews/', GetOnlineReviewsView.as_view(), name='getOnlineReviews'), # custom endpoint for getting online reviews.
     path('api/getUserReviews/', GetUserReviewsView.as_view(), name='getUserReviews'), # custom endpoint for getting user reviews.
+    path('api/getProgramAreas/',GetProgramAreaView.as_view(), name='getProgramAreas'), # custom endpoint for getting program areas.
 ]
