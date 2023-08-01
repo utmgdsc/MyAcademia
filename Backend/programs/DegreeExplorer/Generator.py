@@ -33,11 +33,40 @@ class Generator:
         incomplete_requirements = self.degree.evaluate_requirements()
 
         if "Humanities" in incomplete_requirements and "min200LR" in incomplete_requirements:
-            pass
+            courses = self.suggestHumanitiesElective()
+            courses.objects.filter(course_code__regex=r'^[A-Z]{3}2[0-9]{2}H5$')
+            return courses
         elif "Humanities" in incomplete_requirements and "min300LR" in incomplete_requirements:
-            pass
+            courses = self.suggestHumanitiesElective()
+            courses.objects.filter(course_code__regex=r'^[A-Z]{3}3[0-9]{2}H5$')
+            return courses
         elif "Humanities" in incomplete_requirements:
-            pass
+            courses = self.suggestHumanitiesElective()
+            return courses
+
+        if "Social Science" in incomplete_requirements and "min200LR" in incomplete_requirements:
+            courses = self.suggestSocialScienceElective()
+            courses.objects.filter(course_code__regex=r'^[A-Z]{3}2[0-9]{2}H5$')
+            return courses
+        elif "Social Science" in incomplete_requirements and "min300LR" in incomplete_requirements:
+            courses = self.suggestSocialScienceElective()
+            courses.objects.filter(course_code__regex=r'^[A-Z]{3}3[0-9]{2}H5$')
+            return courses
+        elif "Social Science" in incomplete_requirements:
+            courses = self.suggestSocialScienceElective()
+            return courses
+
+        if "Science" in incomplete_requirements and "min200LR" in incomplete_requirements:
+            courses = self.suggestScienceElective()
+            courses.objects.filter(course_code__regex=r'^[A-Z]{3}2[0-9]{2}H5$')
+            return courses
+        elif "Science" in incomplete_requirements and "min300LR" in incomplete_requirements:
+            courses = self.suggestScienceElective()
+            courses.objects.filter(course_code__regex=r'^[A-Z]{3}3[0-9]{2}H5$')
+            return courses
+        elif "Science" in incomplete_requirements:
+            courses = self.suggestScienceElective()
+            return courses
 
     def suggestHumanitiesElective(self):
         humanities_courses = Course.objects.filter(distribution=Course.HUMANITIES)
@@ -100,21 +129,35 @@ class Generator:
         return sci_course
 
     def suggest200L(self):
-        courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}2[0-9]{2}$')
+        courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}2[0-9]{2}H5$')
+        user_courses_str = self.degree.getCoursesString()
+        for course in courses:
+            exclusion = ExclusionParser(course.exclusions, user_courses_str)
+            if not exclusion.checkCourseApproval():
+                courses = courses.exclude(course_code=course.course_code)
+        return courses
 
         # more to do
     def suggest300L(self):
-        courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}3[0-9]{2}$')
-
+        courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}3[0-9]{2}H5$')
+        user_courses_str = self.degree.getCoursesString()
+        for course in courses:
+            exclusion = ExclusionParser(course.exclusions, user_courses_str)
+            if not exclusion.checkCourseApproval():
+                courses = courses.exclude(course_code=course.course_code)
+        return courses
         # more to do
 
-    def getExclusionCourses(self):
-        for course in self.degree.user_courses:
-            pass
+    # def getExclusionCourses(self):
+    #     for course in self.degree.user_courses:
+    #         pass
+
+    # def generate_graph(self):
+    #     requirements = Requirement.objects.filter(program=self.program)
+    #     for requirement in requirements:
+    #         print(requirement.requirement_description)
 
 
-    def generate_graph(self):
-        pass
 
 
 

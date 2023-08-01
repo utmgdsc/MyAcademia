@@ -1,8 +1,9 @@
 from django.test import TestCase
 from courses.models import Course
 from programs.DegreeExplorer.DegreeAPI import Degree
-# from programs.models import Program, Requirement
+from programs.models import Program, Requirement
 from programs.DegreeExplorer.Generator import Generator
+
 
 
 class DegreeExplorerTestCase(TestCase):
@@ -113,6 +114,12 @@ class GeneratorTestCase(TestCase):
                                 pre_req="None", exclusions="None", distribution="Science",
                                 program_area="None", credit=0.5)
 
+        Course.objects.create(course_code="CSC300H5", title="Software Design II", description="Software Design II",
+                                pre_req="None", exclusions="None", distribution="Science",
+                                program_area="None", credit=0.5)
+
+        # 3 program area courses
+
 
     def testHumSuggestion(self):
         degree = Degree()
@@ -121,5 +128,20 @@ class GeneratorTestCase(TestCase):
         val = generator.suggestScienceElective()
         for c in val:
             print(c.course_code)
+
+    def test200l(self):
+        degree = Degree()
+        generator = Generator(degree)
+        val = generator.suggest200L()
+        for c in val:
+            print(c.course_code)
+
+    def test300l(self):
+        degree = Degree()
+        generator = Generator(degree)
+        val = generator.suggest300L()
+        for c in val:
+            print(c.course_code)
+
 
 
