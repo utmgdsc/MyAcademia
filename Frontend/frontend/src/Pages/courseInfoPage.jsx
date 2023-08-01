@@ -4,10 +4,11 @@ import RedditReview from "../Components/redditreview";
 import Navbar from "../Components/navbar";
 
 class UserReviewData {
-  constructor(userName, review, rating) {
+  constructor(userName, review, rating, professor) {
     this.userName = userName;
     this.rating = rating;
     this.review = review;
+    this.professor = professor;
   }
 }
 
@@ -18,10 +19,12 @@ class RedditReviewData {
   }
 }
 
-function CourseInfoPage() {
+function getCourseData(course_code) {
+// This function will use axios to get the course data from the backend. It will return a CourseData object.
+}
+function CourseInfoPage({course_code}) {
   //These need to be changed to actual values. The idea is we pass in the course code as a prop then use axios to
-  // get the course information from the backend.
-  const course_code = "CSC108";
+  // get the course information from the backend. Then we can use that information to populate the page.
   const course_title = "Introduction to Computer Programming";
   const description =
     "An introduction to computer programming. Topics include program design and development, debugging, testing and documentation, object-oriented programming, and GUIs (graphical user interfaces). Students will learn to design and implement computer programs in a high-level programming language. No prior programming experience is assumed.";
@@ -38,12 +41,14 @@ function CourseInfoPage() {
   const UserReview1 = new UserReviewData(
     "John doe",
     "This course is very easy, I got a 4.0 without even trying",
-    4.5
+    4.5,
+    "None"
   );
   const UserReview2 = new UserReviewData(
     "Jane doe",
     "This course is very hard, I barely passed",
-    1.0
+    1.0,
+    "A. Rosenbloom"
   );
   const averageRating = 2.75;
 
@@ -133,6 +138,9 @@ function CourseInfoPage() {
                 aria-labelledby="nav-profile-tab"
                 tabindex="0"
               >
+                <div class="row">
+                  <div class="col-5"> <h3>Average Course Rating: {averageRating} </h3></div>
+                    </div>
                 <div class="row text-left">
                   <div class="col-2 border-primary text-left">
                     <p class="text-left">
@@ -143,21 +151,23 @@ function CourseInfoPage() {
                     <p class="text-left">Review</p>
                   </div>
                   <div class="col-2 border-secondary">
-                    <p class="text-left">Rating</p>
+                    <p class="text-left">Professor</p>
                   </div>
                   <div class="col-2 border-secondary">
-                    <p class="text-left">Average Rating : {averageRating}</p>
-                </div>
+                    <p class="text-left">Rating</p>
+                  </div>
                 </div>
                 <UserReview
                   userName={UserReview1.userName}
                   rating={UserReview1.rating}
                   review={UserReview1.review}
+                  professor={UserReview1.professor}
                 />
                 <UserReview
                   userName={UserReview2.userName}
                   rating={UserReview2.rating}
                   review={UserReview2.review}
+                  professor={UserReview2.professor}
                 />
                 <div class="row">
                     <div class="col-2">
