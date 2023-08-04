@@ -119,6 +119,7 @@ class GeneratorTestCase(TestCase):
                                 program_area="None", credit=0.5)
 
         # 3 program area courses
+        # Program.objects.create(program_code=)
 
 
     def testHumSuggestion(self):

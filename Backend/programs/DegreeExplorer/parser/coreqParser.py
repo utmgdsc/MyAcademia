@@ -25,7 +25,6 @@ class CoreqParser:
     def evaluate_coreq(self):
         pass
 
-
     def check_none_requirements (self):
         if "None" in self.coreq:
             return True
