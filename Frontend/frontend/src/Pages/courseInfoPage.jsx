@@ -9,8 +9,8 @@ import { useState, useEffect } from "react";
 
 // Classes to store relevant data
 class UserReviewData {
-  constructor(userName, review, rating, professor) {
-    this.userName = userName;
+  constructor(username, review, rating, professor) {
+    this.username = username;
     this.rating = rating;
     this.review = review;
     this.professor = professor;
@@ -81,7 +81,8 @@ async function getCourseData(course_code) {
 
     // Loop through reddit reviews, extract relevant data as RedditReviewData object and add to array
     const redditreviews = redditReviewresponse.data.map(
-      (review) => new RedditReviewData(review.review, review.SAV)
+      (review) =>
+        new RedditReviewData(review.review, review.sentiment_analysis_value)
     );
     courseInformation.redditReviews = redditreviews;
 
@@ -92,17 +93,15 @@ async function getCourseData(course_code) {
           review.username,
           review.review,
           review.rating,
-          review.professor
+          review.Professor
         )
     );
     courseInformation.userReviews = userreviews;
     return courseInformation;
-
   } catch (error) {
-    console.log("Error in getCourseData")
+    console.log("Error in getCourseData");
     console.log(error);
   }
-
 }
 function CourseInfoPage({ course_code }) {
   //These need to be changed to actual values. The idea is we pass in the course code as a prop then use axios to
@@ -121,42 +120,22 @@ function CourseInfoPage({ course_code }) {
     fetchData();
   }, []);
   if (!courseData) {
-    console.log("No course data")
-  }
-  else {
-    console.log(courseData)
+    return <div>Page doesn't exist</div>;
+  } else {
+    console.log(courseData);
   }
 
   const course_title = courseData.course_title;
   const description = courseData.description;
   const distribution = courseData.distribution;
-  const pre_req =  courseData.pre_req;
+  const pre_req = courseData.pre_req;
   const recommended_prep = courseData.recommended_prep;
   const credit = courseData.credit;
-  const redditReview1 = new RedditReviewData(
-    "This course is very easy. I got a 4.0 without even trying. The assignments are very easy and the tests are very easy. I would recommend this course to anyone who wants an easy 4.0.",
-    5
-  );
-  const redditReview2 = new RedditReviewData(
-    "This course is very easy. I got a 4.0 without even trying. The assignments are very easy and the tests are very easy. I would recommend this course to anyone who wants an easy 4.0.",
-    5
-  );
-  const UserReview1 = new UserReviewData(
-    "John doe",
-    "This course is very easy, I got a 4.0 without even trying",
-    4.5,
-    "None"
-  );
-  const UserReview2 = new UserReviewData(
-    "Jane doe",
-    "This course is very hard, I barely passed",
-    1.0,
-    "A. Rosenbloom"
-  );
-  const averageRating = 2.75;
+  const averageRating = courseData.averageRating;
 
   return (
     <div>
+      <Navbar/>
       <div
         class="container text-left"
         style={{
@@ -179,6 +158,12 @@ function CourseInfoPage({ course_code }) {
         <div class="row">
           <div class="col-4">
             <h3> Pre requisites: {pre_req}</h3>
+          </div>
+            <div class="col-4">
+            <h3> Recommended Prep: {recommended_prep}</h3>
+          </div>
+            <div class="col-4">
+            <h3> Credit: {credit}</h3>
           </div>
         </div>
         <div class="row">
@@ -262,18 +247,14 @@ function CourseInfoPage({ course_code }) {
                     <p class="text-left">Rating</p>
                   </div>
                 </div>
-                <UserReview
-                  userName={UserReview1.userName}
-                  rating={UserReview1.rating}
-                  review={UserReview1.review}
-                  professor={UserReview1.professor}
-                />
-                <UserReview
-                  userName={UserReview2.userName}
-                  rating={UserReview2.rating}
-                  review={UserReview2.review}
-                  professor={UserReview2.professor}
-                />
+                {courseData.userReviews.map((review) => (
+                  <UserReview
+                    review={review.review}
+                    rating={review.rating}
+                    professor={review.professor}
+                    username={review.username}
+                  />
+                ))}
                 <div class="row">
                   <div class="col-2">
                     <button type="button" class="btn btn-primary">
@@ -297,14 +278,9 @@ function CourseInfoPage({ course_code }) {
                     <p class="text-left">SAV</p>
                   </div>
                 </div>
-                <RedditReview
-                  review={redditReview1.review}
-                  SAV={redditReview1.SAV}
-                />
-                <RedditReview
-                  review={redditReview2.review}
-                  SAV={redditReview2.SAV}
-                />
+                {courseData.redditReviews.map((review) => (
+                  <RedditReview review={review.review} SAV={review.SAV} />
+                ))}
               </div>
             </div>
           </div>

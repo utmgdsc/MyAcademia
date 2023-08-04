@@ -120,3 +120,13 @@ class GetUserReviewsView(APIView):
         user_reviews = UserReview.objects.filter(course=course)
         serializer = UserReviewSerializer(user_reviews, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class AllProfessorsView(APIView):
+    permission_classes = [permissions.AllowAny]
+    http_method_names = ['get']
+    # A get method to return the user reviews for a course
+    def get(self, request, *args, **kwargs):
+        professors = Professor.objects.all()
+        professor_names = professors.values_list('professor_name', flat=True)
+        return Response(professor_names, status=status.HTTP_200_OK)

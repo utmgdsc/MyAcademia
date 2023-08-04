@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useState } from "react";
+function submitButonClicked(){
+
+}
 
 function AddReviewPage({ course_code }) {
   // These need to be changed to the actual values after getting the data from the backend. Possibly pass this as a prop from the parent component.
+  const [courseProfessors, setcourseProfessors] = useState(null);
+  const [allProfessors, setallProfessors] = useState(null);
+
+  
   return (
     <>
       <div
@@ -17,30 +25,37 @@ function AddReviewPage({ course_code }) {
           </div>
         </div>
       </div>
-      <form>
+
+<form>
   <div class="form-group row">
-    <label for="reviewtextarea" class="col-4 col-form-label">Review:</label> 
+    <label for="reviewtextarea" class="col-4 col-form-label">Review</label> 
     <div class="col-8">
-      <textarea id="reviewtextarea" name="reviewtextarea" cols="40" rows="5" class="form-control" required="required"></textarea>
+      <textarea id="reviewtextarea" name="reviewtextarea" cols="40" rows="2" class="form-control" aria-describedby="reviewtextareaHelpBlock"></textarea> 
+      <span id="reviewtextareaHelpBlock" class="form-text text-muted">Enter your review here</span>
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-4"></label> 
+    <div class="col-4"></div> 
     <div class="col-8">
       <div class="custom-control custom-checkbox custom-control-inline">
-        <input name="anon_checkbox" id="anon_checkbox_0" type="checkbox" class="custom-control-input" value="Yes" aria-describedby="anon_checkboxHelpBlock"/>
-        <label for="anon_checkbox_0" class="custom-control-label">Anoymous</label>
-      </div> 
-      <span id="anon_checkboxHelpBlock" class="form-text text-muted">Select this if you want to remain anonymous in the review. Otherwise, username will be displayed</span>
+        <input name="anon_checkbox" id="anon_checkbox_0" type="checkbox" class="custom-control-input" value="fish"/> 
+        <label for="anon_checkbox_0" class="custom-control-label">Anonymous</label>
+      </div>
     </div>
   </div>
   <div class="form-group row">
-    <label for="select" class="col-4 col-form-label">Professor</label> 
+    <label for="professor_select" class="col-4 col-form-label">Professor</label> 
     <div class="col-8">
-      <select id="select" name="select" class="custom-select" required="required" aria-describedby="selectHelpBlock">
-        <option value="rabbit">No professor</option>
-      </select> 
-      <span id="selectHelpBlock" class="form-text text-muted">Select the professor for this review</span>
+      <select id="professor_select" name="professor_select" class="custom-select">
+        <option value="No professor">No Professor</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="text" class="col-4 col-form-label">Rating</label> 
+    <div class="col-8">
+      <input id="text" name="text" type="text" class="form-control" aria-describedby="textHelpBlock"/> 
+      <span id="textHelpBlock" class="form-text text-muted">Out of 5</span>
     </div>
   </div> 
   <div class="form-group row">

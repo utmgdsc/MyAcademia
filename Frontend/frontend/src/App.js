@@ -7,7 +7,8 @@ import RedditReview from "./Components/redditreview";
 import UserReview from "./Components/userreview";
 import CourseInfoPage from "./Pages/courseInfoPage";
 import AddReviewPage from "./Pages/addReviewPage";
-// import AccountHomePage from "./Pages/accountHomePage";
+import CourseSearch from "./Pages/courseSearch";
+//import AccountHomePage from "./Pages/accountHomePage";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +16,8 @@ import {
   Link,
   Routes,
 } from "react-router-dom";
-import { useRef } from "react";
+import { createContext, useContext, useState } from "react";
+
 
 function App() {
   const url = window.location.href; // http:myacademia.com/courseInfo/CSC108H5
@@ -26,7 +28,9 @@ function App() {
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/courseInfo/:course_code" element={<CourseInfoPage course_code={course_code} />} />
+          <Route path="/addReview/:course_code" element={<AddReviewPage course_code={course_code}/>} />
           <Route path="/addReview/" element={<AddReviewPage course_code={course_code}/>} />
+          < Route path="/courseSearch/" element={<CourseSearch />} />
         </Routes>
       </Router> }
     </div>
