@@ -226,15 +226,12 @@ function CourseInfoPage({ course_code }) {
                 tabindex="0"
               >
                 <div class="row">
-                  <div class="col-5">
-                    {" "}
-                    <h3>Average Course Rating: {averageRating} </h3>
-                  </div>
-                </div>
+                  <div class="col-5"> <h3>Average Course Rating: {averageRating} </h3></div>
+                    </div>
                 <div class="row text-left">
                   <div class="col-2 border-primary text-left">
                     <p class="text-left">
-                      <strong>Username</strong>
+                        <strong>Username</strong>
                     </p>
                   </div>
                   <div class="col-5 border-primary text-left">

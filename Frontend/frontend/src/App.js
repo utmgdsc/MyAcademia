@@ -1,13 +1,15 @@
+
 import React from "react";
 import WelcomePage from "./Pages/welcomePage";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AccountHomePage from './Pages/accountHomePage';
+import CourseSearch from './Pages/courseSearch';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import RedditReview from "./Components/redditreview";
 import UserReview from "./Components/userreview";
 import CourseInfoPage from "./Pages/courseInfoPage";
 import AddReviewPage from "./Pages/addReviewPage";
-import CourseSearch from "./Pages/courseSearch";
 //import AccountHomePage from "./Pages/accountHomePage";
 import {
   BrowserRouter as Router,

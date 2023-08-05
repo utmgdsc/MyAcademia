@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
 function UserReview({username, rating, review, professor}) {
   // These need to be changed to the actual values after getting the data from the backend. Possibly pass this as a prop from the parent component.
   
@@ -17,7 +18,9 @@ function UserReview({username, rating, review, professor}) {
     </div>
   );
 
+
   UserReview.propTypes = { username: PropTypes.string, rating: PropTypes.number, review: PropTypes.string, professor: PropTypes.string};
+
 
 }
 
