@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
@@ -61,37 +60,79 @@ function AddReviewPage({ course_code }) {
         </div>
       </div>
       <form>
-  <div class="form-group row">
-    <label for="reviewtextarea" class="col-4 col-form-label">Review:</label> 
-    <div class="col-8">
-      <textarea id="reviewtextarea" name="reviewtextarea" cols="40" rows="5" class="form-control" required="required"></textarea>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-4"></label> 
-    <div class="col-8">
-      <div class="custom-control custom-checkbox custom-control-inline">
-        <input name="anon_checkbox" id="anon_checkbox_0" type="checkbox" class="custom-control-input" value="Yes" aria-describedby="anon_checkboxHelpBlock"/>
-        <label for="anon_checkbox_0" class="custom-control-label">Anoymous</label>
-      </div> 
-      <span id="anon_checkboxHelpBlock" class="form-text text-muted">Select this if you want to remain anonymous in the review. Otherwise, username will be displayed</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="select" class="col-4 col-form-label">Professor</label> 
-    <div class="col-8">
-      <select id="select" name="select" class="custom-select" required="required" aria-describedby="selectHelpBlock">
-        <option value="rabbit">No professor</option>
-      </select> 
-      <span id="selectHelpBlock" class="form-text text-muted">Select the professor for this review</span>
-    </div>
-  </div> 
-  <div class="form-group row">
-    <div class="offset-4 col-8">
-      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-    </div>
-  </div>
-</form>
+        <div class="form-group row">
+          <label for="reviewtextarea" class="col-4 col-form-label">
+            Review:
+          </label>
+          <div class="col-8">
+            <textarea
+              id="reviewtextarea"
+              name="reviewtextarea"
+              cols="40"
+              rows="5"
+              class="form-control"
+              required="required"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4"></label>
+          <div class="col-8">
+            <div class="custom-control custom-checkbox custom-control-inline">
+              <input
+                name="anon_checkbox"
+                id="anon_checkbox_0"
+                type="checkbox"
+                class="custom-control-input"
+                value="Yes"
+                aria-describedby="anon_checkboxHelpBlock"
+              />
+              <label for="anon_checkbox_0" class="custom-control-label">
+                Anoymous
+              </label>
+            </div>
+            <span id="anon_checkboxHelpBlock" class="form-text text-muted">
+              Select this if you want to remain anonymous in the review.
+              Otherwise, username will be displayed
+            </span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="select" class="col-4 col-form-label">
+            Professor
+          </label>
+          <div class="col-8">
+            <select
+              id="select"
+              name="select"
+              class="custom-select"
+              required="required"
+              aria-describedby="selectHelpBlock"
+            >
+              <option value="No Professor">No professor</option>
+              {courseProfessors && // This is conditional rendering. If the value of courseProfessors is null, then the following code will not be executed. This is to prevent the code from crashing if the data is not fetched from the backend yet.
+                courseProfessors.map((prof) => (
+                  <option value={prof}>{prof}</option>
+                ))}
+                <option disabled="disabled"> --- </option>
+                {allProfessors && // This is conditional rendering. If the value of courseProfessors is null, then the following code will not be executed. This is to prevent the code from crashing if the data is not fetched from the backend yet.
+                allProfessors.map((prof) => (
+                  <option value={prof}>{prof}</option>
+                ))}
+            </select>
+            <span id="selectHelpBlock" class="form-text text-muted">
+              Select the professor for this review
+            </span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
     </>
   );
 
