@@ -6,8 +6,8 @@ function AccountHomePage() {
   return (
     <>
       <Container fluid>
-        <Row className="justify-content-start">
-          <div className="text-left">
+        <Row className="accounthp-justify-content-start">
+          <div className="accounthp-text-left">
             <Button
               variant="primary"
               href="/account"
@@ -22,7 +22,7 @@ function AccountHomePage() {
           </div>
         </Row>
       </Container>
-      <div class="text-center">
+      <div class="accounthp-text-center">
         <Button variant="secondary" className="me-5" href="/coursesearch">
           Course-Search
         </Button>
