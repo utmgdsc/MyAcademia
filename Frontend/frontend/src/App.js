@@ -1,13 +1,16 @@
+
+import React from "react";
+import WelcomePage from "./Pages/welcomePage";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import AccountHomePage from './Pages/accountHomePage';
 import CourseSearch from './Pages/courseSearch';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import RedditReview from "./Components/redditreview";
 import UserReview from "./Components/userreview";
 import CourseInfoPage from "./Pages/courseInfoPage";
 import AddReviewPage from "./Pages/addReviewPage";
-import WelcomePage from "./Pages/welcomePage";
+//import AccountHomePage from "./Pages/accountHomePage";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,22 +18,23 @@ import {
   Link,
   Routes,
 } from "react-router-dom";
-import { useRef } from "react";
+import { createContext, useContext, useState } from "react";
+
 
 function App() {
   const url = window.location.href; // http:myacademia.com/courseInfo/CSC108H5
-  const course_code = url.split("/")[2];
+  const course_code = url.split("/")[4];
   return (
     <div className="App">
-      <Router>
+      {<Router>
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-          <Route path="/courseInfo/" element={<CourseInfoPage course_code={"CSC108H5"} />} />
-          <Route path="/addReview/" element={<AddReviewPage/>} />
-          <Route path="/accountHome/" element={<AccountHomePage/>} />
-          <Route path="/courseSearch/" element={<CourseSearch/>} />
+          <Route path="/courseInfo/:course_code" element={<CourseInfoPage course_code={course_code} />} />
+          <Route path="/addReview/:course_code" element={<AddReviewPage course_code={course_code}/>} />
+          <Route path="/addReview/" element={<AddReviewPage course_code={course_code}/>} />
+          < Route path="/courseSearch/" element={<CourseSearch />} />
         </Routes>
-      </Router>
+      </Router> }
     </div>
   );
 }
