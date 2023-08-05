@@ -1,8 +1,51 @@
-import React from "react";
+
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useState } from "react";
+import axios from "axios";
+function submitButonClicked() {}
+
+async function getCourseProfData(course_code) {
+  try {
+    const dataresponse = await axios.get(
+      "/api/findProfessor/?course_code=" + course_code
+    );
+    console.log(dataresponse.data);
+    return dataresponse.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getAllProfData() {
+  try {
+    const dataresponse = await axios.get("/api/allProfessors/");
+    console.log(dataresponse.data);
+    return dataresponse.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 function AddReviewPage({ course_code }) {
   // These need to be changed to the actual values after getting the data from the backend. Possibly pass this as a prop from the parent component.
+  const [courseProfessors, setcourseProfessors] = useState(null);
+  const [allProfessors, setallProfessors] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const courseprofdata = await getCourseProfData(course_code);
+        setcourseProfessors(courseprofdata);
+        const allprofdata = await getAllProfData();
+        setallProfessors(allprofdata);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <>
       <div

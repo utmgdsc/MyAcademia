@@ -38,11 +38,8 @@ urlpatterns = [
     # /api/name_of_object
     path(r'auth/', include('djoser.urls')), # This is backend endpoints for authentication provided by djoser
     path(r'auth/', include('djoser.urls.jwt')), # Javascript Web Token authentication provided by djoser
+    path('api/', include('reviews.urls')), # Register the reviews urls
+    path('api/', include('courses.urls')), # Register the courses urls
     path('auth/users', CustomUserViewSet.as_view({'post': 'create'}), name='user_create'), # custom endpoint for creating a new user
-    path('api/createUserReview/', CreateReviewView.as_view(), name='createUserReview'), # custom endpoint for creating a new user review
-    path('api/courseSearch/', CourseSearchView.as_view(), name='courseSearch'), # custom endpoint for course search. 
-    path('api/findProfessor/', FindProfessorsView.as_view(), name='findProfessor'), # custom endpoint for filtering professors. 
-    path('api/getOnlineReviews/', GetOnlineReviewsView.as_view(), name='getOnlineReviews'), # custom endpoint for getting online reviews.
-    path('api/getUserReviews/', GetUserReviewsView.as_view(), name='getUserReviews'), # custom endpoint for getting user reviews.
-    path('api/getProgramAreas/',GetProgramAreaView.as_view(), name='getProgramAreas'), # custom endpoint for getting program areas.
+
 ]
