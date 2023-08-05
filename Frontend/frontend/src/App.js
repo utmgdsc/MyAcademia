@@ -31,8 +31,8 @@ function App() {
           <Route path="/" element={<WelcomePage />} />
           <Route path="/courseInfo/:course_code" element={<CourseInfoPage course_code={course_code} />} />
           <Route path="/addReview/:course_code" element={<AddReviewPage course_code={course_code}/>} />
-          <Route path="/addReview/" element={<AddReviewPage course_code={course_code}/>} />
-          < Route path="/courseSearch/" element={<CourseSearch />} />
+          <Route path="/courseSearch/" element={<CourseSearch />} />
+          <Route path="/accountHomePage/" element={<AccountHomePage />} />
         </Routes>
       </Router> }
     </div>
