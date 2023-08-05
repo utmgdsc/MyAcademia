@@ -5,7 +5,7 @@ body{
     
 }
 /* Style for the buttons in the top-left corner */
-.text-left {
+.accounthp-text-left {
    
     display: flex;
     justify-content:space-between;
@@ -14,18 +14,18 @@ body{
   }
 
   
-.text-left .btn {
+.accounthp-text-left .btn {
     margin-right: 40px;
   }
   
   /* Style for the buttons in the center */
-.text-center {
+.accounthp-text-center {
     display: flex;
     justify-content:center;
     margin-top: 30px;
   }
   
-.text-center .btn {
+.accounthp-text-center .btn {
     margin-right: 4px;
   }
   
