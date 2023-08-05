@@ -37,8 +37,8 @@ class ExclusionParser:
                         tempExclusion = tempExclusion.replace(course, "True")
                     else:
                         tempExclusion = tempExclusion.replace(course, "False")
-            if "and" in tempExclusion and "or" in tempExclusion:
-                return eval(tempExclusion)
+            # if "and" in tempExclusion and "or" in tempExclusion:
+            #     return eval(tempExclusion)
             return not eval(tempExclusion)
 
     def noneSyntax(self):

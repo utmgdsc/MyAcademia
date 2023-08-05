@@ -15,7 +15,40 @@ class PrereqParser:
         self.user_courses = user_courses
 
     def evaluatePrereq(self):
-        pass
+        if self.check_for_none_requirement():
+            return True
+        elif self.check_for_garde12_req():
+            return True
+        elif self.check_for_structured_prereq():
+            match = re.findall(utmCourseCode, self.prereq,
+                               flags=re.IGNORECASE)
+            tempPrereq = self.prereq[::]
+            if len(match) > 0:
+                if course in self.user_courses:
+                    tempPrereq = tempPrereq.replace(course, "True")
+                else:
+                    tempPrereq = tempPrereq.replace(course, "False")
+            return eval(tempPrereq)
+        elif self.check_for_credits_in_prereq():
+            retVal = self.check_for_credits()
+            credit_val = retVal[0]
+            course_code = retVal[1]
+            level = retVal[2]
+
+            if course_code == -1 and level == -1:
+                return self.calculate_credits(self.user_courses) >= credit_val
+            elif level == -1 and course_code != -1:
+                reduced_user_courses = []
+                for course in self.user_courses:
+                    if course_code in course:
+                        reduced_user_courses.append(course)
+                return self.calculate_credits(reduced_user_courses) >= credit_val
+            else:
+                reduced_user_courses = []
+                for course in self.user_courses:
+                    if course_code in course and level in course:
+                        reduced_user_courses.append(course)
+                return self.calculate_credits(reduced_user_courses) >= credit_val
 
     def check_for_none_requirement(self):
         """
@@ -92,7 +125,7 @@ class PrereqParser:
                 except ValueError:
                     pass
 
-        # Extract course code
+        # Extract course code  v
         course_code_start = self.prereq.find(" in ")
         if course_code_start != -1:
             pattern = r"[A-Z]{3}"
@@ -187,6 +220,15 @@ class PrereqParser:
                     if i.isalpha():
                         return False
             return True
+
+    def calculate_credits(self, courses):
+        credits = 0
+        for course in courses:
+            if "H" in course:
+                credits += 0.5
+            elif "Y" in course:
+                credits += 1
+        return credits
 
 # f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/parser/pre_req_out/creditsUpdated.txt", "r")
 #

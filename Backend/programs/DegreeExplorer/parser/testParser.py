@@ -45,16 +45,19 @@ class testExclusionParser(unittest.TestCase):
 
     def testCompoundCaseANDOR(self):
         parser = ExclusionParser("(CSC108H5 and CSC148H5) or CSC165H5", ["CSC108H5"])
-        self.assertFalse(parser.checkCourseApproval())
+        self.assertTrue(parser.checkCourseApproval())
 
         parser = ExclusionParser("(CSC108H5 and CSC148H5) or CSC165H5", ["CSC148H5"])
-        self.assertFalse(parser.checkCourseApproval())
+        self.assertTrue(parser.checkCourseApproval())
         #
-        # parser = ExclusionParser("(CSC108H5 and CSC148H5) or CSC165H5", ["CSC108H5", "CSC148H5"])
-        # self.assertFalse(parser.checkCourseApproval())
+        parser = ExclusionParser("(CSC108H5 and CSC148H5) or CSC165H5", ["CSC108H5", "CSC148H5"])
+        self.assertFalse(parser.checkCourseApproval())
+
+        parser = ExclusionParser("(CSC108H5 and CSC148H5) or CSC165H5", ["CSC165H5"])
+        self.assertFalse(parser.checkCourseApproval())
 
 
 class testPreReqParser(unittest.TestCase):
 
-    def testBasic(self):
+    def testNoneCase(self):
         pass
