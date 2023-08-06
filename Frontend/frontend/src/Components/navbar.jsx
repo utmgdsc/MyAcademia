@@ -21,7 +21,7 @@ function Navbar({ activeTab, onTabChange }) {
             <a className="nav-link" href="/login">
               Login
             </a>
-            <a className="nav-link" href="/courseInfo/CSC108H5">
+            <a className="nav-link" href="/courseSearch/">
               CourseSearch
             </a>
           </div>
