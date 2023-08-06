@@ -26,14 +26,43 @@ async function getAllProfData() {
   }
 }
 
+async function getcourseData(course_code) {
+  try {
+    const courseresponse = await axios.get("/api/courses/" + course_code);
+    console.log(courseresponse.data);
+    return courseresponse.data;
+  } catch (error) {
+    console.log(error);
+    console.log("Error caught and returning null");
+    return null;
+  }
+}
+// Function to handle the submit button
+function handleSubmit() {
+  //Get the values from the form and make a post request to the backend
+  const review = document.getElementById("reviewtextarea").value;
+  const anon = document.getElementById("anon_checkbox_0").value;
+  const professor = document.getElementById("select").value;
+  console.log(review);
+  console.log(anon);
+  console.log(professor);
+}
+
 function AddReviewPage({ course_code }) {
-  // These need to be changed to the actual values after getting the data from the backend. Possibly pass this as a prop from the parent component.
   const [courseProfessors, setcourseProfessors] = useState(null);
   const [allProfessors, setallProfessors] = useState(null);
+  const [courseData, setCourseData] = useState(null);
+  const ratings = [1, 2, 3, 4, 5];
 
+  //Fetching the data from the backend
   useEffect(() => {
     async function fetchData() {
       try {
+        const coursedata = await getcourseData(course_code);
+        setCourseData(coursedata);
+        if (courseData === null) {
+          return;
+        }
         const courseprofdata = await getCourseProfData(course_code);
         setcourseProfessors(courseprofdata);
         const allprofdata = await getAllProfData();
@@ -44,7 +73,11 @@ function AddReviewPage({ course_code }) {
     }
     fetchData();
   }, []);
-
+  // If the course does not exist, then display an error message
+  if (courseData == null) {
+    return <h1>Page does not exist</h1>;
+  }
+  // Render the page with the information
   return (
     <>
       <div
@@ -88,7 +121,7 @@ function AddReviewPage({ course_code }) {
                 aria-describedby="anon_checkboxHelpBlock"
               />
               <label for="anon_checkbox_0" class="custom-control-label">
-                Anoymous
+                Anonymous
               </label>
             </div>
             <span id="anon_checkboxHelpBlock" class="form-text text-muted">
@@ -103,8 +136,8 @@ function AddReviewPage({ course_code }) {
           </label>
           <div class="col-8">
             <select
-              id="select"
-              name="select"
+              id="selectProfessor"
+              name="selectProfessor"
               class="custom-select"
               required="required"
               aria-describedby="selectHelpBlock"
@@ -114,8 +147,8 @@ function AddReviewPage({ course_code }) {
                 courseProfessors.map((prof) => (
                   <option value={prof}>{prof}</option>
                 ))}
-                <option disabled="disabled"> --- </option>
-                {allProfessors && // This is conditional rendering. If the value of courseProfessors is null, then the following code will not be executed. This is to prevent the code from crashing if the data is not fetched from the backend yet.
+              <option disabled="disabled"> --- </option>
+              {allProfessors && // This is conditional rendering. If the value of courseProfessors is null, then the following code will not be executed. This is to prevent the code from crashing if the data is not fetched from the backend yet.
                 allProfessors.map((prof) => (
                   <option value={prof}>{prof}</option>
                 ))}
@@ -126,8 +159,31 @@ function AddReviewPage({ course_code }) {
           </div>
         </div>
         <div class="form-group row">
+          <label for="reviewtextarea" class="col-4 col-form-label">
+            Rating
+          </label>
+          <div class="col-1">
+            <select
+              id="selectRating"
+              name="selectRating"
+              class="custom-select"
+              required="required"
+              aria-describedby="selectHelpBlock"
+            >
+              {ratings.map((rating) => (
+                <option value={rating}>{rating}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
           <div class="offset-4 col-8">
-            <button name="submit" type="submit" class="btn btn-primary">
+            <button
+              name="submit"
+              type="button"
+              class="btn btn-primary"
+              onClick={handleSubmit}
+            >
               Submit
             </button>
           </div>

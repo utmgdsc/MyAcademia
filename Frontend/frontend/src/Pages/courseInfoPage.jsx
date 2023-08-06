@@ -120,7 +120,7 @@ function CourseInfoPage({ course_code }) {
     fetchData();
   }, []);
   if (!courseData) {
-    return <div>Page doesn't exist</div>;
+    return <div>Course doesn't exist</div>;
   } else {
     console.log(courseData);
   }
@@ -132,7 +132,9 @@ function CourseInfoPage({ course_code }) {
   const recommended_prep = courseData.recommended_prep;
   const credit = courseData.credit;
   const averageRating = courseData.averageRating;
-
+  const handleAddReviewClick = () => {
+    window.location.href = "/addReview/" + course_code;
+  }
   return (
     <div>
       <Navbar/>
@@ -254,7 +256,7 @@ function CourseInfoPage({ course_code }) {
                 ))}
                 <div class="row">
                   <div class="col-2">
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" onClick={handleAddReviewClick}>
                       Add Review
                     </button>
                   </div>

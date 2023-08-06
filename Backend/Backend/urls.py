@@ -37,6 +37,7 @@ urlpatterns = [
     path('api/', include(router.urls)), # Register the router object. So now, specific objects can be accessed via api/name_of_object
     # /api/name_of_object
     path(r'auth/', include('djoser.urls')), # This is backend endpoints for authentication provided by djoser
+    path(r'auth/', include('djoser.urls.authtoken')),
     path(r'auth/', include('djoser.urls.jwt')), # Javascript Web Token authentication provided by djoser
     path('api/', include('reviews.urls')), # Register the reviews urls
     path('api/', include('courses.urls')), # Register the courses urls
