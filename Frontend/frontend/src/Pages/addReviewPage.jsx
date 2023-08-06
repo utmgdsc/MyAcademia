@@ -38,14 +38,39 @@ async function getcourseData(course_code) {
   }
 }
 // Function to handle the submit button
-function handleSubmit() {
+async function handleSubmit() {
   //Get the values from the form and make a post request to the backend
   const review = document.getElementById("reviewtextarea").value;
-  const anon = document.getElementById("anon_checkbox_0").value;
-  const professor = document.getElementById("select").value;
-  console.log(review);
-  console.log(anon);
-  console.log(professor);
+  const anon = document.getElementById("anon_select").value;
+  const rating = document.getElementById("selectRating").value;
+  const professor_name = document.getElementById("selectProfessor").value;
+  const course_code = document.getElementById("course_code").innerHTML.split(" ")[2];
+  console.log(course_code)
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Token 7fb3fbc37364d9fede74db9c68246470c9a19796 " // Replace with actual user token
+    }
+  }
+  const postdata = {
+    review: review,
+    anonymous: anon,
+    rating: rating,
+    professor_name: professor_name,
+    course_code: course_code,
+  }
+    const response = await axios.post("/api/createUserReview/", postdata, config);
+    console.log("Response from backend")
+    console.log(response);
+    console.log(response.status);
+    if(response.status == 201){
+      window.location.href = "/courseInfo/" + course_code;
+    }
+    else{
+      alert(response.data);
+    }
+  
 }
 
 function AddReviewPage({ course_code }) {
@@ -60,9 +85,6 @@ function AddReviewPage({ course_code }) {
       try {
         const coursedata = await getcourseData(course_code);
         setCourseData(coursedata);
-        if (courseData === null) {
-          return;
-        }
         const courseprofdata = await getCourseProfData(course_code);
         setcourseProfessors(courseprofdata);
         const allprofdata = await getAllProfData();
@@ -88,7 +110,7 @@ function AddReviewPage({ course_code }) {
       >
         <div class="row">
           <div class="col-8 border-primary">
-            <h1>Course Code: {course_code} </h1>
+            <h1 id = "course_code">Course Code: {course_code} </h1>
           </div>
         </div>
       </div>
@@ -109,36 +131,26 @@ function AddReviewPage({ course_code }) {
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-4"></label>
-          <div class="col-8">
-            <div class="custom-control custom-checkbox custom-control-inline">
-              <input
-                name="anon_checkbox"
-                id="anon_checkbox_0"
-                type="checkbox"
-                class="custom-control-input"
-                value="Yes"
-                aria-describedby="anon_checkboxHelpBlock"
-              />
-              <label for="anon_checkbox_0" class="custom-control-label">
-                Anonymous
-              </label>
-            </div>
+          <label class="col-4">Anonymous</label>
+          <div class="col-2">
+            <select class="form-select" aria-label="AnonSelect" id="anon_select">
+              <option selected value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
             <span id="anon_checkboxHelpBlock" class="form-text text-muted">
-              Select this if you want to remain anonymous in the review.
-              Otherwise, username will be displayed
+              Select Yes if you want to be anonymous
             </span>
           </div>
         </div>
         <div class="form-group row">
-          <label for="select" class="col-4 col-form-label">
+          <label for="selectProfessor" class="col-4 col-form-label">
             Professor
           </label>
-          <div class="col-8">
+          <div class="col-2">
             <select
               id="selectProfessor"
               name="selectProfessor"
-              class="custom-select"
+              class="form-select"
               required="required"
               aria-describedby="selectHelpBlock"
             >
@@ -166,7 +178,7 @@ function AddReviewPage({ course_code }) {
             <select
               id="selectRating"
               name="selectRating"
-              class="custom-select"
+              class="form-select"
               required="required"
               aria-describedby="selectHelpBlock"
             >
