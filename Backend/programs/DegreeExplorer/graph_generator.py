@@ -22,7 +22,7 @@ def generate_course_list():
 
 generate_course_list()
 # print(len(course_list))
-cs_minor_courses = ["CSC108H5","CSC148H5","CSC207H5","MAT102H5","CSC236H5","CSC209H5","CSC263H5","CSC258H5","MAT135H5","MAT136H5","MAT232H5","MAT223H5","CSC311H5","CSC369H5","CSC373H5","CSC343H5","CSC363H5","CSC358H5","CSC413H5"]
+cs_minor_courses = ["CSC108H5","CSC148H5","CSC207H5","MAT102H5","CSC236H5","CSC209H5","CSC263H5","CSC258H5","MAT135H5","MAT136H5","MAT232H5","MAT223H5","CSC311H5","CSC369H5","CSC373H5","CSC343H5","CSC363H5","CSC358H5","CSC413H5", "MAT139H5","MAT159H5"]
 
 def get_course_objects(list_of_courses):
     course_objects = []

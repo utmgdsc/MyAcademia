@@ -15,20 +15,25 @@ class PrereqParser:
         self.user_courses = user_courses
 
     def evaluatePrereq(self):
+        tempVal = self.prereq[::]
         if self.check_for_none_requirement():
             return True
         elif self.check_for_garde12_req():
             return True
         elif self.check_for_structured_prereq():
+            self.prereq = tempVal[::]
             match = re.findall(utmCourseCode, self.prereq,
                                flags=re.IGNORECASE)
-            tempPrereq = self.prereq[::]
+            # match = ["CSC108H5"]
+            tempPrereq = self.prereq[0:len(self.prereq)]
             if len(match) > 0:
-                if course in self.user_courses:
-                    tempPrereq = tempPrereq.replace(course, "True")
-                else:
-                    tempPrereq = tempPrereq.replace(course, "False")
-            return eval(tempPrereq)
+                for course in match:
+                    if course in self.user_courses:
+                        tempPrereq = tempPrereq.replace(course, "True")
+                    else:
+                        tempPrereq = tempPrereq.replace(course, "False")
+
+                return eval(tempPrereq)
         elif self.check_for_credits_in_prereq():
             retVal = self.check_for_credits()
             credit_val = retVal[0]
@@ -46,7 +51,9 @@ class PrereqParser:
             else:
                 reduced_user_courses = []
                 for course in self.user_courses:
-                    if course_code in course and level in course:
+                    if course_code in course:
+                        # todo: Fix this regex are
+                        levelRegex = r"[A-Z]{3}\d{3}[HY]"
                         reduced_user_courses.append(course)
                 return self.calculate_credits(reduced_user_courses) >= credit_val
 

@@ -3,15 +3,19 @@ from programs.models import Program, Requirement
 
 from programs.DegreeExplorer.parser.ExclusionParser import \
     ExclusionParser
+
+
 from .DegreeAPI import Degree
 import re
-"""
-The purpose of this class is to generate a graph of the user's degree and
-suggest courses that the user should take next to fulfill their degree
-requirements.
-"""
 
+from .parser.PrereqParser import PrereqParser
 
+"""
+The purpose of this class is to generate a list of courses that the user should
+take next to fulfill their degree requirements. This takes into account various
+requirements to either complete a program requirement or to fulfill a breadth
+requirement.
+"""
 class Generator:
     semester_length: int
     program: Program
@@ -69,6 +73,13 @@ class Generator:
             return courses
 
     def suggestHumanitiesElective(self):
+        """
+        This method will suggest a humanities elective to the user based on the
+        user's degree requirements and the courses they have already taken.
+
+        :return: Humanities elective course that the user should take next to
+        fulfill their degree requirements
+        """
         humanities_courses = Course.objects.filter(distribution=Course.HUMANITIES)
         courses_to_remove = []
         for course in self.degree.user_courses:
@@ -86,10 +97,21 @@ class Generator:
                 humanities_courses = humanities_courses.exclude(course_code=course.course_code)
 
         # remove courses for which the user doesn't have pre-reqs
+        for course in humanities_courses:
+            parser_preq = PrereqParser(course.pre_req, self.degree.getCoursesString())
+            if not parser_preq.evaluatePrereq():
+                humanities_courses = humanities_courses.exclude(course_code=course.course_code)
 
         return humanities_courses
 
     def suggestSocialScienceElective(self):
+        """
+        This method will suggest a social science elective to the user based on
+        the user's degree requirements and the courses they have already taken.
+
+        :return: Social science elective course that the user should take next
+        to fulfill their degree requirements
+        """
         ssc_course = Course.objects.filter(distribution=Course.SOCIAL_SCIENCE)
         courses_to_remove = []
         for course in self.degree.user_courses:
@@ -106,10 +128,21 @@ class Generator:
                 ssc_course = ssc_course.exclude(course_code=course.course_code)
 
         # remove courses for which the user doesn't have pre-reqs
+        for course in ssc_course:
+            parser_preq = PrereqParser(course.pre_req, self.degree.getCoursesString())
+            if not parser_preq.evaluatePrereq():
+                ssc_course = ssc_course.exclude(course_code=course.course_code)
 
         return ssc_course
 
     def suggestScienceElective(self):
+        """
+        This method will suggest a science elective to the user based on the
+        user's degree requirements and the courses they have already taken.
+
+        :return: Science elective course that the user should take next to
+        fulfill their degree requirements
+        """
         sci_course = Course.objects.filter(distribution=Course.SCIENCE)
         courses_to_remove = []
         for course in self.degree.user_courses:
@@ -126,36 +159,57 @@ class Generator:
                 sci_course.exclude(course_code=course.course_code)
 
         # remove courses for which the user doesn't have pre-reqs
+        for course in sci_course:
+            parser_preq = PrereqParser(course.pre_req, self.degree.getCoursesString())
+            if not parser_preq.evaluatePrereq():
+                sci_course = sci_course.exclude(course_code=course.course_code)
+
         return sci_course
 
     def suggest200L(self):
+        """
+        This method will suggest a 200 level course to the user based on the
+        user's degree requirements and the courses they have already taken.
+
+        :return: 200 level course that the user should take next to fulfill
+        their degree requirements
+        """
         courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}2[0-9]{2}H5$')
         user_courses_str = self.degree.getCoursesString()
         for course in courses:
             exclusion = ExclusionParser(course.exclusions, user_courses_str)
             if not exclusion.checkCourseApproval():
                 courses = courses.exclude(course_code=course.course_code)
+
+        for course in courses:
+            parser_preq = PrereqParser(course.pre_req, self.degree.getCoursesString())
+            if not parser_preq.evaluatePrereq():
+                courses = courses.exclude(course_code=course.course_code)
+
         return courses
 
-        # more to do
     def suggest300L(self):
+        """
+        This method will suggest a 300 level course to the user based on the
+        user's degree requirements and the courses they have already taken.
+
+        :return: 300 level course that the user should take next to fulfill
+        their degree requirements
+        """
         courses = Course.objects.filter(course_code__regex=r'^[A-Z]{3}3[0-9]{2}H5$')
         user_courses_str = self.degree.getCoursesString()
         for course in courses:
             exclusion = ExclusionParser(course.exclusions, user_courses_str)
             if not exclusion.checkCourseApproval():
                 courses = courses.exclude(course_code=course.course_code)
+
+        for course in courses:
+            parser_preq = PrereqParser(course.pre_req, self.degree.getCoursesString())
+            if not parser_preq.evaluatePrereq():
+                courses = courses.exclude(course_code=course.course_code)
+
         return courses
-        # more to do
 
-    # def getExclusionCourses(self):
-    #     for course in self.degree.user_courses:
-    #         pass
-
-    # def generate_graph(self):
-    #     requirements = Requirement.objects.filter(program=self.program)
-    #     for requirement in requirements:
-    #         print(requirement.requirement_description)
 
 
 class Graph:
