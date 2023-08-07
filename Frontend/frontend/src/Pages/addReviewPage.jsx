@@ -44,33 +44,37 @@ async function handleSubmit() {
   const anon = document.getElementById("anon_select").value;
   const rating = document.getElementById("selectRating").value;
   const professor_name = document.getElementById("selectProfessor").value;
-  const course_code = document.getElementById("course_code").innerHTML.split(" ")[2];
-  console.log(course_code)
+  const course_code = document
+    .getElementById("course_code")
+    .innerHTML.split(" ")[2];
+  const tokenObject = JSON.parse(localStorage.getItem("usertoken"));
+  const token = tokenObject["auth_token"].toString();
+  console.log(course_code);
+  console.log(token);
 
   const config = {
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Token 7fb3fbc37364d9fede74db9c68246470c9a19796 " // Replace with actual user token
-    }
-  }
+      Authorization: "Token " +  token  // Replace with actual user token
+    },
+  };
+  console.log(config);
   const postdata = {
     review: review,
     anonymous: anon,
     rating: rating,
     professor_name: professor_name,
     course_code: course_code,
+  };
+  const response = await axios.post("/api/createUserReview/", postdata, config);
+  console.log("Response from backend");
+  console.log(response);
+  console.log(response.status);
+  if (response.status == 201) {
+    window.location.href = "/courseInfo/" + course_code;
+  } else {
+    alert(response.data);
   }
-    const response = await axios.post("/api/createUserReview/", postdata, config);
-    console.log("Response from backend")
-    console.log(response);
-    console.log(response.status);
-    if(response.status == 201){
-      window.location.href = "/courseInfo/" + course_code;
-    }
-    else{
-      alert(response.data);
-    }
-  
 }
 
 function AddReviewPage({ course_code }) {
@@ -110,7 +114,7 @@ function AddReviewPage({ course_code }) {
       >
         <div class="row">
           <div class="col-8 border-primary">
-            <h1 id = "course_code">Course Code: {course_code} </h1>
+            <h1 id="course_code">Course Code: {course_code} </h1>
           </div>
         </div>
       </div>
@@ -133,8 +137,14 @@ function AddReviewPage({ course_code }) {
         <div class="form-group row">
           <label class="col-4">Anonymous</label>
           <div class="col-2">
-            <select class="form-select" aria-label="AnonSelect" id="anon_select">
-              <option selected value="false">No</option>
+            <select
+              class="form-select"
+              aria-label="AnonSelect"
+              id="anon_select"
+            >
+              <option selected value="false">
+                No
+              </option>
               <option value="true">Yes</option>
             </select>
             <span id="anon_checkboxHelpBlock" class="form-text text-muted">

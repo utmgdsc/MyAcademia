@@ -20,15 +20,21 @@ function LoginPage() {
     };
     setpayload(payload);
     // console.log(payload);
-      //Sending a post request to database with credentials expecting a response
-    axios.post("/api/login/".payload).then((response) => {
-      if (response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data));
-        console.log(response.data);
+    //Sending a post request to database with credentials expecting a response
+    axios.post("/auth/token/login/",payload).then((response) => {
+      if (response.data.auth_token) {
+        console.log("Getting token")
+        console.log(response.data.auth_token);
+        localStorage.setItem("usertoken", JSON.stringify(response.data));
+        console.log("Retrieving token form local storage");
+        console.log(localStorage.getItem("usertoken"));
       }
       if (response.data.message) {
         setloginStatus(response.data.message);
       }
+    }).catch((error) => {
+      console.log(error);
+      alert("Invalid Credentials");
     });
   };
 
@@ -56,7 +62,7 @@ function LoginPage() {
           <h2 className="text-center mb-4">Login</h2>
           <Form>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email or Username</Form.Label>
+              <Form.Label> Username</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter email or username"
@@ -78,7 +84,7 @@ function LoginPage() {
               variant="primary"
               type="submit"
               block
-              //   onClick={handleLoginClick}
+              onClick={handleLoginClick}
             >
               Log In
             </Button>
