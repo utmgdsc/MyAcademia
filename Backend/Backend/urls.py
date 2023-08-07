@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from courses.views import CourseView, CourseSearchView,GetProgramAreaView
-from programs.views import ProgramView, RequirementView
+from programs.views import ProgramView, RequirementView, TestDegreeExplorerView
 from reviews.views import UserReviewView, OnlineReviewView, ProfessorView, CreateReviewView, FindProfessorsView, GetOnlineReviewsView, GetUserReviewsView
 from accounts.views import ProfileView, CustomUserViewSet
 
@@ -42,5 +42,6 @@ urlpatterns = [
     path('api/', include('reviews.urls')), # Register the reviews urls
     path('api/', include('courses.urls')), # Register the courses urls
     path('auth/users', CustomUserViewSet.as_view({'post': 'create'}), name='user_create'), # custom endpoint for creating a new user
-
+    path('auth/users/me', CustomUserViewSet.as_view({'get': 'me'}), name='user_me'), # custom endpoint for getting the current user
+    path('api/', include('programs.urls')), # Register the programs urls
 ]

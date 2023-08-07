@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from .serializers import ProgramSerializer, RequirementSerializer
 from .models import Program, Requirement
 from courses.models import Course
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 # To view programs in the backend
 class ProgramView(viewsets.ModelViewSet):
@@ -15,9 +17,15 @@ class RequirementView(viewsets.ModelViewSet):
     queryset = Requirement.objects.all()
 
 
-def getProgramRequirements(Program: Program):
-    # Get the requirements for a program
-    for req in Program.requirements.all():
-        for course in req.courses.all():
-            print(course.course_code)
+# View to test the degree explorer
+class TestDegreeExplorerView(APIView):
+
+    def get(self, request):
+        dict = {}
+        dict['program'] = 'Computer Science'
+        dict['requirements'] = "Hey there"
+        return Response(dict, status=status.HTTP_200_OK) 
+
+
+
 
