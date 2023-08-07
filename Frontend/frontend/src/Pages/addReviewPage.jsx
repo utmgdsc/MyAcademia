@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
@@ -27,14 +26,65 @@ async function getAllProfData() {
   }
 }
 
+async function getcourseData(course_code) {
+  try {
+    const courseresponse = await axios.get("/api/courses/" + course_code);
+    console.log(courseresponse.data);
+    return courseresponse.data;
+  } catch (error) {
+    console.log(error);
+    console.log("Error caught and returning null");
+    return null;
+  }
+}
+// Function to handle the submit button
+async function handleSubmit() {
+  //Get the values from the form and make a post request to the backend
+  const review = document.getElementById("reviewtextarea").value;
+  const anon = document.getElementById("anon_select").value;
+  const rating = document.getElementById("selectRating").value;
+  const professor_name = document.getElementById("selectProfessor").value;
+  const course_code = document.getElementById("course_code").innerHTML.split(" ")[2];
+  console.log(course_code)
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Token 7fb3fbc37364d9fede74db9c68246470c9a19796 " // Replace with actual user token
+    }
+  }
+  const postdata = {
+    review: review,
+    anonymous: anon,
+    rating: rating,
+    professor_name: professor_name,
+    course_code: course_code,
+  }
+    const response = await axios.post("/api/createUserReview/", postdata, config);
+    console.log("Response from backend")
+    console.log(response);
+    console.log(response.status);
+    if(response.status == 201){
+      window.location.href = "/courseInfo/" + course_code;
+    }
+    else{
+      alert(response.data);
+    }
+  
+}
+
 function AddReviewPage({ course_code }) {
-  // These need to be changed to the actual values after getting the data from the backend. Possibly pass this as a prop from the parent component.
   const [courseProfessors, setcourseProfessors] = useState(null);
   const [allProfessors, setallProfessors] = useState(null);
+  const [courseData, setCourseData] = useState(null);
+  const ratings = [1, 2, 3, 4, 5];
 
+  //Fetching the data from the backend
   useEffect(() => {
     async function fetchData() {
       try {
+        const coursedata = await getcourseData(course_code);
+        setCourseData(coursedata);
         const courseprofdata = await getCourseProfData(course_code);
         setcourseProfessors(courseprofdata);
         const allprofdata = await getAllProfData();
@@ -45,7 +95,11 @@ function AddReviewPage({ course_code }) {
     }
     fetchData();
   }, []);
-
+  // If the course does not exist, then display an error message
+  if (courseData == null) {
+    return <h1>Page does not exist</h1>;
+  }
+  // Render the page with the information
   return (
     <>
       <div
@@ -56,42 +110,97 @@ function AddReviewPage({ course_code }) {
       >
         <div class="row">
           <div class="col-8 border-primary">
-            <h1>Course Code: {course_code} </h1>
+            <h1 id = "course_code">Course Code: {course_code} </h1>
           </div>
         </div>
       </div>
       <form>
-  <div class="form-group row">
-    <label for="reviewtextarea" class="col-4 col-form-label">Review:</label> 
-    <div class="col-8">
-      <textarea id="reviewtextarea" name="reviewtextarea" cols="40" rows="5" class="form-control" required="required"></textarea>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-4"></label> 
-    <div class="col-8">
-      <div class="custom-control custom-checkbox custom-control-inline">
-        <input name="anon_checkbox" id="anon_checkbox_0" type="checkbox" class="custom-control-input" value="Yes" aria-describedby="anon_checkboxHelpBlock"/>
-        <label for="anon_checkbox_0" class="custom-control-label">Anoymous</label>
-      </div> 
-      <span id="anon_checkboxHelpBlock" class="form-text text-muted">Select this if you want to remain anonymous in the review. Otherwise, username will be displayed</span>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="select" class="col-4 col-form-label">Professor</label> 
-    <div class="col-8">
-      <select id="select" name="select" class="custom-select" required="required" aria-describedby="selectHelpBlock">
-        <option value="rabbit">No professor</option>
-      </select> 
-      <span id="selectHelpBlock" class="form-text text-muted">Select the professor for this review</span>
-    </div>
-  </div> 
-  <div class="form-group row">
-    <div class="offset-4 col-8">
-      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-    </div>
-  </div>
-</form>
+        <div class="form-group row">
+          <label for="reviewtextarea" class="col-4 col-form-label">
+            Review:
+          </label>
+          <div class="col-8">
+            <textarea
+              id="reviewtextarea"
+              name="reviewtextarea"
+              cols="40"
+              rows="5"
+              class="form-control"
+              required="required"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4">Anonymous</label>
+          <div class="col-2">
+            <select class="form-select" aria-label="AnonSelect" id="anon_select">
+              <option selected value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+            <span id="anon_checkboxHelpBlock" class="form-text text-muted">
+              Select Yes if you want to be anonymous
+            </span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="selectProfessor" class="col-4 col-form-label">
+            Professor
+          </label>
+          <div class="col-2">
+            <select
+              id="selectProfessor"
+              name="selectProfessor"
+              class="form-select"
+              required="required"
+              aria-describedby="selectHelpBlock"
+            >
+              <option value="No Professor">No professor</option>
+              {courseProfessors && // This is conditional rendering. If the value of courseProfessors is null, then the following code will not be executed. This is to prevent the code from crashing if the data is not fetched from the backend yet.
+                courseProfessors.map((prof) => (
+                  <option value={prof}>{prof}</option>
+                ))}
+              <option disabled="disabled"> --- </option>
+              {allProfessors && // This is conditional rendering. If the value of courseProfessors is null, then the following code will not be executed. This is to prevent the code from crashing if the data is not fetched from the backend yet.
+                allProfessors.map((prof) => (
+                  <option value={prof}>{prof}</option>
+                ))}
+            </select>
+            <span id="selectHelpBlock" class="form-text text-muted">
+              Select the professor for this review
+            </span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="reviewtextarea" class="col-4 col-form-label">
+            Rating
+          </label>
+          <div class="col-1">
+            <select
+              id="selectRating"
+              name="selectRating"
+              class="form-select"
+              required="required"
+              aria-describedby="selectHelpBlock"
+            >
+              {ratings.map((rating) => (
+                <option value={rating}>{rating}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button
+              name="submit"
+              type="button"
+              class="btn btn-primary"
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
     </>
   );
 

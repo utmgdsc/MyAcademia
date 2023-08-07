@@ -25,7 +25,7 @@ function CourseSearch() {
   useEffect(() => {
     // Fetch data from the server using axios
     axios
-      .get("api/getProgramAreas/")
+      .get("/api/getProgramAreas/")
       .then((response) => setItems(response.data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
@@ -90,7 +90,7 @@ function CourseSearch() {
     };
     console.log(postdata);
     axios
-      .post("api/courseSearch/", postdata)
+      .post("/api/courseSearch/", postdata)
       .then((response) => {
         // console.log(response);
         setOutput_list(response.data);
@@ -171,9 +171,9 @@ function CourseSearch() {
               value={distribution}
             >
               <option>Distribution</option>
-              <option value="Science">SCIENCE</option>
+              <option value="Science">SCIENCE</option> 
               <option value="Humanities">HUMANITIES</option>
-              <option value="Social_science">SOCIAL_SCIENCE</option>
+              <option value="Social Science">SOCIAL_SCIENCE</option>
               <option value="None">NONE</option>
             </Form.Select>
             <p style={{ fontWeight: 'bold' }}>Selected distribution:{distribution}</p>
