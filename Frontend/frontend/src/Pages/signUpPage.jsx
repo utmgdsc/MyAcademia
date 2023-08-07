@@ -26,7 +26,7 @@ const SignupPage = () => {
   };
     console.log(payload);
     const handleSubmitClick = () => {
-        axios.post("http://localhost:8000/api/signup/", payload).then((response) => {
+        axios.post("/api/signup/", payload).then((response) => {
             if (response.data.accessToken) {
                 localStorage.setItem("user", JSON.stringify(response.data));
                 console.log(response.data);
