@@ -6,6 +6,7 @@ import {
   Col,
   Dropdown,
   Button,
+  Container,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
@@ -114,7 +115,6 @@ function CourseSearch() {
   return (
     <>
       <div
-        
         style={{
           backgroundImage: `url(${require("../images/course_search_background.jpeg")})`,
           backgroundSize: "cover",
@@ -128,11 +128,34 @@ function CourseSearch() {
           justifyContent: "center", // Center items vertically
         }}
       >
-        <h2 style={{ color: 'white' }}>Course Search</h2>
+        <Container fluid>
+          <Row className="accounthp-justify-content-start">
+            <div className="accounthp-text-left">
+              <Button
+                variant="primary"
+                href="/"
+                className="mb-2 "
+                id="accountbtn"
+              >
+                Home
+              </Button>
+              <Button
+                variant="secondary"
+                href="/accountHomePage/"
+                className="mb-2"
+                id="logoutbtn"
+              >
+                Account Home Page
+              </Button>
+            </div>
+          </Row>
+        </Container>
+        <h2 style={{ color: "white" }}>Course Search</h2>
         <br></br>
         <br></br>
         <br></br>
         <br></br>
+
         <Row>
           <Col xs={8} md={3}>
             <FloatingLabel
@@ -147,7 +170,9 @@ function CourseSearch() {
                 style={{ height: "10px", resize: "none", width: "auto" }} // Adjust the height as needed
               />
             </FloatingLabel>
-            <p style={{ fontWeight: 'bold' }}>Please enter the course code above</p>
+            <p style={{ fontWeight: "bold" }}>
+              Please enter the course code above
+            </p>
           </Col>
           <Col xs={8} md={3}>
             <FloatingLabel
@@ -162,7 +187,9 @@ function CourseSearch() {
                 style={{ height: "10px", resize: "none", width: "auto" }} // Adjust the height as needed
               />
             </FloatingLabel>
-            <p style={{fontWeight:'bold'}}>Please enter the Pre-requisite above</p>
+            <p style={{ fontWeight: "bold" }}>
+              Please enter the Pre-requisite above
+            </p>
           </Col>
           <Col xs={8} md={3}>
             <Form.Select
@@ -176,7 +203,9 @@ function CourseSearch() {
               <option value="Social Science">SOCIAL_SCIENCE</option>
               <option value="None">NONE</option>
             </Form.Select>
-            <p style={{ fontWeight: 'bold' }}>Selected distribution:{distribution}</p>
+            <p style={{ fontWeight: "bold" }}>
+              Selected distribution:{distribution}
+            </p>
           </Col>
           <Col xs={8} md={3}>
             <Form.Select
@@ -189,7 +218,7 @@ function CourseSearch() {
                 <option value={item}>{item}</option>
               ))}
             </Form.Select>
-            <p style={{ fontWeight: 'bold' }}>Selected program:{program}</p>
+            <p style={{ fontWeight: "bold" }}>Selected program:{program}</p>
           </Col>
         </Row>
         <br />

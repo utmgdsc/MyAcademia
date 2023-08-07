@@ -10,7 +10,10 @@ import RedditReview from "./Components/redditreview";
 import UserReview from "./Components/userreview";
 import CourseInfoPage from "./Pages/courseInfoPage";
 import AddReviewPage from "./Pages/addReviewPage";
+import LoginPage from "./Pages/loginPage";
+import SignupPage from "./Pages/signUpPage";
 //import AccountHomePage from "./Pages/accountHomePage";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,6 +35,9 @@ function App() {
           <Route path = "/contactInfo/" element = {<WelcomePage activeTab="ContactInfo" />} />
           <Route path="/courseInfo/:course_code" element={<CourseInfoPage course_code={course_code} />} />
           <Route path="/addReview/:course_code" element={<AddReviewPage course_code={course_code}/>} />
+          <Route path="/accountHomePage/" element={<AccountHomePage />} />
+          <Route path="/login/" element={<LoginPage />} />
+          <Route path="/signup/" element={<SignupPage />} />
           <Route path="/courseSearch/" element={<CourseSearch />} />
           <Route path="/accountHomePage/" element={<AccountHomePage />} />
         </Routes>
