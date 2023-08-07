@@ -198,7 +198,7 @@ function CourseSearch() {
               value={distribution}
             >
               <option>Distribution</option>
-              <option value="Science">SCIENCE</option>
+              <option value="Science">SCIENCE</option> 
               <option value="Humanities">HUMANITIES</option>
               <option value="Social Science">SOCIAL_SCIENCE</option>
               <option value="None">NONE</option>

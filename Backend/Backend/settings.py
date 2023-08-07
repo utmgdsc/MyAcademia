@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     'programs.apps.ProgramsConfig',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
     'djoser',
     'accounts.apps.AccountsConfig',
-    'rest_framework.authtoken',
+    
 ]
 
 MIDDLEWARE = [

@@ -31,14 +31,15 @@ function App() {
     <div className="App">
       {<Router>
         <Routes>
-          <Route path="/" element={<WelcomePage />} />
+          <Route path="/" element={<WelcomePage activeTab="Home"/>} />
+          <Route path = "/contactInfo/" element = {<WelcomePage activeTab="ContactInfo" />} />
           <Route path="/courseInfo/:course_code" element={<CourseInfoPage course_code={course_code} />} />
           <Route path="/addReview/:course_code" element={<AddReviewPage course_code={course_code}/>} />
-          <Route path="/addReview/" element={<AddReviewPage course_code={course_code}/>} />
-          <Route path="/courseSearch/" element={<CourseSearch />} />
           <Route path="/accountHomePage/" element={<AccountHomePage />} />
           <Route path="/login/" element={<LoginPage />} />
           <Route path="/signup/" element={<SignupPage />} />
+          <Route path="/courseSearch/" element={<CourseSearch />} />
+          <Route path="/accountHomePage/" element={<AccountHomePage />} />
         </Routes>
       </Router> }
     </div>

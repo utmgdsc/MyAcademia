@@ -39,6 +39,7 @@ class Course(models.Model):
         return "Issues exist here"
     # Function to update the average rating and number of reviews for the course
     def updateRating(self, rating: int):
+        rating = int(rating)
         currTotal = self.avg_rating * self.num_reviews
         self.num_reviews += 1
         self.avg_rating = (currTotal + rating) / self.num_reviews

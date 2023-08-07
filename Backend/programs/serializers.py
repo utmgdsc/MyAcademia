@@ -11,4 +11,4 @@ class ProgramSerializer(serializers.ModelSerializer):
 class RequirementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Requirement
-        fields = ('requirement_id', 'requirement_type', 'requirement_description', 'count', 'courses')
+        fields = ('requirement_id', 'requirement_type', 'requirement_description', 'count', 'courses', 'categories')
