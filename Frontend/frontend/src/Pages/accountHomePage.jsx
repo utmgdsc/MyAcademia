@@ -1,10 +1,29 @@
 import React from "react";
-import { Button, Container, Row, ButtonGroup } from "react-bootstrap";
+import { Button, Container, Row, ButtonGroup, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./accountHomePage.css";
+import Navbar from "../Components/navbar";
+import axios from "axios";
+
+async function handleLogout(){
+  const tokenObject = JSON.parse(sessionStorage.getItem("usertoken"));
+  const token = tokenObject["auth_token"].toString();
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Token " + token, 
+    },
+  };
+  await axios.post("/auth/token/logout/", {}, config);
+  sessionStorage.removeItem("usertoken");
+  sessionStorage.removeItem("activeUser", "false");
+  window.location.href = "/";
+}
+
 function AccountHomePage() {
   return (
     <>
+    <Navbar />
       <Container fluid>
         <Row className="accounthp-justify-content-start">
           <div className="accounthp-text-left">
@@ -16,7 +35,7 @@ function AccountHomePage() {
             >
               Account
             </Button>
-            <Button variant="link" href="/" className="mb-2" id="logoutbtn">
+            <Button variant="link" href="/" className="mb-2" id="logoutbtn" onClick={handleLogout}>
               Logout
             </Button>
           </div>

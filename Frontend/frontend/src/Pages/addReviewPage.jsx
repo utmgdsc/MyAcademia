@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import axios from "axios";
-function submitButonClicked() {}
-
+import {useNavigate} from "react-router-dom";
+// Get professors who have taught the course before
 async function getCourseProfData(course_code) {
   try {
     const dataresponse = await axios.get(
@@ -15,7 +15,7 @@ async function getCourseProfData(course_code) {
     console.log(error);
   }
 }
-
+// Get all professors from the database
 async function getAllProfData() {
   try {
     const dataresponse = await axios.get("/api/allProfessors/");
@@ -25,7 +25,7 @@ async function getAllProfData() {
     console.log(error);
   }
 }
-
+//Get the course data from the backend. This is used for validation
 async function getcourseData(course_code) {
   try {
     const courseresponse = await axios.get("/api/courses/" + course_code);
@@ -47,7 +47,7 @@ async function handleSubmit() {
   const course_code = document
     .getElementById("course_code")
     .innerHTML.split(" ")[2];
-  const tokenObject = JSON.parse(localStorage.getItem("usertoken"));
+  const tokenObject = JSON.parse(sessionStorage.getItem("usertoken"));
   const token = tokenObject["auth_token"].toString();
   console.log(course_code);
   console.log(token);
@@ -82,9 +82,19 @@ function AddReviewPage({ course_code }) {
   const [allProfessors, setallProfessors] = useState(null);
   const [courseData, setCourseData] = useState(null);
   const ratings = [1, 2, 3, 4, 5];
+  const navigate = useNavigate();
 
-  //Fetching the data from the backend
+  
   useEffect(() => {
+    // Check if the user is logged in and redirect to login page if not
+    const activeUser = sessionStorage.getItem("activeUser");
+    console.log(activeUser)
+    if(activeUser === "false" || activeUser === null){
+      sessionStorage.setItem("fromaddreview", "true");
+      sessionStorage.setItem("course_code", course_code)
+      navigate("/login");
+    }
+    //Fetching the data from the backend
     async function fetchData() {
       try {
         const coursedata = await getcourseData(course_code);

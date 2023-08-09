@@ -3,6 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Container, Form, Button, Row } from "react-bootstrap";
 function LoginPage() {
+  if (sessionStorage.getItem("activeUser") === "true") {
+    window.location.href = "/accountHomePage";
+  }
   const usernamelog = useRef();
   const passwordlog = useRef();
   const [payload, setpayload] = useState({
@@ -21,21 +24,31 @@ function LoginPage() {
     setpayload(payload);
     // console.log(payload);
     //Sending a post request to database with credentials expecting a response
-    axios.post("/auth/token/login/",payload).then((response) => {
-      if (response.data.auth_token) {
-        console.log("Getting token")
-        console.log(response.data.auth_token);
-        localStorage.setItem("usertoken", JSON.stringify(response.data));
-        console.log("Retrieving token form local storage");
-        console.log(localStorage.getItem("usertoken"));
-      }
-      if (response.data.message) {
-        setloginStatus(response.data.message);
-      }
-    }).catch((error) => {
-      console.log(error);
-      alert("Invalid Credentials");
-    });
+    axios
+      .post("/auth/token/login/", payload)
+      .then((response) => {
+        if (response.data.auth_token) {
+          sessionStorage.setItem("usertoken", JSON.stringify(response.data));
+          const activeUser = "true";
+          sessionStorage.setItem("activeUser", activeUser);
+          const fromaddreview = sessionStorage.getItem("fromaddreview");
+          //Send them back to the add review page if they came from there else send them to the account home page
+          if (fromaddreview === "true") {
+            sessionStorage.setItem("fromaddreview", "false");
+            const course_code = sessionStorage.getItem("course_code");
+            window.location.href = "/addReview/" + course_code;
+          } else {
+            window.location.href = "/accountHomePage";
+          }
+        }
+        if (response.data.message) {
+          setloginStatus(response.data.message);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Invalid Credentials");
+      });
   };
 
   return (
