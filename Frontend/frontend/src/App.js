@@ -27,6 +27,7 @@ import { createContext, useContext, useState } from "react";
 function App() {
   const url = window.location.href; // http:myacademia.com/courseInfo/CSC108H5
   const course_code = url.split("/")[4];
+
   return (
     <div className="App">
       {<Router>

@@ -19,11 +19,10 @@ class RequirementView(viewsets.ModelViewSet):
 
 # View to test the degree explorer
 class TestDegreeExplorerView(APIView):
-
     def get(self, request):
         dict = {}
-        dict['program'] = 'Computer Science'
-        dict['requirements'] = "Hey there"
+        test1 = "Hey"
+        dict["test1"] = test1
         return Response(dict, status=status.HTTP_200_OK) 
 
 
