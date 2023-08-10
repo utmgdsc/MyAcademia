@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./accountHomePage.css";
 import Navbar from "../Components/navbar";
 import axios from "axios";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 async function handleLogout(){
   const tokenObject = JSON.parse(sessionStorage.getItem("usertoken"));
@@ -21,6 +23,15 @@ async function handleLogout(){
 }
 
 function AccountHomePage() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    // Check if the user is logged in and redirect to login page if not
+    const activeUser = sessionStorage.getItem("activeUser");
+    console.log(activeUser);
+    if (activeUser === "false" || activeUser === null) {
+      navigate("/login");
+    }
+  }, []);
   return (
     <>
     <Navbar />
