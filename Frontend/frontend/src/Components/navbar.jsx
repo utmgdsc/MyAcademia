@@ -1,6 +1,7 @@
 import React from "react";
 import "../custom.scss";
 import axios from "axios";
+
 async function handleLogout(){
   const tokenObject = JSON.parse(sessionStorage.getItem("usertoken"));
   const token = tokenObject["auth_token"].toString();
@@ -15,6 +16,7 @@ async function handleLogout(){
   sessionStorage.removeItem("activeUser", "false");
   window.location.href = "/";
 }
+
 function Navbar() {
   const activeUser = sessionStorage.getItem("activeUser");
   return (
@@ -40,7 +42,7 @@ function Navbar() {
               </a>
             )}
             <a className="nav-link" href="/courseSearch/">
-              CourseSearch
+              Course Search
             </a>
             <a className="nav-link" href="/degreeExplorer/">
               Degree Explorer

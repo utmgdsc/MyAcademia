@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import Navbar from "../Components/navbar";
 // Get professors who have taught the course before
 async function getCourseProfData(course_code) {
   try {
@@ -111,11 +112,12 @@ function AddReviewPage({ course_code }) {
   }, []);
   // If the course does not exist, then display an error message
   if (courseData == null) {
-    return <h1>Page does not exist</h1>;
+    return <h2>Page does not exist</h2>;
   }
   // Render the page with the information
   return (
     <>
+    <Navbar/>
       <div
         class="container text-left"
         style={{
@@ -124,7 +126,7 @@ function AddReviewPage({ course_code }) {
       >
         <div class="row">
           <div class="col-8 border-primary">
-            <h1 id="course_code">Course Code: {course_code} </h1>
+            <h2 id="course_code">Course Code: {course_code} </h2>
           </div>
         </div>
       </div>

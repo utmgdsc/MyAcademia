@@ -16,7 +16,7 @@ async function handleLogout(){
   };
   await axios.post("/auth/token/logout/", {}, config);
   sessionStorage.removeItem("usertoken");
-  sessionStorage.removeItem("activeUser", "false");
+  sessionStorage.setItem("activeUser", "false");
   window.location.href = "/";
 }
 
@@ -35,7 +35,7 @@ function AccountHomePage() {
             >
               Account
             </Button>
-            <Button variant="link" href="/" className="mb-2" id="logoutbtn" onClick={handleLogout}>
+            <Button variant="link" className="mb-2" id="logoutbtn" onClick={handleLogout}>
               Logout
             </Button>
           </div>
