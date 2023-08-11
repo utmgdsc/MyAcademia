@@ -2,13 +2,13 @@ import React from "react";
 import "../custom.scss";
 import axios from "axios";
 
-async function handleLogout(){
+async function handleLogout() {
   const tokenObject = JSON.parse(sessionStorage.getItem("usertoken"));
   const token = tokenObject["auth_token"].toString();
   const config = {
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Token " + token, 
+      Authorization: "Token " + token,
     },
   };
   await axios.post("/auth/token/logout/", {}, config);

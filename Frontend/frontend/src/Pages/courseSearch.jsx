@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import Navbar from "../Components/navbar";
 import {
   FloatingLabel,
   Form,
@@ -114,6 +115,7 @@ function CourseSearch() {
 
   return (
     <>
+      <Navbar />
       <div
         style={{
           backgroundImage: `url(${require("../images/course_search_background.jpeg")})`,

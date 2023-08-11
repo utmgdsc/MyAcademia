@@ -7,13 +7,13 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-async function handleLogout(){
+async function handleLogout() {
   const tokenObject = JSON.parse(sessionStorage.getItem("usertoken"));
   const token = tokenObject["auth_token"].toString();
   const config = {
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Token " + token, 
+      Authorization: "Token " + token,
     },
   };
   await axios.post("/auth/token/logout/", {}, config);
@@ -34,7 +34,7 @@ function AccountHomePage() {
   }, []);
   return (
     <>
-    <Navbar />
+      <Navbar />
       <Container fluid>
         <Row className="accounthp-justify-content-start">
           <div className="accounthp-text-left">
@@ -46,7 +46,12 @@ function AccountHomePage() {
             >
               Account
             </Button>
-            <Button variant="link" className="mb-2" id="logoutbtn" onClick={handleLogout}>
+            <Button
+              variant="link"
+              className="mb-2"
+              id="logoutbtn"
+              onClick={handleLogout}
+            >
               Logout
             </Button>
           </div>
