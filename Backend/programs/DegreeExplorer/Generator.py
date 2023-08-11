@@ -209,33 +209,3 @@ class Generator:
                 courses = courses.exclude(course_code=course.course_code)
 
         return courses
-
-
-
-class Graph:
-    def __init__(self):
-        self.adjacency_list = {}
-
-    def generate_graph(self):
-        pass
-
-    def getAllCourses(self, program):
-        courses = []
-        requirements = Program.objects.filter(program_code="CS")
-        for requirement in requirements:
-            courses.append(requirement.course)
-
-    def add_vertex(self, vertex):
-        self.adjacency_list[vertex] = []
-
-
-
-
-
-
-
-
-
-
-
-
