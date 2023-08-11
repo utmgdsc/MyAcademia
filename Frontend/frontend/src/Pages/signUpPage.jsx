@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Container, Form, Button, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "../Components/navbar";
 import axios from "axios";
 const SignupPage = () => {
   const usernameRef = useRef();
@@ -49,92 +50,95 @@ const SignupPage = () => {
   };
 
   return (
-    <div>
-      <Container fluid>
-        <Row className="accounthp-justify-content-start">
-          <div className="accounthp-text-left">
-            <Button
-              variant="primary"
-              href="/"
-              className="mb-2 "
-              id="accountbtn"
-            >
-              Home
-            </Button>
+    <>
+      <Navbar />
+      <div>
+        <Container fluid>
+          <Row className="accounthp-justify-content-start">
+            <div className="accounthp-text-left">
+              <Button
+                variant="primary"
+                href="/"
+                className="mb-2 "
+                id="accountbtn"
+              >
+                Home
+              </Button>
+            </div>
+          </Row>
+        </Container>
+        <Container
+          className="d-flex align-items-center justify-content-center"
+          style={{ minHeight: "100vh" }}
+        >
+          <div className="w-100" style={{ maxWidth: "400px" }}>
+            <h2 className="text-center mb-4">Sign Up MyAcademia</h2>
+
+            <Form onSubmit={handleSignupClick}>
+              <Form.Group controlId="formBasicUsername">
+                <Form.Label>First Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter First Name"
+                  ref={firstNameRef}
+                />
+              </Form.Group>
+              <br />
+              <br />
+              <Form.Group controlId="formBasicUsername">
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter last Name"
+                  ref={lastNameRef}
+                />
+              </Form.Group>
+              <br />
+              <br />
+              <Form.Group controlId="formBasicUsername">
+                <Form.Label>UserName</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter username"
+                  ref={usernameRef}
+                />
+              </Form.Group>
+              <br />
+              <br />
+
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  ref={emailRef}
+                />
+              </Form.Group>
+              <br />
+              <br />
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  ref={passwordRef}
+                />
+              </Form.Group>
+              <br />
+              <br />
+              <Button
+                variant="primary"
+                type="submit"
+                block
+                onClick={handleSignupClick}
+              >
+                Sign Up
+              </Button>
+            </Form>
           </div>
-        </Row>
-      </Container>
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
-      >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
-          <h2 className="text-center mb-4">Sign Up MyAcademia</h2>
-
-          <Form onSubmit={handleSignupClick}>
-            <Form.Group controlId="formBasicUsername">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter First Name"
-                ref={firstNameRef}
-              />
-            </Form.Group>
-            <br />
-            <br />
-            <Form.Group controlId="formBasicUsername">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter last Name"
-                ref={lastNameRef}
-              />
-            </Form.Group>
-            <br />
-            <br />
-            <Form.Group controlId="formBasicUsername">
-              <Form.Label>UserName</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter username"
-                ref={usernameRef}
-              />
-            </Form.Group>
-            <br />
-            <br />
-
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                ref={emailRef}
-              />
-            </Form.Group>
-            <br />
-            <br />
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                ref={passwordRef}
-              />
-            </Form.Group>
-            <br />
-            <br />
-            <Button
-              variant="primary"
-              type="submit"
-              block
-              onClick={handleSignupClick}
-            >
-              Sign Up
-            </Button>
-          </Form>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </>
   );
 };
 
