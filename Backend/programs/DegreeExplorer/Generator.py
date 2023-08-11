@@ -25,8 +25,8 @@ class Generator:
     degree: Degree
 
     def __init__(self, degree):
-        # self.semester_length = semester_length
-        # self.program = Program.objects.get(program_code=program)
+        self.semester_length = semester_length
+        self.program = Program.objects.get(program_code=program)
         self.degree = degree
 
     def suggestDegreeCourse(self):
@@ -257,10 +257,11 @@ class Graph:
     adj_list: Dict[Vertex, List[Vertex]]
     vertex_by_level: Dict[int, List[Vertex]]
 
-    def __init__(self, vertices):
+    def __init__(self, vertices, user_course):
         self.vertices = vertices
         self.adj_list = {}
         self.vertex_by_level = {}
+        self.user_courses = user_course
 
     def add_edge(self, u: Vertex, v: Vertex) -> None:
         if u is None and v is not None:
@@ -312,7 +313,7 @@ class Graph:
                     isLevelComplete = True
                     suggested_courses.append(vertex)
         for val in suggested_courses:
-            parser = PrereqParser(val.course.pre_req, [])
+            parser = PrereqParser(val.course.pre_req, self.user_courses)
             if not parser.evaluatePrereq():
                 suggested_courses.remove(val)
         for val in suggested_courses:
