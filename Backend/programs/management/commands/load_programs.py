@@ -42,6 +42,5 @@ class Command(BaseCommand):
                 course = Course.objects.get(course_code=course_code)
                 new_requirement.courses.add(course)
             except Course.DoesNotExist:
-                print(course_code)
                 course = Course.objects.create(course_code=course_code, is_dummy=True)
                 new_requirement.courses.add(course)

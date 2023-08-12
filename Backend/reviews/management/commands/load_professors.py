@@ -19,5 +19,4 @@ class Command(BaseCommand):
                 try:
                     professor = Professor.objects.get(professor_name=row["professor"], department=row["department"])
                 except Professor.DoesNotExist:
-                    print(f'professor {row["professor"]} does not exist')
                     Professor.objects.create(professor_name=row["professor"], department=row["department"])
