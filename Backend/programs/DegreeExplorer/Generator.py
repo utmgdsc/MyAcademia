@@ -9,7 +9,11 @@ from programs.DegreeExplorer.parser.ExclusionParser import \
 from .DegreeAPI import Degree
 import re
 
+utmCourseRegex = re.compile(r'^[A-Z]{3}[0-9]{3}[A-Z][0-9]$')
+
 from .parser.PrereqParser import PrereqParser
+
+import re
 
 """
 The purpose of this class is to generate a list of courses that the user should
@@ -24,9 +28,9 @@ class Generator:
     program: Program
     degree: Degree
 
-    def __init__(self, degree):
+    def __init__(self, degree, semester_length, program):
         self.semester_length = semester_length
-        self.program = Program.objects.get(program_code=program)
+        self.program = "Program.objects.get(program_code=program)"
         self.degree = degree
 
     def suggestDegreeCourse(self):
@@ -224,18 +228,16 @@ class Generator:
 
         return courses
 
-    def suggestProgramCourse(self):
-        program_courses = []  # TODO: get list of courses in a program
+    def suggestProgramCourse(self, program_courses: List[Course]):
+        program_courses = program_courses
         vertexDict = {}
         for course in program_courses:
             course_vertex = Vertex(course)
             vertexDict[course.course_code] = course_vertex
-        graph = Graph(vertexDict)
+        graph = Graph(vertexDict, self.degree.user_courses)
         graph.build_graph()
         suggestion = graph.suggestCourses()
         return suggestion
-
-
 
 
 class Vertex:
@@ -316,8 +318,10 @@ class Graph:
             parser = PrereqParser(val.course.pre_req, self.user_courses)
             if not parser.evaluatePrereq():
                 suggested_courses.remove(val)
+        retValCourses = []
         for val in suggested_courses:
-            print(val.course.course_code)
-        return suggested_courses
+            retValCourses.append(val.course)
+            # print(val.course.course_code)
+        return retValCourses
 
 
