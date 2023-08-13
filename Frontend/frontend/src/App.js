@@ -13,6 +13,7 @@ import AddReviewPage from "./Pages/addReviewPage";
 import LoginPage from "./Pages/loginPage";
 import SignupPage from "./Pages/signUpPage";
 //import AccountHomePage from "./Pages/accountHomePage";
+import DegreeExplorer from "./Pages/degreeExplorer";
 
 import {
   BrowserRouter as Router,
@@ -41,6 +42,7 @@ function App() {
           <Route path="/signup/" element={<SignupPage />} />
           <Route path="/courseSearch/" element={<CourseSearch />} />
           <Route path="/accountHomePage/" element={<AccountHomePage />} />
+          <Route path="/degreeExplorer/" element={<DegreeExplorer />} />
         </Routes>
       </Router> }
     </div>
