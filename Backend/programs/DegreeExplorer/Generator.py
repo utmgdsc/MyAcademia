@@ -229,15 +229,36 @@ class Generator:
         return courses
 
     def suggestProgramCourse(self, program_courses: List[Course]):
-        program_courses = program_courses
-        vertexDict = {}
-        for course in program_courses:
-            course_vertex = Vertex(course)
-            vertexDict[course.course_code] = course_vertex
-        graph = Graph(vertexDict, self.degree.user_courses)
-        graph.build_graph()
-        suggestion = graph.suggestCourses()
-        return suggestion
+        if self.semester_length == 1:
+            program_courses = program_courses
+            vertexDict = {}
+            for course in program_courses:
+                course_vertex = Vertex(course)
+                vertexDict[course.course_code] = course_vertex
+            graph = Graph(vertexDict, self.degree.user_courses)
+            graph.build_graph()
+            suggestion = graph.suggestCourses()
+            return set(suggestion)
+        else:
+            program_courses = program_courses
+            vertexDict = {}
+            for course in program_courses:
+                course_vertex = Vertex(course)
+                vertexDict[course.course_code] = course_vertex
+            graph = Graph(vertexDict, self.degree.user_courses)
+            graph.build_graph()
+            suggestion = graph.suggestCourses()
+            tempCourses = []
+            for course in suggestion:
+                vertexDict[course.course_code].visited = True
+                tempCourses.append(course.course_code)
+
+            tempCourses += self.degree.user_courses
+            graph.user_courses = tempCourses
+            graph.build_graph()
+            suggestion += graph.suggestCourses()
+            # return suggestion
+            return set(suggestion)
 
 
 class Vertex:

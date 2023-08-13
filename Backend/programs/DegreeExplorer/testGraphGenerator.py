@@ -38,10 +38,18 @@ User Inputs:
 
 Expected Output:
 Given that the user has not yet taken any courses, the graph generator should 
-recommend the following courses:
+recommend the following courses for 1 semester length:
     1. CSC108H5
     2. MAT102H5
     3. MAT135H5
+    
+Given that the user has not yet taken any courses, the graph generator should
+recommend the following courses for 2 semester length:
+    1. CSC108H5
+    2. MAT102H5
+    3. MAT135H5
+    4. MAT136H5
+    5. CSC148H5
 
 These are the only options available for the user, as they have not completed 
 any courses that could influence the recommendations.
@@ -114,6 +122,8 @@ class GraphGeneratorTest(TestCase):
 
         # Expected Output: CSC108H5, MAT102H5, MAT135H5
         retVal = generator.suggestProgramCourse(program_courses)
+        # for course in retVal:
+        #     print(course.course_code)
         self.assertIn(Course.objects.get(course_code="CSC108H5"), retVal)
         self.assertIn(Course.objects.get(course_code="MAT102H5"), retVal)
         self.assertIn(Course.objects.get(course_code="MAT135H5"), retVal)
@@ -125,6 +135,24 @@ class GraphGeneratorTest(TestCase):
         courses for both of the semesters (Fall and Winter) of the user's
         program.
         """
+        # adding cs minor courses
+        program_courses = Course.objects.filter(course_code__in=["CSC108H5", "MAT102H5", "MAT135H5", "MAT136H5",
+                                                                 "CSC148H5", "CSC207H5", "CSC209H5", "CSC263H5",
+                                                                 "CSC258H5", "CSC236H5"])
+        program_courses = list(program_courses)
+        degree = Degree()
+
+        # Generating courses for the first semester of the user's program
+        generator = Generator(degree, 2, "FILLER")
+
+        # Expected Output: CSC108H5, MAT102H5, MAT135H5
+        retVal = generator.suggestProgramCourse(program_courses)
+
+        self.assertIn(Course.objects.get(course_code="CSC108H5"), retVal)
+        self.assertIn(Course.objects.get(course_code="MAT102H5"), retVal)
+        self.assertIn(Course.objects.get(course_code="MAT135H5"), retVal)
+        self.assertIn(Course.objects.get(course_code="MAT136H5"), retVal)
+        self.assertIn(Course.objects.get(course_code="CSC148H5"), retVal)
 
 
 
