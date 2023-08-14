@@ -58,12 +58,16 @@ class CourseSearchView(APIView):
         if program_area != "":
             courses = courses.filter(program_area=program_area)
             searched = True
-        
+
         # If we have narrowed the queryset, return the courses. Else, return an empty queryset
         if searched:
             return courses
         else:
-            return Course.objects.none() 
+            return Course.objects.none()
+
+
+
+
 
 class GetProgramAreaView(APIView):
     permission_classes = [permissions.AllowAny] # Allow any user to access this endpoint
@@ -88,5 +92,3 @@ class GetProgramAreaView(APIView):
 
     
 
-    
-   
