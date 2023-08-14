@@ -44,7 +44,7 @@ recommend the following courses for 1 semester length:
     3. MAT135H5
     
 Given that the user has not yet taken any courses, the graph generator should
-recommend the following courses for 2 semester length:
+recommend the following courses for 2 semester length (or year long):
     1. CSC108H5
     2. MAT102H5
     3. MAT135H5
@@ -155,5 +155,58 @@ class GraphGeneratorTest(TestCase):
         self.assertIn(Course.objects.get(course_code="CSC148H5"), retVal)
 
 
+"""
+Test Case 2: Course Suggestion for a CS Minor Program 
+             (Previous Courses Taken towards Program completion)
 
+Basic Background:
+    - The degree program consists of several courses (referred to as X courses).
+    - Each course contributes towards the completion of the degree program 
+      and 
+
+Test Case Scenario:
+    In this test case, we aim to showcase the functionality of the graph generator 
+    in suggesting courses for a user who has not yet taken any courses in their 
+    CS Minor program. The graph generator recommends courses based on prerequisites 
+    and course relationships.
+
+Degree Program (CS Minor) Courses:
+    - CSC108H5: No pre-reqs
+    - MAT102H5: No pre-reqs
+    - MAT135H5: No pre-reqs
+    - MAT136H5: MAT135H5
+    - CSC148H5: CSC108H5
+    - CSC207H5: CSC148H5
+    - CSC209H5: CSC207H5
+    - CSC263H5: CSC207H5 and CSC236H5 and (STA246H5 or STA256H5)
+    - CSC258H5: CSC148H5
+    - CSC236H5: CSC148H5 and MAT102H5
+
+User Inputs:
+    - Program: CS Minor
+    - Completed Degree Courses: None
+    - Semester Length: 1 semester (Fall or Winter) and 2 semesters (Fall and Winter)
+
+Expected Output:
+Given that the user has not yet taken any courses, the graph generator should 
+recommend the following courses for 1 semester length:
+    1. CSC108H5
+    2. MAT102H5
+    3. MAT135H5
+    
+Given that the user has not yet taken any courses, the graph generator should
+recommend the following courses for 2 semester length:
+    1. CSC108H5
+    2. MAT102H5
+    3. MAT135H5
+    4. MAT136H5
+    5. CSC148H5
+
+These are the only options available for the user, as they have not completed 
+any courses that could influence the recommendations.
+
+Note: The provided test case documentation assumes that the graph generator 
+suggests courses based on prerequisites and course relationships, 
+and the output is generated accordingly.
+"""
 
