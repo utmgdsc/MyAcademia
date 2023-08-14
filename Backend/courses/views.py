@@ -45,9 +45,7 @@ class CourseSearchView(APIView):
     def filterCourses(self, course_code, pre_req, distribution, program_area):
         active_courses = Course.objects.filter(is_dummy=False) # Get all active courses
         if course_code:
-            if not course_code.endswith("H5"):
-                course_code += "H5"  # Add H5 to the end of the course code if it is not already there
-            return active_courses.filter(course_code=course_code)
+            return active_courses.filter(course_code__icontains=course_code)
         # Filter courses based on the criteria provided. If empty string is provided for an attribute, don't filter
         courses = active_courses
         searched = False # Boolean that tells us whether we have narrowed the queryset or not
@@ -70,6 +68,27 @@ class CourseSearchView(APIView):
 
 
 
+
+class GetProgramAreaView(APIView):
+    permission_classes = [permissions.AllowAny] # Allow any user to access this endpoint
+    http_method_names = ['get']
+
+    # A get method to handle the request and return the program areas
+    def get(self, request):
+        # Get all program areas
+        program_areas_db = Course.objects.values('program_area').distinct()
+        program_areas = []
+        # Extract the program areas from the queryset
+        for program_area in program_areas_db:
+            value=program_area.get('program_area',"")
+            value=value.split(",")
+            for val in value:
+                val=val.strip()
+                if val not in program_areas:
+                    program_areas.append(val)
+        program_areas.sort()
+
+        return Response(program_areas, status=status.HTTP_200_OK)
 
     
 

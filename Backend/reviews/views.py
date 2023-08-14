@@ -32,32 +32,30 @@ class CreateReviewView(APIView):
     # A post method to handle the request and create a new user review
     def post(self, request, *args, **kwargs):
             # Extract the review data from request
-        username = request.data['username']
-        course_code = request.data['course_code']
-        professor_name = request.data['professor_name']
-        department = request.data['department']
-        rating = request.data['rating']
-        review = request.data['review']
-        if not username or not course_code or not rating or not review or not professor_name or not department:
-            return Response({'Error, invalid arguments'}, status=status.HTTP_400_BAD_REQUEST)
+        user = request.user
+        course_code = request.data.get('course_code', None)
+        professor_name = request.data.get('professor_name', None)
+        rating = request.data.get('rating', None)
+        review = request.data.get('review', None)
+        anonymous = request.data.get('anonymous', None)
+        if not user or not course_code or not rating or not review or not professor_name or not anonymous:
+            return Response({f'Error, invalid arguments {user}, {course_code}, {professor_name}, {rating}, {review}, {anonymous}\
+                             '}, status=status.HTTP_400_BAD_REQUEST)
         # Check if the user exists and add if not AnonymousUser
         userReview = UserReview()
-        user = User.objects.get(username=username)
-        if not user and username != 'AnonymousUser':
-            return Response({'Error, user does not exist'}, status=status.HTTP_400_BAD_REQUEST)
-        if username != 'AnonymousUser':
-            userReview.userName = user
+        if anonymous == 'false':
+            userReview.username = user
         # Check if the course exists
         course = Course.objects.get(course_code=course_code)
         if not course:
             return Response({'Error, course does not exist'}, status=status.HTTP_400_BAD_REQUEST)
         userReview.course = course
         # Check if the professor exists
-        professor = Professor.objects.filter(professor_name=professor_name).filter(department=department)
+        professor = Professor.objects.filter(professor_name=professor_name)
         if len(professor) != 0:
             userReview.Professor = professor[0] # We may need to change this later. Currently it uniquely identifies a professor based on name and department.
             userReview.Professor.add_course(course)  
-        if len(professor) == 0 and professor_name != 'NoProfessor':
+        if len(professor) == 0 and professor_name != 'No Professor':
             return Response({'Error, professor does not exist'}, status=status.HTTP_400_BAD_REQUEST)
         # Add rating and review. Store the review in the database
         userReview.rating = rating
@@ -83,6 +81,8 @@ class FindProfessorsView(APIView):
             return Response({'Error, course does not exist'}, status=status.HTTP_400_BAD_REQUEST)
         # Get the professor for the course
         professors_names = Professor.objects.filter(previous_courses__in=[course]).values_list('professor_name', flat=True)
+        professors_names = list(set(professors_names))
+        professors_names.sort()
         return Response(professors_names, status=status.HTTP_200_OK)
 
 
@@ -120,3 +120,16 @@ class GetUserReviewsView(APIView):
         user_reviews = UserReview.objects.filter(course=course)
         serializer = UserReviewSerializer(user_reviews, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class AllProfessorsView(APIView):
+    permission_classes = [permissions.AllowAny]
+    http_method_names = ['get']
+    # A get method to return the user reviews for a course
+    def get(self, request, *args, **kwargs):
+        professors = Professor.objects.all()
+        professor_names = professors.values_list('professor_name', flat=True)
+        professor_names = list(set(professor_names))
+        professor_names.sort()
+        professor_names.remove('None') # Remove the None value
+        return Response(professor_names, status=status.HTTP_200_OK)

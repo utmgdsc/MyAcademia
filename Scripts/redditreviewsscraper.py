@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
-from Scripts import databaseFiller
 #from Scripts import databaseFiller
 import prawcore
 import random

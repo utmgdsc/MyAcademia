@@ -1,0 +1,32 @@
+/* accountHomePage.css */
+
+/* Style for the buttons in the top-left corner */
+.accounthp-text-left {
+   
+    display: flex;
+    justify-content:space-between;
+    padding: 40px;
+
+  }
+
+  
+.accounthp-text-left .btn {
+    margin-right: 40px;
+  }
+  
+  /* Style for the buttons in the center */
+.accounthp-text-center {
+    display: flex;
+    justify-content:center;
+    margin-top: 30px;
+  }
+  
+.accounthp-text-center .btn {
+    margin-right: 4px;
+  }
+  
+  /* Optional: Increase the font size of the buttons */
+  .btn {
+    font-size: 18px;
+  }
+  
