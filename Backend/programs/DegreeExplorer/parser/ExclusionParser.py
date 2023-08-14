@@ -23,13 +23,29 @@ class ExclusionParser:
     def checkCourseApproval(self):
         if self.noneSyntax():
             return True
-        elif self.isStructuredExclusion():
-            return self.checkStructuredExclusion()
+        elif self.check_for_structured_prereqs():
+            match = re.findall(utmCourseCode, self.exclusion,
+                               flags=re.IGNORECASE)
+            match += re.findall(utsgCourseCode, self.exclusion,
+                                flags=re.IGNORECASE)
+            match += re.findall(utscCourseCode, self.exclusion,
+                                flags=re.IGNORECASE)
+            tempExclusion = self.exclusion[::]
+            if len(match) > 0:
+                for course in match:
+                    if course in self.user_courses:
+                        tempExclusion = tempExclusion.replace(course, "True")
+                    else:
+                        tempExclusion = tempExclusion.replace(course, "False")
+            # if "and" in tempExclusion and "or" in tempExclusion:
+            #     return eval(tempExclusion)
+            return not eval(tempExclusion)
 
     def noneSyntax(self):
         if "None" in self.exclusion:
             return True
         return False
+
 
     def isValidCouseCode(self, courseCode):
         utmMatches = re.findall(utmCourseCode, courseCode, flags=re.IGNORECASE)
@@ -107,21 +123,21 @@ class ExclusionParser:
                         return False
             return True
 
-
-def check_all_exclusion():
-    f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/parser/updatedExclusion.txt", "r")
-
-    while True:
-        line = f.readline()
-        if not line:
-            break
-        else:
-            line_exclusion = line.split(":")
-            exclusion = ExclusionParser(line_exclusion[1], [])
-
-            if not exclusion.noneSyntax():
-                if not exclusion.check_for_structured_prereqs():
-                    print(f"{line}")
-    f.close()
-
-check_all_exclusion()
+#
+# def check_all_exclusion():
+#     f = open("/Users/guninkakar/Desktop/GDSC/myAcademia/MyAcademia/Backend/programs/DegreeExplorer/parser/updatedExclusion.txt", "r")
+#
+#     while True:
+#         line = f.readline()
+#         if not line:
+#             break
+#         else:
+#             line_exclusion = line.split(":")
+#             exclusion = ExclusionParser(line_exclusion[1], [])
+#
+#             if not exclusion.noneSyntax():
+#                 if not exclusion.check_for_structured_prereqs():
+#                     print(f"{line}")
+#     f.close()
+#
+# check_all_exclusion()

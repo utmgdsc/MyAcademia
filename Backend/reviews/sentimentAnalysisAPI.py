@@ -48,6 +48,22 @@ class SentimentAnalysis:
         result = self.roBERTaModel()
         return result['roberta_neg'] * -1 + result['roberta_neu'] * 0 + result['roberta_pos'] * 1
 
+    """
+    This function will return the sentiment of the text.
+    If the roBERTa model is able to analyze the sentiment of the text, then
+    the sentiment of the text will be returned. Otherwise, the vader model
+    will be used to analyze the sentiment of the text.
+    
+    :return: sentiment of the text
+    """
+    def getValues(self):
+        value = 0
+        try:
+            value = self.roBERTaModelResult()
+        except:
+            value = self.vaderModel()
+        return value
+
 # sea = SentimentAnalysis("you are very very very very bad")
 # print(sea.roBERTaModelResult())
 # print(sea.vaderModel())
