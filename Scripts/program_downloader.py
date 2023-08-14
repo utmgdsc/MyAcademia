@@ -104,7 +104,7 @@ if __name__ == "__main__":
             # print(f"Reseting programs for number {currentStudyArea}, moving to {studyAreaNum}")
             currentStudyArea = studyAreaNum
 
-        # Add the program, hopefully it doesn't fail due to an un-added prereq program
+        # Add the program, hopefully it doesn't fail due to an un-added coreq program
         r = requests.post(
             f"https://degreeexplorer.utoronto.ca/degreeExplorer/rest/dxPlanner/saveProgramEntry?tabIndex=0&newPostCode={programID}",
             headers=addProgramPOSTHeader)
