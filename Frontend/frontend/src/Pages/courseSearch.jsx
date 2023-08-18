@@ -162,13 +162,13 @@ function CourseSearch() {
           <Col xs={8} md={3}>
             <FloatingLabel
               controlId="course_code-textarea"
-              label="Course Code(ABCH5)"
+              label="Course Code(ABC123H5)"
               className="mb-3"
             >
               <Form.Control
                 as="textarea"
                 placeholder="Smaller Input"
-                size="sm"
+                size="large"
                 style={{ height: "10px", resize: "none", width: "auto" }} // Adjust the height as needed
               />
             </FloatingLabel>
@@ -179,13 +179,13 @@ function CourseSearch() {
           <Col xs={8} md={3}>
             <FloatingLabel
               controlId="pre-requisites-textarea"
-              label="Pre-requisites(ABCH5)"
+              label="Pre-requisites(ABC123H5)"
               className="mb-3"
             >
               <Form.Control
                 as="textarea"
                 placeholder="Smaller Input"
-                size="sm"
+                size="large"
                 style={{ height: "10px", resize: "none", width: "auto" }} // Adjust the height as needed
               />
             </FloatingLabel>

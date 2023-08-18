@@ -32,38 +32,50 @@ function AccountHomePage() {
       navigate("/login");
     }
   }, []);
+  ///Users/akhil/Desktop/CSC392/MyAcademia/Frontend/frontend/src/images/accountHomePagebg.webp
   return (
     <>
       <Navbar />
-      <Container fluid>
-        <Row className="accounthp-justify-content-start">
-          <div className="accounthp-text-left">
-            <Button
+      <div
+        style={{
+          backgroundImage: `url(${require("../images/accountHomePagebg.jpeg")})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        <Container fluid>
+          <Row className="accounthp-justify-content-start">
+            <div className="accounthp-text-left">
+              {/* <Button
               variant="primary"
               href="/account"
               className="mb-2 "
               id="accountbtn"
             >
               Account
-            </Button>
-            <Button
+            </Button> */}
+              {/* <Button
               variant="link"
               className="mb-2"
               id="logoutbtn"
               onClick={handleLogout}
             >
               Logout
-            </Button>
-          </div>
-        </Row>
-      </Container>
-      <div class="accounthp-text-center">
-        <Button variant="secondary" className="me-5" href="/coursesearch">
-          Course-Search
-        </Button>
-        <Button className="me-2" variant="secondary" href="/degree-explorer">
-          Degree-Explorer
-        </Button>
+            </Button> */}
+            </div>
+          </Row>
+        </Container>
+        <div class="accounthp-text-center">
+          <Button variant="secondary" className="me-5" href="/coursesearch">
+            Course-Search
+          </Button>
+          <Button className="me-2" variant="secondary" href="/degreeExplorer">
+            Degree-Explorer
+          </Button>
+        </div>
       </div>
     </>
   );
