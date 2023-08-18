@@ -14,6 +14,7 @@ import LoginPage from "./Pages/loginPage";
 import SignupPage from "./Pages/signUpPage";
 //import AccountHomePage from "./Pages/accountHomePage";
 import DegreeExplorer from "./Pages/degreeExplorer";
+import NotFoundPage from "./Pages/notFoundPage";
 
 import {
   BrowserRouter as Router,
@@ -43,6 +44,7 @@ function App() {
           <Route path="/courseSearch/" element={<CourseSearch />} />
           <Route path="/accountHomePage/" element={<AccountHomePage />} />
           <Route path="/degreeExplorer/" element={<DegreeExplorer />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router> }
     </div>
