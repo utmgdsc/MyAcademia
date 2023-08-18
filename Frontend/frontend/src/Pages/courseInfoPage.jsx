@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import QuestionTooltip from "../Components/questiontooltip";
 
 // Classes to store relevant data
 class UserReviewData {
@@ -134,10 +135,10 @@ function CourseInfoPage({ course_code }) {
   const averageRating = courseData.averageRating;
   const handleAddReviewClick = () => {
     window.location.href = "/addReview/" + course_code;
-  }
+  };
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div
         class="container text-left"
         style={{
@@ -161,10 +162,10 @@ function CourseInfoPage({ course_code }) {
           <div class="col-4">
             <h3> Pre requisites: {pre_req}</h3>
           </div>
-            <div class="col-4">
+          <div class="col-4">
             <h3> Recommended Prep: {recommended_prep}</h3>
           </div>
-            <div class="col-4">
+          <div class="col-4">
             <h3> Credit: {credit}</h3>
           </div>
         </div>
@@ -228,12 +229,15 @@ function CourseInfoPage({ course_code }) {
                 tabindex="0"
               >
                 <div class="row">
-                  <div class="col-5"> <h3>Average Course Rating: {averageRating} </h3></div>
-                    </div>
+                  <div class="col-5">
+                    {" "}
+                    <h3>Average Course Rating: {averageRating} </h3>
+                  </div>
+                </div>
                 <div class="row text-left">
                   <div class="col-2 border-primary text-left">
                     <p class="text-left">
-                        <strong>Username</strong>
+                      <strong>Username</strong>
                     </p>
                   </div>
                   <div class="col-5 border-primary text-left">
@@ -256,7 +260,11 @@ function CourseInfoPage({ course_code }) {
                 ))}
                 <div class="row">
                   <div class="col-2">
-                    <button type="button" class="btn btn-primary" onClick={handleAddReviewClick}>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      onClick={handleAddReviewClick}
+                    >
                       Add Review
                     </button>
                   </div>
@@ -274,7 +282,9 @@ function CourseInfoPage({ course_code }) {
                     <p class="text-left">Review</p>
                   </div>
                   <div class="col-2 border-secondary">
-                    <p class="text-left">SAV</p>
+                    <p class="text-left">
+                      SAV <QuestionTooltip text="Sentiment Analysis Value. This is a value between -1 and 1 representing the tone of the review with -1 being negative, 0 being neutral and 1 being positive"/>
+                    </p>
                   </div>
                 </div>
                 {courseData.redditReviews.map((review) => (
