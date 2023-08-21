@@ -48,7 +48,7 @@ function LoginPage() {
       })
       .catch((error) => {
         console.log(error);
-        alert(Object.values(error.response.data).toString());
+        alert(Object.values(error.response.data).toString())
       });
   };
 

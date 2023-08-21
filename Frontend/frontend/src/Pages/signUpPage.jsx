@@ -45,7 +45,7 @@ const SignupPage = () => {
       })
       .catch((error) => {
         console.log(error.response);
-        alert((Object.values(error.response.data).toString());
+        alert(Object.values(error.response.data).toString());
       });
   };
 
