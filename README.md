@@ -13,9 +13,9 @@ MyAcademia is a website that will be a tool for UTM students for course enrollme
 Currently, the application hasn’t been hosted on any server. However, below are the steps to set up the application on a user’s local computer. Please note that these steps do not include populating the database with User Reviews as these are not stored in any file and are not scraped from the internet.  
 
 Prerequisites
-Python - https://www.python.org/downloads/
-Npm - https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-ReactJS 
+- Python - https://www.python.org/downloads/
+- Npm - https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+- ReactJS 
 
 
 ### Backend Setup
@@ -40,7 +40,10 @@ Clone the github repository :
 ```
 git clone https://github.com/utmgdsc/MyAcademia.git
 ```
-Navigate to the Scripts directory in the project -cd MyAcademia/Scripts
+Navigate to the Scripts directory in the project:
+```
+ cd MyAcademia/Scripts
+```
 Run the following scripts
 - scrapedata.py - generates a csv with list of course. csv is titled course_data.csv
 - redditreviewscraper.py - generates a csv with list of course reviews scraped from reddit. csv is titled courses_reviews.csv Please note this will take a while to get the list for all courses. We recommend running it for a few mins to scrape data for the first few courses. The script will automatically print the PID of the process which you can use to terminate the process if required. Ctrl C should work as well
