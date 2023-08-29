@@ -13,10 +13,8 @@ MyAcademia is a website that will be a tool for UTM students for course enrollme
 Currently, the application hasn’t been hosted on any server. However, below are the steps to set up the application on a user’s local computer. Please note that these steps do not include populating the database with User Reviews as these are not stored in any file and are not scraped from the internet.  
 
 Prerequisites
-Python - ```
-https://www.python.org/downloads/
-```
-Npm - ```https://docs.npmjs.com/downloading-and-installing-node-js-and-npm```
+Python - https://www.python.org/downloads/
+Npm - https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 ReactJS 
 
 
@@ -24,25 +22,28 @@ ReactJS
 First create a virtual python environment. Run the command python -m venv “path” where “path” is the path where you want to store the virtual environment
 Activate the new virtual environment. Use the command source path_to_venv/bin/activate
 Use pip to install the following (pip install name_of_library)
+- Django
+- Djoser
+- Djangorestframework
+- bs4
+- lxml
+- tensorflow (if wanting to add scraped reddit reviews into database)
+- praw
+- profanity
+- pandas
+- scripts
+- django-cors-headers
+- Django-extensions
+
+
+Clone the github repository : 
 ```
-Django
-Djoser
-Djangorestframework
-bs4
-lxml
-tensorflow (if wanting to add scraped reddit reviews into database)
-praw
-profanity
-pandas
-scripts
-django-cors-headers
-Django-extensions
+git clone https://github.com/utmgdsc/MyAcademia.git
 ```
-Clone the github repository : ```https://github.com/utmgdsc/MyAcademia.git```
-Navigate to the Scripts directory in the project - ```cd MyAcademia/Scripts```
+Navigate to the Scripts directory in the project -cd MyAcademia/Scripts
 Run the following scripts
-scrapedata.py - generates a csv with list of course. csv is titled course_data.csv
-redditreviewscraper.py - generates a csv with list of course reviews scraped from reddit. csv is titled courses_reviews.csv Please note this will take a while to get the list for all courses. We recommend running it for a few mins to scrape data for the first few courses. The script will automatically print the PID of the process which you can use to terminate the process if required. Ctrl C should work as well
+- scrapedata.py - generates a csv with list of course. csv is titled course_data.csv
+- redditreviewscraper.py - generates a csv with list of course reviews scraped from reddit. csv is titled courses_reviews.csv Please note this will take a while to get the list for all courses. We recommend running it for a few mins to scrape data for the first few courses. The script will automatically print the PID of the process which you can use to terminate the process if required. Ctrl C should work as well
 Navigate to the backend directory in the command line. You should be able to see a manage.py file
 Run the makemigrations command (python manage.py makemigrations) followed by the migrate command (python mange.py migrate). 
 Run the following commands (in order) to load data into the database:
@@ -57,7 +58,10 @@ The backend is now setup
 ### Frontend setup
 Navigate to the frontend directory (MyAcademia/Frontend/frontend)
 Make sure there does not exist a node_modules folder. If there does, remove it (rm -r node_modules)
-Run the command ```npm install```
+Run the command:
+```
+npm start
+```
 
 The frontend is now setup
 
