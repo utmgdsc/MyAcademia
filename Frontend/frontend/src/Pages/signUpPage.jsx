@@ -45,7 +45,7 @@ const SignupPage = () => {
       })
       .catch((error) => {
         console.log(error.response);
-        alert("Invalid Credentials");
+        alert(Object.values(error.response.data).toString());
       });
   };
 

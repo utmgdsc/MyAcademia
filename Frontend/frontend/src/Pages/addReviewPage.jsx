@@ -13,7 +13,7 @@ async function getCourseProfData(course_code) {
     console.log(dataresponse.data);
     return dataresponse.data;
   } catch (error) {
-    console.log(error);
+    alert(Object.values(error.response.data).toString());
   }
 }
 // Get all professors from the database
@@ -23,7 +23,7 @@ async function getAllProfData() {
     console.log(dataresponse.data);
     return dataresponse.data;
   } catch (error) {
-    console.log(error);
+     alert(Object.values(error.response.data).toString());
   }
 }
 //Get the course data from the backend. This is used for validation
@@ -76,6 +76,7 @@ async function handleSubmit() {
   } else {
     alert(response.data);
   }
+  
 }
 
 function AddReviewPage({ course_code }) {

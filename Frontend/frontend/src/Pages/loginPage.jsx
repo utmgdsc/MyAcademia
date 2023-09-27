@@ -48,7 +48,7 @@ function LoginPage() {
       })
       .catch((error) => {
         console.log(error);
-        alert("Invalid Credentials");
+        alert(Object.values(error.response.data).toString())
       });
   };
 
